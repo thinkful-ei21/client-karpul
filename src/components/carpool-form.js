@@ -4,6 +4,8 @@ import Input from './input';
 import { createNewCarpool } from '../actions/carpools';
 import {required, nonEmpty} from '../validators';
 
+import '../styles/carpool-form.css';
+
 export class CarpoolForm extends React.Component {
     onSubmit(values) {
         console.log(values)
@@ -13,7 +15,7 @@ export class CarpoolForm extends React.Component {
           values.endLocation,
           values.arrivalTime,
           values.seats, // totalSeats?
-          values.description
+          values.details
         ));
     }
 
@@ -71,12 +73,25 @@ export class CarpoolForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
 
-                <label htmlFor="seats">Available Seats</label>
+                <label htmlFor="seats">Seats</label>
                 <Field
-                    component={Input}
-                    type="text"
+                    component="select"
+                    type="select"
                     name="seats"
                     id="seats"
+                >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </Field>
+
+                <label htmlFor="details">Details</label>
+                <Field
+                    component="textarea"
+                    type="textarea"
+                    name="details"
+                    id="details"
                     validate={[required, nonEmpty]}
                 />
 
