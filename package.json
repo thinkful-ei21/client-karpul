@@ -6,6 +6,9 @@
     "react-scripts": "1.1.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "cloudinary": "^1.11.0",
+    "fs": "0.0.1-security",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
