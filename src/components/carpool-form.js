@@ -11,8 +11,7 @@ export class CarpoolForm extends React.Component {
           values.title, 
           values.startLocation,
           values.endLocation,
-          values.startTime,
-          values.endTime,
+          values.arrivalTime,
           values.seats, // totalSeats?
           values.description
         ));
@@ -63,25 +62,16 @@ export class CarpoolForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
 
-                <label htmlFor="startTime">Start Time</label>
+                <label htmlFor="arrivalTime">Arrival Time</label>
                 <Field
                     component={Input}
                     type="text"
-                    name="startTime"
-                    id="startTime"
+                    name="arrivalTime"
+                    id="arrivalTime"
                     validate={[required, nonEmpty]}
                 />
 
-                <label htmlFor="endTime">End Time</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="endTime"
-                    id="endTime"
-                    validate={[required, nonEmpty]}
-                />
-
-                <label htmlFor="seats">Seats</label>
+                <label htmlFor="seats">Available Seats</label>
                 <Field
                     component={Input}
                     type="text"
