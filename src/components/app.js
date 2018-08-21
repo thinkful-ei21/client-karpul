@@ -8,6 +8,8 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
+import CarpoolForm from './carpool-form';
+
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
@@ -42,6 +44,7 @@ export class App extends React.Component {
         return (
             <div className="app">
                 <HeaderBar />
+                <CarpoolForm />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
