@@ -1,0 +1,27 @@
+ul.tabContainer{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightblue;
+}
+
+ul.tabContainer li {
+  float: left;
+}
+
+ul.tabContainer li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.tabContainer li a:hover {
+  background-color: grey;
+}
+
+ul.tabContainer li a.active {
+  background-color: salmon;
+}
