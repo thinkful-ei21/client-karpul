@@ -1,5 +1,7 @@
 import React from 'react';
+import './login-form.css'
 import {Field, reduxForm, focus} from 'redux-form';
+import {Link, Redirect} from 'react-router-dom';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
@@ -37,7 +39,7 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <input type="file" onChange={this.handleUploadFile} />
+                {/* <input type="file" onChange={this.handleUploadFile} /> */}
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
@@ -55,8 +57,9 @@ export class LoginForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
                 <button disabled={this.props.pristine || this.props.submitting}>
-                    Log in
+                    Login
                 </button>
+                <Link to="/register">Register</Link>
             </form>
         );
     }
