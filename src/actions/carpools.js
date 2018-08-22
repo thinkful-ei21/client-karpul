@@ -20,6 +20,7 @@ import {normalizeResponseErrors} from './utils';
 // updateCarpool
 
 export const createNewCarpool = carpool => dispatch => {
+    console.log(carpool)
     return fetch(`${API_BASE_URL}/carpools`, { // confirm endpoint for carpool creation
         method: 'POST',
         headers: {

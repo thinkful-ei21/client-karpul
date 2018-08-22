@@ -1,6 +1,7 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm, FormSection, focus} from 'redux-form';
 import Input from './input';
+import Address from './address';
 import { createNewCarpool } from '../actions/carpools';
 import {required, nonEmpty} from '../validators';
 
@@ -14,7 +15,7 @@ export class CarpoolForm extends React.Component {
           values.startAddress,
           values.endAddress,
           values.arrivalTime,
-          values.seats, // totalSeats?
+          values.seats,
           values.details
         ));
     }
@@ -45,24 +46,16 @@ export class CarpoolForm extends React.Component {
                     id="carpoolTitle"
                     validate={[required, nonEmpty]}
                 />
-
+                
                 <label htmlFor="startAddress">Start Address</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="startAddress"
-                    id="startAddress"
-                    validate={[required, nonEmpty]}
-                />
+                <FormSection name="startAddress">
+                    <Address />
+                </FormSection>
 
                 <label htmlFor="endAddress">End Address</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="endAddress"
-                    id="endAddress"
-                    validate={[required, nonEmpty]}
-                />
+                <FormSection name="endAddress">
+                    <Address />
+                </FormSection>
 
                 <label htmlFor="arrivalTime">Arrival Time</label>
                 <Field
