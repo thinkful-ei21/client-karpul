@@ -3,14 +3,13 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const registerUser = user => dispatch => {
-    console.log(user);
-    return fetch(`${API_BASE_URL}/users`, {
+export const createNewCarpool = carpool => dispatch => {
+    return fetch(`${API_BASE_URL}/carpools`, { // confirm endpoint for carpool creation
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(carpool)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
