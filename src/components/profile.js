@@ -101,7 +101,6 @@ export class Profile extends React.Component{
               type="textarea"
               name="bio"
               id="bio"
-              label="Bio"
               aria-label="Bio"
               aria-required="true"
               validate={[required, nonEmpty]}
