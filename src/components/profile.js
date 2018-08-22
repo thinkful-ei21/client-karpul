@@ -43,7 +43,7 @@ export class Profile extends React.Component{
               this.onSubmit(values)
           )}>
           {error}  
-          <label htmlFor="profilePic" id="profilePiclbl">Profile Pic</label>
+          {/* <label htmlFor="profilePic" id="profilePiclbl">Profile Pic</label> */}
           <button type="file" onChange={this.handleUploadFile} >Upload Profile Pic</button>
           <Field
               component={Input}
