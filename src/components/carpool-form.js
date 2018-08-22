@@ -10,9 +10,9 @@ export class CarpoolForm extends React.Component {
     onSubmit(values) {
         console.log(values)
         return this.props.dispatch(createNewCarpool(
-          values.title, 
-          values.startLocation,
-          values.endLocation,
+          values.carpoolTitle, 
+          values.startAddress,
+          values.endAddress,
           values.arrivalTime,
           values.seats, // totalSeats?
           values.details
@@ -37,30 +37,30 @@ export class CarpoolForm extends React.Component {
 
                 {error}
 
-                <label htmlFor="title">Title</label>
+                <label htmlFor="carpoolTitle">Carpool Title</label>
                 <Field
                     component={Input}
                     type="text"
-                    name="title"
-                    id="title"
+                    name="carpoolTitle"
+                    id="carpoolTitle"
                     validate={[required, nonEmpty]}
                 />
 
-                <label htmlFor="startLocation">Start Location</label>
+                <label htmlFor="startAddress">Start Address</label>
                 <Field
                     component={Input}
                     type="text"
-                    name="startLocation"
-                    id="startLocation"
+                    name="startAddress"
+                    id="startAddress"
                     validate={[required, nonEmpty]}
                 />
 
-                <label htmlFor="endLocation">End Location</label>
+                <label htmlFor="endAddress">End Address</label>
                 <Field
                     component={Input}
                     type="text"
-                    name="endLocation"
-                    id="endLocation"
+                    name="endAddress"
+                    id="endAddress"
                     validate={[required, nonEmpty]}
                 />
 
