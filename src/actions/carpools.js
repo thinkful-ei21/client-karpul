@@ -19,12 +19,13 @@ import {normalizeResponseErrors} from './utils';
 // UPDATE_CARPOOL_ERROR
 // updateCarpool
 
-export const createNewCarpool = carpool => dispatch => {
-    console.log(carpool)
+export const createNewCarpool = carpool => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/carpools`, { // confirm endpoint for carpool creation
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify(carpool)
     })

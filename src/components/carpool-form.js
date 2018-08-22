@@ -9,15 +9,7 @@ import '../styles/carpool-form.css';
 
 export class CarpoolForm extends React.Component {
     onSubmit(values) {
-        console.log(values)
-        return this.props.dispatch(createNewCarpool(
-          values.carpoolTitle, 
-          values.startAddress,
-          values.endAddress,
-          values.arrivalTime,
-          values.seats,
-          values.details
-        ));
+        return this.props.dispatch(createNewCarpool(values));
     }
 
     render() {
