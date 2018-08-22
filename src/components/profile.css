@@ -1,3 +1,7 @@
 #profilePiclbl{
   font-weight: bold;
 }
+
+.profilePic {
+  max-width: 160px;
+}

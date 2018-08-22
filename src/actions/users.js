@@ -10,7 +10,7 @@ export const picRequest = () => ({
 
 export const PIC_SUCCESS = 'PIC_SUCCESS';
 export const picSuccess = picUrl => ({
-    type: pic_SUCCESS,
+    type: PIC_SUCCESS,
     picUrl
 });
 
@@ -25,7 +25,8 @@ export const fetchPic = userId => dispatch => {
     return fetch(`${API_BASE_URL}/users/${userId}`)
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(data => dispatch(picSuccess(data)))
+        .then(data => {
+            dispatch(picSuccess(data))})
         .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
@@ -50,6 +51,7 @@ export const registerUser = user => dispatch => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
+        .then(res => dispatch(fetchPic(res._id)))
         .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
