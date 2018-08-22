@@ -3,11 +3,29 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const createNewCarpool = carpool => dispatch => {
+// FETCH_CARPOOLS_REQUEST
+// FETCH_CARPOOLS_SUCCESS
+// FETCH_CARPOOLS_ERROR
+// fetchCarpools
+
+// FETCH_ONE_CARPOOL_REQUEST
+// FETCH_ONE_CARPOOL_SUCCESS
+// FETCH_ONE_CARPOOL_ERROR
+// fetchOneCarpool
+
+// HOST ONLY ACTIONS //
+// UPDATE_CARPOOL_REQUEST
+// UPDATE_CARPOOL_SUCCESS
+// UPDATE_CARPOOL_ERROR
+// updateCarpool
+
+export const createNewCarpool = carpool => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/carpools`, { // confirm endpoint for carpool creation
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify(carpool)
     })

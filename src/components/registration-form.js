@@ -28,11 +28,14 @@ export class RegistrationForm extends React.Component {
                 </div>
             );
         }
-        
+
         return (
             <div>
             <form
                 className="login-form"
+                aria-live="polite"
+                aria-atomic="true"
+                role="complementary"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>

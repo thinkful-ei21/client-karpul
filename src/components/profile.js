@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm, focus, Form} from 'redux-form';
 import {required, nonEmpty} from '../validators';
 import axios from 'axios';
 import {API_BASE_URL} from '../config';
@@ -34,8 +34,11 @@ export class Profile extends React.Component{
     }
 
     return (
-      <form
+      <Form
           className="login-form"
+          aria-live="polite"
+          aria-atomic="true"
+          role="complementary"
           onSubmit={this.props.handleSubmit(values =>
               this.onSubmit(values)
           )}>
@@ -92,8 +95,9 @@ export class Profile extends React.Component{
               aria-required="true"
               validate={[required, nonEmpty]}
           />
+          <label htmlFor="bio">Bio</label>
           <Field
-              component={Input}
+              component="textarea"
               type="textarea"
               name="bio"
               id="bio"
@@ -108,7 +112,7 @@ export class Profile extends React.Component{
                 Create Profile
             </button>
 
-      </form>
+      </Form>
   );
   }
 }

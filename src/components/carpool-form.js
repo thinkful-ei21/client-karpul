@@ -1,6 +1,7 @@
 import React from 'react';
-import {Field, reduxForm, focus, Form} from 'redux-form';
+import {Field, reduxForm, focus, Form, FormSection} from 'redux-form';
 import Input from './input';
+import Address from './address';
 import { createNewCarpool } from '../actions/carpools';
 import {required, nonEmpty} from '../validators';
 
@@ -8,15 +9,7 @@ import '../styles/carpool-form.css';
 
 export class CarpoolForm extends React.Component {
     onSubmit(values) {
-        console.log(values)
-        return this.props.dispatch(createNewCarpool(
-          values.title, 
-          values.startLocation,
-          values.endLocation,
-          values.arrivalTime,
-          values.seats, // totalSeats?
-          values.details
-        ));
+        return this.props.dispatch(createNewCarpool(values));
     }
 
     render() {
@@ -31,38 +24,31 @@ export class CarpoolForm extends React.Component {
         return (
             <Form
                 className="carpool-form"
+                aria-live="polite"
+                aria-atomic="true"
+                role="complementary"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-
                 {error}
-
-                <label htmlFor="title">Title</label>
+                <label htmlFor="startAddress">Carpool Title</label>
                 <Field
                     component={Input}
                     type="text"
-                    name="title"
-                    id="title"
+                    name="carpoolTitle"
+                    id="carpoolTitle"
                     validate={[required, nonEmpty]}
                 />
+                
+                <label htmlFor="startAddress">Start Address</label>
+                <FormSection name="startAddress">
+                    <Address />
+                </FormSection>
 
-                <label htmlFor="startLocation">Start Location</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="startLocation"
-                    id="startLocation"
-                    validate={[required, nonEmpty]}
-                />
-
-                <label htmlFor="endLocation">End Location</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="endLocation"
-                    id="endLocation"
-                    validate={[required, nonEmpty]}
-                />
+                <label htmlFor="endAddress">End Address</label>
+                <FormSection name="endAddress">
+                    <Address />
+                </FormSection>
 
                 <label htmlFor="arrivalTime">Arrival Time</label>
                 <Field
@@ -79,11 +65,16 @@ export class CarpoolForm extends React.Component {
                     type="select"
                     name="seats"
                     id="seats"
+                    className="seat-selector"
                 >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option 
+                    className="seat-selector" value="1">1</option>
+                    <option 
+                    className="seat-selector" value="2">2</option>
+                    <option 
+                    className="seat-selector" value="3">3</option>
+                    <option 
+                    className="seat-selector" value="4">4</option>
                 </Field>
 
                 <label htmlFor="details">Details</label>
@@ -95,10 +86,9 @@ export class CarpoolForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
 
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button type="submit" className="create-carpool-button" disabled={this.props.pristine || this.props.submitting}>
                     Create Carpool
                 </button>
-
             </Form>
         );
     }

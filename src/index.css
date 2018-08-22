@@ -26,23 +26,10 @@ form.login-form, form.carpool-form {
   -o-border-radius: 5px;
 }
 
-input[type="text"]#username,
-input[type="password"]#password,
-input[type="text"]#firstName,
-input[type="text"]#lastName,
-input[type="text"]#username,
-input[type="text"]#phone,
-input[type="text"]#title,
-input[type="text"]#startLocation,
-input[type="text"]#endLocation,
-input[type="text"]#arrivalTime,
-input[type="text"]#userName,
-input[type="textarea"]#address,
-input[type="text"]#phoneNumber,
-input[type="textarea"]#bio,
-input[type="select"]#seats,
-input[type="password"]#password,
-input[type="password"]  {
+input[type="text"],
+input[type="password"],
+input[type="textarea"],
+input[type="select"]#seats {
 	width: 250px;
 	height: 30px;
   margin: 10px auto;
@@ -50,7 +37,11 @@ input[type="password"]  {
   font-size: 25px;
 }
 
-.login-form > button  {
+input[type="select"]#seats.seat-selector {
+  width: 280px;
+}
+
+.login-form > button, .carpool-form > button  {
   width: 260px;
   height: 45px;
   padding: 10px;
