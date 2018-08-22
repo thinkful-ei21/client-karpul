@@ -1,0 +1,11 @@
+.form-input{
+  display: flex;
+  width:100%;
+  margin-bottom: 5px;
+}
+.form-input > div.form-label{
+  width:25%;
+}
+.form-input label{
+  font-weight: bold;
+}
