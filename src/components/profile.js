@@ -1,6 +1,10 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {connect} from 'react-redux';
 import Input from './input';
+import axios from 'axios'
+import {refreshAuthToken} from '../actions/auth'
+import {API_BASE_URL} from '../config';
 import './profile.css';
 
 
@@ -9,6 +13,17 @@ export class Profile extends React.Component{
   onSubmit(values) {
     return 
   }
+
+  handleUploadFile = (event) => {
+    console.log(this.props.currentUser)
+    const data = new FormData();
+    data.append('file', event.target.files[0]);
+    data.append('id', this.props.currentUser._id)
+    // '/files' is your node.js route that triggers our middleware
+    axios.post(`${API_BASE_URL}/files`, data).then((response) => {
+      axios.post(`${API_BASE_URL}/profilePic`, {id: this.props.currentUser._id, profilePicUrl: response.data})
+      .then((response)=> {this.props.dispatch(refreshAuthToken())})
+    });}
 
   render() {
     let error;
@@ -28,7 +43,8 @@ export class Profile extends React.Component{
           )}>
           {error}  
           <label htmlFor="profilePic" id="profilePiclbl">Profile Pic</label>
-          <input type="file" onChange={this.handleUploadFile} />                  
+          <input type="file" onChange={this.handleUploadFile} />
+          <img src={this.props.currentUser.profilePicUrl} alt='Sample Image'/>              
           <Field
               component={Input}
               type="text"
@@ -78,7 +94,12 @@ export class Profile extends React.Component{
   }
 }
 
-export default reduxForm({
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null,
+    currentUser: state.auth.currentUser !== null ? state.auth.currentUser : ""
+});
+
+export default connect (mapStateToProps)(reduxForm({
   form: 'profile',
   onSubmitFail: (errors, dispatch) => dispatch(focus('profile', 'firstName'))
-})(Profile);
+})(Profile))
