@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm, focus, Form} from 'redux-form';
 import Input from './input';
 import { createNewCarpool } from '../actions/carpools';
 import {required, nonEmpty} from '../validators';
@@ -29,7 +29,7 @@ export class CarpoolForm extends React.Component {
             );
         }
         return (
-            <form
+            <Form
                 className="carpool-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
@@ -99,7 +99,7 @@ export class CarpoolForm extends React.Component {
                     Create Carpool
                 </button>
 
-            </form>
+            </Form>
         );
     }
 }

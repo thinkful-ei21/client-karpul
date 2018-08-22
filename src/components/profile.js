@@ -1,5 +1,8 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {required, nonEmpty} from '../validators';
+import axios from 'axios';
+import {API_BASE_URL} from '../config';
 import Input from './input';
 import './profile.css';
 
@@ -9,6 +12,16 @@ export class Profile extends React.Component{
   onSubmit(values) {
     return 
   }
+
+  handleUploadFile = (event) => {
+    const data = new FormData();
+    data.append('file', event.target.files[0]);
+    data.append('name', 'some value user types');
+    data.append('description', 'some value user types');
+    // '/files' is your node.js route that triggers our middleware
+    axios.post(`${API_BASE_URL}files`, data).then((response) => {
+      console.log(response); // do something with the response
+    });}
 
   render() {
     let error;
@@ -28,50 +41,72 @@ export class Profile extends React.Component{
           )}>
           {error}  
           <label htmlFor="profilePic" id="profilePiclbl">Profile Pic</label>
-          <input type="file" onChange={this.handleUploadFile} />                  
+          <button type="file" onChange={this.handleUploadFile} >Upload Profile Pic</button>
           <Field
               component={Input}
               type="text"
               name="firstName"
-              id="firstName"   
-              label="First Name"           
-          />          
+              id="firstName"
+              aria-label="First Name"
+              aria-required="true"
+              validate={[required, nonEmpty]}
+              label="First Name" 
+          />
           <Field
               component={Input}
               type="text"
               name="lastName"
-              id="lastName"              
+              id="lastName"
               label="Last Name"
-          />          
+              aria-label="Last Name"
+              aria-required="true"
+              validate={[required, nonEmpty]}
+          />
           <Field
               component={Input}
               type="text"
               name="userName"
               id="userName"
               label="User Name"
-          />          
+              aria-label="User Name"
+              aria-required="true"
+              validate={[required, nonEmpty]}
+          />
           <Field
               component={Input}
               type="text"
               name="phoneNumber"
               id="phoneNumber"
-              label="Phone Number"              
-          />          
+              label="Phone Number"
+              aria-label="Phone Number"
+              aria-required="true"
+              validate={[required, nonEmpty]}
+          />
           <Field
               component={Input}
               type="textarea"
               name="address"
               id="address"
-              label="Address"              
+              label="Address"
+              aria-label="Address"
+              aria-required="true"
+              validate={[required, nonEmpty]}
           />
           <Field
               component={Input}
               type="textarea"
               name="bio"
               id="bio"
-              label="Bio"              
+              label="Bio"
+              aria-label="Bio"
+              aria-required="true"
+              validate={[required, nonEmpty]}
           />
-
+            <button
+                type="submit"
+                disabled={this.props.pristine || this.props.submitting}>
+                Create Profile
+            </button>
 
       </form>
   );

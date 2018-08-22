@@ -12,16 +12,10 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard">
-            <h2>Welcome to Karpul</h2>
-                <div className="dashboard-username">
-                    {this.props.username}
-                </div>
-                <Tab />
-                {/* <div className="dashboard-name">Name: {this.props.name}</div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-                </div> */}
-
+            <div className="header-username">
+                Welcome {this.props.username}
+            </div>
+            <Tab />
             </div>
         );
     }

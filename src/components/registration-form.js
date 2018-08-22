@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {Link} from 'react-router-dom';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
@@ -15,34 +16,54 @@ export class RegistrationForm extends React.Component {
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
     }
+    
 
     render() {
+
+        let error;
+        if (this.props.error) {
+            error = (
+                <div className="form-error" aria-live="polite">
+                    {this.props.error}
+                </div>
+            );
+        }
+        
         return (
+            <div>
             <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
-                )}>                
-                <Field component={Input} type="text" name="firstName" label="First Name"/>
-                
-                <Field component={Input} type="text" name="lastName" label="Last Name"/>
-                
+                )}>
+                <h2>Register</h2>
+                {error}
+                <Field component={Input}
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    label="First Name"/>
+                <Field component={Input}
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    label="Last Name"/>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
+                    id="username"
                     label="User Name"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                
                 <Field
                     component={Input}
                     type="text"
                     name="phone"
+                    id="phone"
                     label="Phone Number"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                
                 <Field
                     component={Input}
                     type="password"
@@ -50,7 +71,6 @@ export class RegistrationForm extends React.Component {
                     label="Password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                
                 <Field
                     component={Input}
                     type="password"
@@ -63,7 +83,14 @@ export class RegistrationForm extends React.Component {
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
                 </button>
+                <br />
+                or
+                <Link to="/" className="login-link">
+                    <h2 className="register-text">Login</h2>
+                </Link>
             </form>
+           
+          </div>
         );
     }
 }
