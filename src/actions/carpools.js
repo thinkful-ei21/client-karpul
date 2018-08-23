@@ -4,34 +4,125 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 /* For My Carpools Page */
-// FETCH_USER_CARPOOLS_REQUEST
-// FETCH_USER_CARPOOLS_SUCCESS
-// FETCH_USER_CARPOOLS_ERROR
-// fetchUserCarpools
+export const FETCH_USER_CARPOOLS_REQUEST = 'FETCH_USER_CARPOOLS_REQUEST';
+export const fetchUserCarpoolsRequest = () => ({
+    type: FETCH_USER_CARPOOLS_REQUEST
+})
 
-/* For expanded view */
-// FETCH_ONE_CARPOOL_REQUEST
-// FETCH_ONE_CARPOOL_SUCCESS
-// FETCH_ONE_CARPOOL_ERROR
-// fetchOneCarpool
+export const FETCH_USER_CARPOOLS_SUCCESS = 'FETCH_USER_CARPOOLS_SUCCESS';
+export const fetchUserCarpoolsSuccess = carpools => ({
+    type: FETCH_USER_CARPOOLS_SUCCESS,
+    carpools
+})
+
+export const FETCH_USER_CARPOOLS_ERROR = 'FETCH_USER_CARPOOLS_ERROR';
+export const fetchUserCarpoolsError = err => ({
+    type: FETCH_USER_CARPOOLS_ERROR,
+    err
+})
+
+export const fetchUserCarpools = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/carpools`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(carpools => dispatch(FETCH_USER_CARPOOLS_SUCCESS(carpools)))
+    .catch(err => {
+        dispatch(FETCH_USER_CARPOOLS_ERROR(err))
+    })
+}
 
 /* For Find Carpools Page */
-// CARPOOL_PROXIMITY_SEARCH_REQUEST
-// CARPOOL_PROXIMITY_SEARCH_SUCCESS
-// CARPOOL_PROXIMITY_SEARCH_ERROR
-// fetchNearbyCarpools
+export const CARPOOL_PROXIMITY_SEARCH_REQUEST = 'CARPOOL_PROXIMITY_SEARCH_REQUEST';
+export const carpoolProximitySearchRequest = () => ({
+    type: CARPOOL_PROXIMITY_SEARCH_REQUEST
+})
+
+export const CARPOOL_PROXIMITY_SEARCH_SUCCESS = 'CARPOOL_PROXIMITY_SEARCH_SUCCESS';
+export const carpoolProximitySearchSuccess = carpools => ({
+    type: CARPOOL_PROXIMITY_SEARCH_SUCCESS,
+    carpools
+})
+
+export const CARPOOL_PROXIMITY_SEARCH_ERROR = 'CARPOOL_PROXIMITY_SEARCH_ERROR';
+export const carpoolProximitySearchError = err => ({
+    type: CARPOOL_PROXIMITY_SEARCH_ERROR,
+    err
+})
+
+export const fetchNearbyCarpools = () => dispatch => {
+
+}
+
+/* For expanded view */
+export const FETCH_ONE_CARPOOL_REQUEST = 'FETCH_ONE_CARPOOL_REQUEST';
+export const fetchOneCarpoolRequest = () => ({
+    type: FETCH_ONE_CARPOOL_REQUEST
+})
+
+export const FETCH_ONE_CARPOOL_SUCCESS = 'FETCH_ONE_CARPOOL_SUCCESS';
+export const fetchOneCarpoolSuccess = carpool => ({
+    type: FETCH_ONE_CARPOOL_SUCCESS,
+    carpool
+})
+
+export const FETCH_ONE_CARPOOL_ERROR = 'FETCH_ONE_CARPOOL_ERROR';
+export const fetchOneCarpoolError = err => ({
+    type: FETCH_ONE_CARPOOL_ERROR,
+    err
+})
+
+export const fetchOneCarpool = () => dispatch => {
+
+}
 
 /* Editable Carpools Fields by HOST */
-// UPDATE_CARPOOL_REQUEST
-// UPDATE_CARPOOL_SUCCESS
-// UPDATE_CARPOOL_ERROR
-// updateCarpool
+export const UPDATE_CARPOOL_REQUEST = 'UPDATE_CARPOOL_REQUEST';
+export const updateCarpoolRequest = carpool => ({
+    type: UPDATE_CARPOOL_REQUEST,
+    carpool
+})
+
+export const UPDATE_CARPOOL_SUCCESS = 'UPDATE_CARPOOL_SUCCESS';
+export const updateCarpoolSuccess = () => ({
+    type: updateCarpoolSuccess
+})
+
+export const UPDATE_CARPOOL_ERROR = 'UPDATE_CARPOOL_ERROR';
+export const updateCarpoolError = err => ({
+    type: UPDATE_CARPOOL_ERROR,
+    err
+})
+
+export const updateCarpool = () => dispatch => {
+
+}
 
 /* User clicking "Request To Join" button */
-// REQUEST_CARPOOL_INVITE_REQUEST
-// REQUEST_CARPOOL_INVITE_SUCCESS
-// REQUEST_CARPOOL_INVITE_ERROR
-// requestCarpoolInvite
+export const REQUEST_CARPOOL_INVITE_REQUEST = 'REQUEST_CARPOOL_INVITE_REQUEST';
+export const requestCarpoolInviteRequest = () => ({
+    type: REQUEST_CARPOOL_INVITE_REQUEST
+})
+
+export const REQUEST_CARPOOL_INVITE_SUCCESS = 'REQUEST_CARPOOL_INVITE_SUCCESS';
+export const requestCarpoolInviteSuccess = () => ({
+    type: REQUEST_CARPOOL_INVITE_SUCCESS
+})
+
+export const REQUEST_CARPOOL_INVITE_ERROR = 'REQUEST_CARPOOL_INVITE_ERROR';
+export const requestCarpoolInviteError = err => ({
+    type: REQUEST_CARPOOL_INVITE_ERROR,
+    err
+})
+
+export const requestCarpoolInvite = () => dispatch => {
+
+}
 
 export const createNewCarpool = carpool => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
