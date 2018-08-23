@@ -16,7 +16,9 @@ export class Dashboard extends React.Component {
                 Welcome {this.props.username}
             </div>
             <Tab />
+            
             </div>
+
         );
     }
 }
