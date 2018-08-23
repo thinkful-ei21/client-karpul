@@ -9,3 +9,7 @@
 .form-input label{
   font-weight: bold;
 }
+
+.form-text-box input{
+  height: 200px;
+}
