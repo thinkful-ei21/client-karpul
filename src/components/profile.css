@@ -4,4 +4,35 @@
 
 .profilePic {
   max-width: 160px;
+  display: block;
+  
+}
+
+.pic-container {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 25px;
+}
+
+.pic-container img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pic-container input{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.profile-labels {
+  display: block;
+}
+
+.profile-label-container{
+  margin-top: 10px;
 }
