@@ -16,7 +16,7 @@ import {
   REQUEST_CARPOOL_INVITE_ERROR
 } from '../actions/carpools';
 
-const intialState = {
+const initialState = {
   userCarpools: [],
   nearbyCarpools: [],
   selectedCarpool: {},
