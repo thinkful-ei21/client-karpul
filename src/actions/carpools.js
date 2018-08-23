@@ -23,7 +23,8 @@ export const fetchUserCarpoolsError = err => ({
 
 export const fetchUserCarpools = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/carpools`, {
+    dispatch(fetchOneCarpoolRequest());
+    fetch(`${API_BASE_URL}/carpools`, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${authToken}`
@@ -31,9 +32,9 @@ export const fetchUserCarpools = () => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(carpools => dispatch(FETCH_USER_CARPOOLS_SUCCESS(carpools)))
+    .then(carpools => dispatch(fetchUserCarpoolsSuccess(carpools)))
     .catch(err => {
-        dispatch(FETCH_USER_CARPOOLS_ERROR(err))
+        dispatch(fetchUserCarpoolsError(err))
     })
 }
 

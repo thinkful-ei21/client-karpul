@@ -41,6 +41,10 @@ input[type="select"]#seats.seat-selector {
   width: 280px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .login-form > button, .carpool-form > button  {
   width: 260px;
   height: 45px;

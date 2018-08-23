@@ -8,6 +8,10 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import CarpoolPage from './carpool-page';
 import {refreshAuthToken} from '../actions/auth';
+import MyCarpools from './myCarpools';
+import Help from './help';
+import FindCarpools from './find-carpools';
+import Profile from './profile';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -45,6 +49,10 @@ export class App extends React.Component {
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/find-carpool" component={FindCarpools} />
+                <Route exact path="/my-carpools" component={MyCarpools} />
+                <Route exact path="/help" component={Help} />
                 <Route exact path="/register" component={RegistrationPage} />
                 <Route path="/carpools/:carpool" component={CarpoolPage} />
             </div>
