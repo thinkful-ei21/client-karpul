@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchNearbyCarpools } from '../actions/carpools';
+import {connect} from 'react-redux';
 
 
 

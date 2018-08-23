@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from './profile';
-import FindCarpools from './findCarpools';
+import FindCarpools from './find-carpools';
 import MyCarpools from './myCarpools';
 import GPS from './GPS';
 import Help from './help';
