@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Example from './example'
+import CarpoolForm from './carpool-form';
 
 // import {setEventEditIndex} from '../actions/event-list'
 
@@ -10,6 +11,9 @@ class Modal extends Component {
   setPage() {
     if (this.props.page === 'example'){
       return <Example />
+    }
+    if (this.props.page === 'carpool-form') {
+      return <CarpoolForm />
     }
   }
   render() {

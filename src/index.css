@@ -20,6 +20,8 @@ form.login-form, form.carpool-form {
   border: 2px solid rgb(117, 29, 29);
   border-radius: 5px;
   width: 400px;
+  height: 600px;
+  overflow: scroll;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -45,6 +47,7 @@ button:hover {
   cursor: pointer;
 }
 
+
 .login-form > button, .carpool-form > button  {
   width: 260px;
   height: 45px;
@@ -60,6 +63,14 @@ button:hover {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
+
+button.close-modal-button {
+  width: 20px;
+  height: 25px;
+  padding: 0;
+  margin-left: 10px;
+}
+
 
 .login-form > button:hover {
   color: rgb(117, 29, 29);

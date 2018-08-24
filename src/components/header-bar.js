@@ -21,7 +21,6 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar" role="banner" aria-live="polite" aria-atomic="true">
-                <ProximitySearchForm />
                 <h1>Karpul</h1>
                 {logOutButton}
             </div>

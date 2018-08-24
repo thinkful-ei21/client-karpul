@@ -2,6 +2,7 @@ import React from 'react';
 import CarpoolForm from './carpool-form';
 import {  fetchUserCarpools  } from '../actions/carpools';
 import './carpools.css';
+import {showModal} from '../actions/modals';
 import { connect } from 'react-redux';
 
 
@@ -61,15 +62,17 @@ class MyCarpools extends React.Component{
       </li>
     ));
 
-    return  <ul className="carpool-list"> {carpool} </ul>;
+      
+    return  <div>
+              <ul className="carpool-list"> {carpool} </ul>
+            </div>;
 }
 
   render(){
 
     return (
       <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
-        <button onClick={this.createCarpool}>Create Carpool</button>
-        {/* <CarpoolForm />  */}
+        <button onClick={()=>this.props.dispatch(showModal("carpool-form"))}>Create Carpool</button>
         <ul className="carpool-item">
           {this.renderResults()}
         </ul>

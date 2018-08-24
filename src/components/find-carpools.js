@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchNearbyCarpools } from '../actions/carpools';
 import {connect} from 'react-redux';
+import ProximitySearchForm from './proximity-search-form';
 import './carpools.css';
 
 class FindCarpools extends React.Component {
@@ -15,9 +16,7 @@ class FindCarpools extends React.Component {
 
   }
   componentDidMount() {
-    this.props.dispatch(fetchNearbyCarpools());
-    // each carpool card will link to:
-    // <Link to={`/${this.props.nearbyCarpools.id}`} />
+    
   }
 
   joinCarpool() {
@@ -32,7 +31,7 @@ class FindCarpools extends React.Component {
     // const nearbyCarpools = this.props.carpools.nearbyCarpools;
     // console.log('nearbyCarpools: ',nearbyCarpools)
     // const carpool = nearbyCarpools.map((carpool, index) => (
-    // // <li className="carpool-result"
+    // <li className="carpool-result"
     //   key={index}>
     //   <div className="carpool-item">
     //       <div className="carpool-item-text">
@@ -59,7 +58,7 @@ class FindCarpools extends React.Component {
     return (
       <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
         <h1>Find Carpools</h1>
-        {/* <CarpoolForm />  */}
+        <ProximitySearchForm /> 
         <ul className="carpool-item">
           {this.renderResults()}
         </ul>

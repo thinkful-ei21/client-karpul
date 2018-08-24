@@ -2,14 +2,18 @@ import React from 'react';
 import {Field, reduxForm, focus, Form, FormSection} from 'redux-form';
 import Input from './input';
 import Address from './address';
+import {hideModal} from '../actions/modals';
 import { createNewCarpool } from '../actions/carpools';
+import {  fetchUserCarpools  } from '../actions/carpools';
 import {required, nonEmpty} from '../validators';
 
 import '../styles/carpool-form.css';
 
 export class CarpoolForm extends React.Component {
     onSubmit(values) {
-        return this.props.dispatch(createNewCarpool(values));
+        return this.props.dispatch(createNewCarpool(values))
+        .then (() => this.props.dispatch(hideModal()))
+        .then(() => this.props.dispatch(fetchUserCarpools()))
     }
 
     render() {
@@ -31,7 +35,8 @@ export class CarpoolForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="carpoolTitle">Carpool Title</label>
+
+                <label htmlFor="startAddress">Carpool Title</label>
                 <Field
                     component={Input}
                     type="text"
