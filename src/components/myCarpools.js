@@ -1,7 +1,7 @@
 import React from 'react';
 import CarpoolForm from './carpool-form';
 import {  fetchUserCarpools  } from '../actions/carpools';
-import './my-carpools.css';
+import './carpools.css';
 import { connect } from 'react-redux';
 
 
