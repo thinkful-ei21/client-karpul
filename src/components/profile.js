@@ -1,15 +1,14 @@
 import React from 'react';
 import {Field, reduxForm, focus, Form} from 'redux-form';
-import {required, nonEmpty} from '../validators';
-
-
+import {required, nonEmpty, phoneNumber, length} from '../validators';
 import {connect} from 'react-redux';
 import Input from './input';
 import axios from 'axios'
 import {fetchPic, fetchUserData, updateUserData} from '../actions/users'
 import {API_BASE_URL} from '../config';
 import './profile.css';
-
+const inputLength = length({min: 0, max: 30});
+const bioLength = length({min: 0, max: 250});
 
 export class Profile extends React.Component{
   
@@ -45,7 +44,7 @@ export class Profile extends React.Component{
               label="Phone Number"
               aria-label="Phone Number"
               aria-required="true"
-              validate={[required, nonEmpty]}
+              validate={[required, phoneNumber]}
           />
           <Field
               component={Input}
@@ -55,7 +54,7 @@ export class Profile extends React.Component{
               label="City"
               aria-label="City"
               aria-required="true"
-              validate={[required, nonEmpty]}
+              validate={[inputLength]}
           />
           <label style={{display: 'block'}} htmlFor="state">State</label>
           <Field
@@ -66,8 +65,9 @@ export class Profile extends React.Component{
               label="State"
               aria-label="State"
               aria-required="true"
-              validate={[required, nonEmpty]}
-          >
+              validate={[]}
+          >     
+                <option value=""></option>
                 <option value="AL">AL</option>
                 <option value="AK">AK</option>
                 <option value="AR">AR</option>	
@@ -130,7 +130,7 @@ export class Profile extends React.Component{
               label="About Me"
               aria-label="Bio"
               aria-required="true"
-              validate={[required, nonEmpty]}
+              validate={[bioLength]}
           />
             <button
                 type="submit"
@@ -142,7 +142,7 @@ export class Profile extends React.Component{
       </Form>
       }
       else {
-          return <section>
+          return <section className="login-form profile-container">
               <div className="profile-label-container">
               <label className="profile-labels">Name</label>
               <span className="profile-label-data">{this.props.userData.firstName} {this.props.userData.lastName}</span>

@@ -11,6 +11,19 @@ export const length = length => value => {
         return `Must be at most ${length.max} characters long`;
     }
 };
+export const phoneNumber = value => {
+    value = value.replace(/-/g, "")
+    value = value.trim()
+    if(value.length !== 10){
+        return "invalid phone number"
+    }
+    for ( let x = 0; x < value.length; x++){
+        if(value.charCodeAt(x) < 48 || value.charCodeAt(x) > 57){
+            return "invalid phone number"
+        }
+    }
+    
+}
 export const matches = field => (value, allValues) =>
     field in allValues && value.trim() === allValues[field].trim()
         ? undefined
