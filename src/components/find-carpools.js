@@ -12,8 +12,18 @@ export class FindCarpools extends React.Component {
     // <Link to={`/${this.props.nearbyCarpools.id}`} />
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(e.target.value)
+  }
+
   render(){
-    return <div>FindCarpools</div>;
+    return (
+      <form onSubmit={e => this.handleSubmit(e)}>
+      <input/>
+      <button type="submit">Test</button>
+      </form>
+    );
   }
 }
 
