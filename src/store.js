@@ -6,6 +6,7 @@ import carpoolsReducer from './reducers/carpools';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import usersReducer from './reducers/users';
+import modalsReducer from './reducers/modals';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 const store = createStore(
@@ -14,7 +15,8 @@ const store = createStore(
         form: formReducer,
         auth: authReducer,
         protectedData: protectedDataReducer,
-        users: usersReducer
+        users: usersReducer,
+        modals: modalsReducer
     }),
     applyMiddleware(thunk)
 );

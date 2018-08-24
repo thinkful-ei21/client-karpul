@@ -12,6 +12,7 @@ import MyCarpools from './myCarpools';
 import Help from './help';
 import FindCarpools from './find-carpools';
 import Profile from './profile';
+import Modal from './modal'
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -47,6 +48,7 @@ export class App extends React.Component {
         return (
             <div className="app">
                 <HeaderBar />
+                <Modal />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/profile" component={Profile} />
