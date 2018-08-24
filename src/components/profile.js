@@ -19,7 +19,7 @@ export class Profile extends React.Component{
     }
 
   componentDidMount(){
-      this.props.dispatch(fetchPic(this.props.currentUser._id))
+      this.props.dispatch(fetchPic(this.props.currentUser.username))
       this.props.dispatch(fetchUserData(this.props.currentUser._id))
       .then(()=>{this.props.initialize({phoneNumber: this.props.userData.phone, state: this.props.userData.state, city: this.props.userData.city, bio: this.props.userData.bio})})
   }

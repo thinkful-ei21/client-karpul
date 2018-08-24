@@ -1,0 +1,21 @@
+.example-container {
+    height: 200px;
+    width: 400px    ;
+    text-align: center;
+    border: solid black 5px;
+    background-color: white;
+    color: black;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .example-container {
+        width: 300px;
+    }
+
+    .example-section {
+        width: 100%;
+        background-color: white;
+    }
+    
+  }
