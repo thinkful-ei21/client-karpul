@@ -3,7 +3,7 @@ import ReactMapGL from 'react-map-gl';
 ///i will place this in a env file or something, i just wanted to give you guys the key first so you know it works
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZGJyaWFuNDYzIiwiYSI6ImNqbDQxYzd6YTI3OTMzdXBnOTJlNGxuaWIifQ.dfN-ws3FQ17D47nnLzovSw';
 
-export default class Maps extends Component {
+export class Maps extends Component {
   state = {
     viewport: {
       width: 500,
@@ -13,6 +13,9 @@ export default class Maps extends Component {
       zoom: 8
   }
 }
+
+
+
 render(){
   return (
     <div>
@@ -25,3 +28,9 @@ render(){
   );
 }
 }
+
+const mapStateToProps = state => ({
+  carpools: state.carpools.nearbyCarpools
+})
+
+export default connect(mapStateToProps)(Maps);

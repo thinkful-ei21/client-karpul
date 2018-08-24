@@ -1,6 +1,7 @@
 import React from 'react';
 import CarpoolForm from './carpool-form';
 import {  fetchUserCarpools  } from '../actions/carpools';
+import './carpools.css';
 import { connect } from 'react-redux';
 
 
@@ -29,42 +30,38 @@ class MyCarpools extends React.Component{
     return <CarpoolForm />
   }
 
+  removeCarpool() {
+    console.log('remove button reached');
+  }
+
   renderResults() {
 
     if (this.props.error) {
         return <strong>{this.props.error}</strong>;
     }
+    const userCarpools = this.props.carpools.userCarpools;
+    console.log('userCarpools: ',userCarpools)
+    const carpool = userCarpools.map((carpool, index) => (
+    <li className="carpool-result"
+      key={index}>
+      <div className="carpool-item">
+          <div className="carpool-item-text">
+            <button
+              onClick={e => this.removeCarpool(carpool)}
+              className="remove-button"> - </button>
+            <h2 className="title">{carpool.carpoolTitle}</h2>
+            <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{carpool.arrivalTime}</span><br/>
+            <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetNumber} {carpool.startAddress.streetName} {carpool.startAddress.city}, {carpool.startAddress.state} {carpool.startAddress.zipcode}
+            </span><br/>
+            <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetNumber} {carpool.endAddress.streetName} {carpool.endAddress.city}, {carpool.endAddress.state} {carpool.endAddress.zipcode}
+            </span><br/>
+            <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
+          </div>
+        </div>
+      </li>
+    ));
 
-    console.log('userCarpools: ', this.props.carpools.userCarpools)
-    // const carpool = this.props.carpools.map((carpool, index) => (
-    // <li className="carpool-result"
-    //   key={index}>
-    //   <div className="carpool-item">
-    //       <img className="carpool-item-map" src={carpool.map} alt={carpool.title}/>
-    //       <div className="carpool-item-text">
-    //         <span className="title">{carpool.carpoolTitle}</span><br/>
-    //         <span className="arrival-time">{carpool.startAddress.arrivalTime}</span><br/>
-    //         <h2>Start Address</h2>
-    //         <span className="street-number">{carpool.startAddress.streetNumber}</span><br/>
-    //         <span className="street-name">{carpool.startAddress.streetName}</span>
-    //         <span className="city">{carpool.startAddress.city}</span><br/>
-    //         <span className="state">{carpool.startAddress.state}</span><br/>
-    //         <span className="zipcode">{carpool.startAddress.zipcode}</span>
-    //         <h2>End Address</h2>
-    //         <span className="street-number">{carpool.endAddress.streetNumber}</span><br/>
-    //         <span className="street-name">{carpool.endAddress.streetName}</span>
-    //         <span className="city">{carpool.endAddress.city}</span><br/>
-    //         <span className="state">{carpool.endAddress.state}</span><br/>
-    //         <span className="zipcode">{carpool.endAddress.zipcode}</span>
-    //       </div>
-    //     </div>
-    //     <span
-    //     onClick={e => this.removeCarpool(carpool)}
-    //     className="remove-button"> - </span>
-    //   </li>
-    // ));
-
-    // return  <ul className="collection-list"> {carpool} </ul>;
+    return  <ul className="carpool-list"> {carpool} </ul>;
 }
 
   render(){
@@ -72,7 +69,7 @@ class MyCarpools extends React.Component{
     return (
       <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
         <button onClick={this.createCarpool}>Create Carpool</button>
-        <CarpoolForm />
+        {/* <CarpoolForm />  */}
         <ul className="carpool-item">
           {this.renderResults()}
         </ul>
