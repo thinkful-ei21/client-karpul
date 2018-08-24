@@ -27,6 +27,7 @@ export const fetchUserCarpools = () => (dispatch, getState) => {
     fetch(`${API_BASE_URL}/carpools`, {
         method: 'GET',
         headers: {
+            'content-type': 'application/json',
             Authorization: `Bearer ${authToken}`
         }
     })
@@ -56,8 +57,22 @@ export const carpoolProximitySearchError = err => ({
     err
 })
 
-export const fetchNearbyCarpools = () => dispatch => {
-
+export const fetchNearbyCarpools = address => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(carpoolProximitySearchRequest());
+    return fetch(`${API_BASE_URL}/carpools/${address.proximitySearch}`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(carpools => dispatch(carpoolProximitySearchSuccess(carpools)))
+        .catch(err => {
+            dispatch(carpoolProximitySearchError(err))
+        })
 }
 
 /* For expanded view */

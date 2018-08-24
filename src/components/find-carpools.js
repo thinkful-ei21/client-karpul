@@ -27,7 +27,7 @@ class FindCarpools extends React.Component {
   renderResults() {
 
     if (this.props.error) {
-        return <strong>{this.props.error}</strong>;
+      return <strong>{this.props.error}</strong>;
     }
     // const nearbyCarpools = this.props.carpools.nearbyCarpools;
     // console.log('nearbyCarpools: ',nearbyCarpools)
