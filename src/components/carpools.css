@@ -186,3 +186,11 @@ button.remove-button:hover {
 .coor{
 	text-align: left;
 }
+
+.markers{
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background-color: skyblue;
+	color: black;
+}

@@ -26,7 +26,7 @@ render(){
 //<li><Marker longitude={this.props.coordinates[0].longitude} latitude={42.7577} >there </Marker></li>
 
 const allMarkers = this.props.coordinates.map((marks, index) => (
-    <li> <Marker longitude= {marks.longitude} latitude= {marks.latitude}>carpool {index} </Marker></li>
+    <li> <Marker className="markers" longitude= {marks.longitude} latitude= {marks.latitude}>carpool {index} </Marker></li>
 )
 )
   return (
