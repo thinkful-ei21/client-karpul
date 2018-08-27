@@ -4,8 +4,14 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import ProximitySearchForm from './proximity-search-form'
+import {fetchPic} from '../actions/users'
 
 export class HeaderBar extends React.Component {
+
+    componentDidMount(){
+        this.props.dispatch(fetchPic(this.props.username))
+    }
+
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
@@ -16,7 +22,10 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <div>
+                <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic}/></div>
+                <button className="log-out-button" onClick={() => this.logOut()}>Log out</button>
+                </div>
             );
         }
         return (
@@ -30,7 +39,9 @@ export class HeaderBar extends React.Component {
 
 const mapStateToProps = state => (
     {
-        loggedIn: state.auth.currentUser !== null
+        loggedIn: state.auth.currentUser !== null,
+        username: state.auth.currentUser !== null ? state.auth.currentUser.username : "",
+        profilePic: state.users.picUrl
 });
 
 

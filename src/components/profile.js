@@ -178,7 +178,7 @@ export class Profile extends React.Component{
     // '/files' is your node.js route that triggers our middleware
     axios.post(`${API_BASE_URL}/files`, data).then((response) => {
       axios.post(`${API_BASE_URL}/profilePic`, {id: this.props.currentUser._id, profilePicUrl: response.data})
-      .then((response)=> {this.props.dispatch(fetchPic(this.props.currentUser._id))})
+      .then((response)=> {this.props.dispatch(fetchPic(this.props.currentUser.username))})
 
     });}
 
