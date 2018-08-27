@@ -4,6 +4,10 @@ import React from 'react';
 export default class Help extends React.Component{
 
   render(){
-    return <div>Help</div>;
+    return (
+      <div>
+        Under construction...
+      </div>
+    )   
   }
 }
