@@ -5,16 +5,7 @@ import ProximitySearchForm from './proximity-search-form';
 import './carpools.css';
 import Maps from './maps';
 class FindCarpools extends React.Component {
-  constructor(props) {
-    super(props)
 
-    this.state = {
-      currentUser: null,
-      errorMessage: '',
-      nearbyCarpools: []
-    }
-
-  }
   componentDidMount() {
     console.log(this.props.nearbyCarpools)
   }
@@ -28,29 +19,30 @@ class FindCarpools extends React.Component {
     if (this.props.error) {
       return <strong>{this.props.error}</strong>;
     }
-    // const nearbyCarpools = this.props.carpools.nearbyCarpools;
-    // console.log('nearbyCarpools: ',nearbyCarpools)
-    // const carpool = nearbyCarpools.map((carpool, index) => (
-    // <li className="carpool-result"
-    //   key={index}>
-    //   <div className="carpool-item">
-    //       <div className="carpool-item-text">
-    //         <button
-    //           onClick={e => this.joinCarpool(carpool)}
-    //           className="remove-button"> + </button>
-    //         <h2 className="title">{carpool.carpoolTitle}</h2>
-    //         <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{carpool.arrivalTime}</span><br/>
-    //         <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetNumber} {carpool.startAddress.streetName} {carpool.startAddress.city}, {carpool.startAddress.state} {carpool.startAddress.zipcode}
-    //         </span><br/>
-    //         <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetNumber} {carpool.endAddress.streetName} {carpool.endAddress.city}, {carpool.endAddress.state} {carpool.endAddress.zipcode}
-    //         </span><br/>
-    //         <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
-    //       </div>
-    //     </div>
-    //   </li>
-    // ));
 
-    // return  <ul className="carpool-list"> {carpool} </ul>;
+    const nearbyCarpools = this.props.nearbyCarpools;
+    console.log('nearbyCarpools: ',nearbyCarpools)
+    const carpool = nearbyCarpools.map((carpool, index) => (
+    <li className="carpool-result"
+      key={index}>
+      <div className="carpool-item">
+          <div className="carpool-item-text">
+            <button
+              onClick={e => this.joinCarpool(carpool)}
+              className="remove-button"> + </button>
+            <h2 className="title">{carpool.carpoolTitle}</h2>
+            <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{carpool.arrivalTime}</span><br/>
+            <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetNumber} {carpool.startAddress.streetName} {carpool.startAddress.city}, {carpool.startAddress.state} {carpool.startAddress.zipcode}
+            </span><br/>
+            <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetNumber} {carpool.endAddress.streetName} {carpool.endAddress.city}, {carpool.endAddress.state} {carpool.endAddress.zipcode}
+            </span><br/>
+            <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
+          </div>
+        </div>
+      </li>
+    ));
+
+    return  <ul className="carpool-list"> {carpool} </ul>;
 }
 coor = [
   {longitude:-73.43,
@@ -66,19 +58,29 @@ coor = [
 ]
   render(){
 
+    if (this.props.nearbyCarpools) {
+      this.props.nearbyCarpools.map((carpool, index) => {
+        console.log(`${index}: ${carpool.startAddress.location.coordinates}`)
+      })
+    }
+
     return (
       <div>
-      <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
+
         <h1>Find Carpools</h1>
         <ProximitySearchForm />
+
+        <div className="coor">
+          <Maps coordinates={this.coor}/>
+        </div>
+
+        <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
 
         <ul className="carpool-item">
           {this.renderResults()}
         </ul>
-      </div>
-      <div className="coor">
-        <Maps coordinates={this.coor}/>
-      </div>
+          
+        </div>
       </div>
     )
   }

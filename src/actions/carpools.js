@@ -59,6 +59,7 @@ export const carpoolProximitySearchError = err => ({
 
 export const fetchNearbyCarpools = address => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    console.log(address);
     dispatch(carpoolProximitySearchRequest());
     return fetch(`${API_BASE_URL}/findCarpool?address=${address.proximitySearch}`, {
         method: 'GET',

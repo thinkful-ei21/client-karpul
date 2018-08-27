@@ -20,15 +20,26 @@ componentDidMount(){
 
 
 render(){
-////get rid of text align center for map
-//////list of markers
-///<li><Marker longitude={this.props.coordinates[0].longitude} latitude={40.7577} >here </Marker></li>
-//<li><Marker longitude={this.props.coordinates[0].longitude} latitude={42.7577} >there </Marker></li>
 
-const allMarkers = this.props.coordinates.map((marks, index) => (
-    <li> <Marker className="markers" longitude= {marks.longitude} latitude= {marks.latitude}>carpool {index} </Marker></li>
-)
-)
+  let allMarkers = [];
+  if (this.props.carpools) {
+    this.props.carpools.map(carpool => {
+      allMarkers.push(carpool.endAddress.location.coordinates);
+    })
+  }
+
+  let pins = allMarkers.map((mark, index) => {
+    return (
+      <li key={index}>
+        <Marker className="markers" longitude={mark[0]} latitude={mark[1]}>
+          {index + 1}
+        </Marker>
+      </li>
+    )
+  })
+
+  console.log(allMarkers);
+
   return (
     <div className="map">
     <ReactMapGL
@@ -36,7 +47,7 @@ const allMarkers = this.props.coordinates.map((marks, index) => (
       onViewportChange={(viewport) => this.setState({viewport})}
       mapboxApiAccessToken={MAPBOX_TOKEN}
       > <ul>
-        {allMarkers}
+        {pins}
       </ul></ReactMapGL>
 
     </div>
