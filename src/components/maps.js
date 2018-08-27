@@ -9,15 +9,18 @@ export class Maps extends Component {
     viewport: {
       width: 1040,
       height: 800,
-      latitude: 40.7577,
-      longitude: -73.4376,
-      zoom: 8
+      latitude: 45.52165,
+      longitude: -122.67685,
+      zoom: 14
   }
 }
 componentDidMount(){
   console.log(this.props.coordinates[0].longitude);
 }
 
+handleClick(e) {
+  console.log(e.target.value)
+}
 
 render(){
 
@@ -30,7 +33,7 @@ render(){
 
   let pins = allMarkers.map((mark, index) => {
     return (
-      <li key={index}>
+      <li key={index} onClick={(e) => this.handleClick(e)}>
         <Marker className="markers" longitude={mark[0]} latitude={mark[1]}>
           {index + 1}
         </Marker>
