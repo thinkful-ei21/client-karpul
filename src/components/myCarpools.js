@@ -72,7 +72,7 @@ class MyCarpools extends React.Component{
 
     return (
       <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
-        <button onClick={()=>this.props.dispatch(showModal("carpool-form"))}>Create Carpool</button>
+        <button onClick={()=>this.props.dispatch(showModal("carpool-form"))}>Create Karpül</button>
         <ul className="carpool-item">
           {this.renderResults()}
         </ul>

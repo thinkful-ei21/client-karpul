@@ -31,7 +31,7 @@ export class ProximitySearchForm extends React.Component {
         )}>
 
         {error}
-        <label htmlFor="proximitySearch">Find Nearby Carpools! YAY!!</label>
+        <label htmlFor="proximitySearch">Find Karpüls</label>
           <Field
               component={Input}
               type="text"

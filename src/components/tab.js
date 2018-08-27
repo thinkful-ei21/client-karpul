@@ -46,8 +46,8 @@ export default class Tab extends React.Component{
       <div>
         <ul className="tabContainer">
           <li><a className={this.generateActiveStyle('profile')} onClick={() => this.setState({active: 'profile'})}>Profile</a></li>
-          <li><a className={this.generateActiveStyle('findCarpools')} onClick={() => this.setState({active: 'findCarpools'})}>Find Carpools</a></li>
-          <li><a className={this.generateActiveStyle('myCarpools')} onClick={() => this.setState({active: 'myCarpools'})}>My Carpools</a></li>
+          <li><a className={this.generateActiveStyle('findCarpools')} onClick={() => this.setState({active: 'findCarpools'})}>Find Karpüls</a></li>
+          <li><a className={this.generateActiveStyle('myCarpools')} onClick={() => this.setState({active: 'myCarpools'})}>My Karpüls</a></li>
           <li><a className={this.generateActiveStyle('GPS')} onClick={() => this.setState({active: 'GPS'})}>GPS</a></li>
           <li><a className={this.generateActiveStyle('help')} onClick={() => this.setState({active: 'help'})}>Help</a></li>
         </ul>

@@ -67,7 +67,7 @@ coor = [
     return (
       <div>
 
-        <h1>Find Carpools</h1>
+        <h1>Find Karpüls</h1>
         <ProximitySearchForm />
 
         <div className="coor">
