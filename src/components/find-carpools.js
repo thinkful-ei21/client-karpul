@@ -3,12 +3,12 @@ import { fetchNearbyCarpools } from '../actions/carpools';
 import {connect} from 'react-redux';
 import ProximitySearchForm from './proximity-search-form';
 import './carpools.css';
-
+import Maps from './maps';
 class FindCarpools extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { 
+    this.state = {
       currentUser: null,
       errorMessage: '',
       nearbyCarpools: []
@@ -16,7 +16,7 @@ class FindCarpools extends React.Component {
 
   }
   componentDidMount() {
-    
+    console.log(this.props.nearbyCarpools)
   }
 
   joinCarpool() {
@@ -52,16 +52,33 @@ class FindCarpools extends React.Component {
 
     // return  <ul className="carpool-list"> {carpool} </ul>;
 }
-
+coor = [
+  {longitude:-73.43,
+  latitude: 40},
+  {
+    longitude:-73.43,
+    latitude: 41
+  },
+  {
+    longitude:-72.43,
+    latitude: 41.45
+  },
+]
   render(){
 
     return (
+      <div>
       <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
         <h1>Find Carpools</h1>
-        <ProximitySearchForm /> 
+        <ProximitySearchForm />
+
         <ul className="carpool-item">
           {this.renderResults()}
         </ul>
+      </div>
+      <div className="coor">
+        <Maps coordinates={this.coor}/>
+      </div>
       </div>
     )
   }
