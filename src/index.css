@@ -19,8 +19,7 @@ form.login-form, form.carpool-form {
   color: black;
   border: 2px solid rgb(117, 29, 29);
   border-radius: 5px;
-  width: 400px;
-  height: 600px;
+  width: 300px;
   overflow: scroll;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -28,19 +27,31 @@ form.login-form, form.carpool-form {
   -o-border-radius: 5px;
 }
 
+form.carpool-form {
+  height: 500px;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="textarea"],
-input[type="select"]#seats {
+.seat-selector, .details-input  {
 	width: 250px;
 	height: 30px;
   margin: 10px auto;
   border: 1px solid rgb(117, 29, 29);
-  font-size: 25px;
+  font-size: 20px;
 }
 
-input[type="select"]#seats.seat-selector {
-  width: 280px;
+fieldset.address-fieldset {
+  margin: 15px 0;
+}
+
+.seat-selector {
+  font-size: 70%
+}
+
+.details-input {
+  height: 4em;
 }
 
 button:hover {
