@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Example from './example'
 import CarpoolForm from './carpool-form';
+import ProfileModal from './profile-modal';
 
 // import {setEventEditIndex} from '../actions/event-list'
 
 import './modal.css'
+
 
 class Modal extends Component {
   setPage() {
@@ -14,6 +16,9 @@ class Modal extends Component {
     }
     if (this.props.page === 'carpool-form') {
       return <CarpoolForm />
+    }
+    if (this.props.page === "profile-modal"){
+      return <ProfileModal  user={this.props.id}/>
     }
   }
   render() {
