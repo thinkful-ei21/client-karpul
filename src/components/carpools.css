@@ -58,7 +58,7 @@ button.remove-button:hover {
   margin-top: 10px;
 }
 
-.arrival-title, .address-title, .details-title {
+.arrival-title, .address-title, .details-title, .seats-title {
   color: rgba(255, 0, 0, 0.61);
   font-weight: bold;
 }

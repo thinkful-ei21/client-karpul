@@ -68,14 +68,18 @@ export class CarpoolForm extends React.Component {
 
                 <label className="arrival-time-label" htmlFor="arrivalTime">Arrival Time</label>
 
-                <TimePicker
-                 className="time-picker"
-                 onChange={this.onTimeSelect}
-                 value={this.state.arrivalTime}
-                 name="arrivalTime"
-                 id="arrivalTime"
-                 validate={[required, nonEmpty]}
+
+                <Field
+                    component={Input}
+                    type="time"
+                    className="time-picker"
+                    onChange={this.onTimeSelect}
+                    value={this.state.arrivalTime}
+                    name="arrivalTime"
+                    id="arrivalTime"
+                    validate={[required]}
                 />
+
 
                 <label className="available-seats-label" htmlFor="seats">Seats</label>
                 <Field
@@ -86,7 +90,7 @@ export class CarpoolForm extends React.Component {
                     className="seat-selector"
                 >
                     <option 
-                    className="seat-selector" value="1" selected>1</option>
+                    className="seat-selector" value="1" defaultValue>1</option>
                     <option 
                     className="seat-selector" value="2">2</option>
                     <option 
