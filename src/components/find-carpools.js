@@ -1,6 +1,7 @@
 import React from 'react';
 import { joinCarpool } from '../actions/carpools';
 import {connect} from 'react-redux';
+import {showModal} from '../actions/modals';
 import ProximitySearchForm from './proximity-search-form';
 import './carpools.css';
 import Maps from './maps';
@@ -17,7 +18,6 @@ class FindCarpools extends React.Component {
     }
 
     const nearbyCarpools = this.props.nearbyCarpools;
-    console.log('nearbyCarpools: ',nearbyCarpools)
     const carpool = nearbyCarpools.map((carpool, index) => (
     <li className="carpool-result"
       key={index}>
@@ -35,6 +35,8 @@ class FindCarpools extends React.Component {
           <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetNumber} {carpool.endAddress.streetName} {carpool.endAddress.city}, {carpool.endAddress.state} {carpool.endAddress.zipcode}
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
+          <span className="carpool-details"><span className="details-title">Host: 
+          </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("profile-modal", carpool.host))}} className="members-images"/>}</span><br/>
         </div>
        
       </div>
