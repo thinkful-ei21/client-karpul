@@ -53,6 +53,8 @@ class MyCarpools extends React.Component{
         <div className="carpool-item-text">
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{carpool.arrivalTime}</span><br/>
+          {/* TODO: render row of member profileImg */}
+          {/* <span className="members"><span className="member-title">Members: </span>{carpool.users[0]}</span><br/> */}
           <span className="open-seats"><span className="seats-title">Open Seats: </span>{carpool.openSeats}</span><br/>
           <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetNumber} {carpool.startAddress.streetName} {carpool.startAddress.city}, {carpool.startAddress.state} {carpool.startAddress.zipcode}
           </span><br/>

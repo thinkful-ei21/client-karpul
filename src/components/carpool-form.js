@@ -80,6 +80,17 @@ export class CarpoolForm extends React.Component {
                     validate={[required]}
                 />
 
+                {/* <Field
+                    component={Input}
+                    type="time"
+                    className="time-picker"
+                    onChange={this.onTimeSelect}
+                    value={this.state.arrivalTime}
+                    name="arrivalTime"
+                    id="arrivalTime"
+                    validate={[required]}
+                /> */}
+
 
                 <label className="available-seats-label" htmlFor="seats">Seats</label>
                 <Field
