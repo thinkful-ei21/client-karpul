@@ -120,7 +120,7 @@ export const updateCarpool = () => dispatch => {
 
 }
 
-/* User clicking "Request To Join" button */
+/* User Join Carpool */
 export const JOIN_CARPOOL_REQUEST = 'JOIN_CARPOOL_REQUEST';
 export const joinCarpoolRequest = () => ({
     type: JOIN_CARPOOL_REQUEST
@@ -139,7 +139,6 @@ export const joinCarpoolError = err => ({
 
 export const joinCarpool = carpoolId => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    console.log(carpoolId);
     return fetch(`${API_BASE_URL}/carpools`, {
         method: 'PUT',
         headers: {
@@ -154,6 +153,76 @@ export const joinCarpool = carpoolId => (dispatch, getState) => {
         .catch(err => {
             dispatch(joinCarpoolError(err))
         })
+}
+
+/* User leaving carpool */
+export const LEAVE_CARPOOL_REQUEST = 'LEAVE_CARPOOL_REQUEST';
+export const leaveCarpoolRequest = () => ({
+    type: LEAVE_CARPOOL_REQUEST
+})
+
+export const LEAVE_CARPOOL_SUCCESS = 'LEAVE_CARPOOL_SUCCESS';
+export const leaveCarpoolSuccess = () => ({
+    type: LEAVE_CARPOOL_SUCCESS
+})
+
+export const LEAVE_CARPOOL_ERROR = 'LEAVE_CARPOOL_ERROR';
+export const leaveCarpoolError = err => ({
+    type: LEAVE_CARPOOL_ERROR,
+    err
+})
+
+export const leaveCarpool = carpoolId => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/carpools/leave-carpool`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify({carpoolId: carpoolId})
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(() => fetchUserCarpools())
+    .catch(err => {
+        dispatch(leaveCarpoolError(err))
+    })
+}
+
+/* Host deleting carpool */
+export const DELETE_CARPOOL_REQUEST = 'DELETE_CARPOOL_REQUEST';
+export const deleteCarpoolRequest = () => ({
+    type: DELETE_CARPOOL_REQUEST
+})
+
+export const DELETE_CARPOOL_SUCCESS = 'DELETE_CARPOOL_SUCCESS';
+export const deleteCarpoolSuccess = () => ({
+    type: DELETE_CARPOOL_SUCCESS
+})
+
+export const DELETE_CARPOOL_ERROR = 'DELETE_CARPOOL_ERROR';
+export const deleteCarpoolError = err => ({
+    type: DELETE_CARPOOL_ERROR,
+    err
+})
+
+export const deleteCarpool = carpoolId => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/carpools`, {
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify({carpoolId: carpoolId})
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(() => fetchUserCarpools())
+    .catch(err => {
+        dispatch(deleteCarpoolError(err))
+    })
 }
 
 export const createNewCarpool = carpool => (dispatch, getState) => {
