@@ -11,9 +11,9 @@ import {
   UPDATE_CARPOOL_REQUEST,
   UPDATE_CARPOOL_SUCCESS,
   UPDATE_CARPOOL_ERROR,
-  REQUEST_CARPOOL_INVITE_REQUEST,
-  REQUEST_CARPOOL_INVITE_SUCCESS,
-  REQUEST_CARPOOL_INVITE_ERROR
+  JOIN_CARPOOL_REQUEST,
+  JOIN_CARPOOL_SUCCESS,
+  JOIN_CARPOOL_ERROR
 } from '../actions/carpools';
 
 const initialState = {
@@ -112,20 +112,20 @@ export default function reducer(state = initialState, action) {
       error: action.err
     }
 
-    case REQUEST_CARPOOL_INVITE_REQUEST:
+    case JOIN_CARPOOL_REQUEST:
     return {
       ...state,
       loading: true
     }
 
-    case REQUEST_CARPOOL_INVITE_SUCCESS:
+    case JOIN_CARPOOL_SUCCESS:
     return {
       ...state,
       loading: false,
       error: null
     }
 
-    case REQUEST_CARPOOL_INVITE_ERROR:
+    case JOIN_CARPOOL_ERROR:
     return {
       ...state,
       loading: false,

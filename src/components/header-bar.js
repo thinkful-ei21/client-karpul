@@ -30,7 +30,7 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar" role="banner" aria-live="polite" aria-atomic="true">
-                <h1>Karpul</h1>
+                <h1>Karpül</h1>
                 {logOutButton}
             </div>
         );

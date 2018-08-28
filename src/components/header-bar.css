@@ -22,12 +22,12 @@
 
 .log-out-button  {
   width: 80px;
-  height: 35px;
+  height: 40px;
   margin: 0;
   color: white;
   background-color:rgb(50, 92, 116);
   border: 1px solid white;
-  font-size: 18px;
+  font-size: 15px;
   position: absolute;
   top: 30px;
   right: 30px;
