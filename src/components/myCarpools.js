@@ -59,6 +59,8 @@ class MyCarpools extends React.Component{
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
         </div>
+  {/* TODO: */}
+        {/* ternary to render button for host vs member */}
         <button
             onClick={e => this.leaveCarpool(carpool)}
             className="leave-button">Leave</button>
