@@ -15,6 +15,7 @@
     "react-map-gl": "^3.3.4",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
+    "react-time-picker": "^2.6.0",
     "redux": "^3.6.0",
     "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0"

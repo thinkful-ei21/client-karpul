@@ -11,35 +11,37 @@ export default class Address extends React.Component {
   render() {
     return (
       <div>
-        <Field 
-          name="streetNumber" 
-          component={Input}
-          type="text" 
-          label="Street Number"
-        />
-        <Field 
-          name="streetName"
-          component={Input}
-          type="text"
-          label="Street Name"
+        <fieldset className="address-fieldset">
+          <Field 
+            name="streetNumber" 
+            component={Input}
+            type="text" 
+            label="Street Number"
           />
+          <Field 
+            name="streetName"
+            component={Input}
+            type="text"
+            label="Street Name"
+            />
 
-        <Field
-          name="city" 
-          component={Input} 
-          type="text"
-          label="City"/>
+          <Field
+            name="city" 
+            component={Input} 
+            type="text"
+            label="City"/>
 
-        <Field name="state"
-          component={Input}
-          type="text"
-          label="State"/>
+          <Field name="state"
+            component={Input}
+            type="text"
+            label="State"/>
 
-        <Field 
-          name="zipcode" 
-          component={Input}
-          type="text"
-          label="Zip Code" />
+          <Field 
+            name="zipcode" 
+            component={Input}
+            type="text"
+            label="Zip Code" />
+        </fieldset>
       </div>
     )
   }
