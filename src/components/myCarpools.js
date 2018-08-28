@@ -45,7 +45,6 @@ class MyCarpools extends React.Component{
         return <strong>{this.props.error}</strong>;
     }
     const userCarpools = this.props.carpools.userCarpools;
-    console.log('userCarpools: ',userCarpools)
     const carpool = userCarpools.map((carpool, index) => (
     <li className="carpool-result"
       key={index}>
@@ -60,9 +59,10 @@ class MyCarpools extends React.Component{
           <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetNumber} {carpool.endAddress.streetName} {carpool.endAddress.city}, {carpool.endAddress.state} {carpool.endAddress.zipcode}
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
-    <span className="carpool-details"><span className="details-title">Members: 
-              </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("profile-modal", carpool.host))}} className="members-images"/>}
-              {carpool.users.map((user, index)=> <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>)}</span><br/>
+          <span className="carpool-details"><span className="details-title">Host: 
+          </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("profile-modal", carpool.host))}} className="members-images"/>}</span><br/>
+          <span className="carpool-details"><span className="details-title">Members: 
+          </span>{carpool.users.map((user, index)=> <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>)}</span><br/>
         </div>
   {/* TODO: */}
         {/* ternary to render button for host vs member */}

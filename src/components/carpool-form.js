@@ -31,7 +31,6 @@ export class CarpoolForm extends React.Component {
         this.setState({
           days: myDays
         });
-        console.log(myDays)
       }
 
     onTimeSelect = arrivalTime => this.setState({ arrivalTime })

@@ -228,7 +228,6 @@ export const deleteCarpool = carpoolId => (dispatch, getState) => {
 
 export const createNewCarpool = carpool => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    console.log(carpool)
     return fetch(`${API_BASE_URL}/carpools`, { // confirm endpoint for carpool creation
         method: 'POST',
         headers: {
