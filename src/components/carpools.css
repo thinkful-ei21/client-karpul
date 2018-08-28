@@ -67,6 +67,17 @@ button.remove-button:hover {
   margin: 2%;
 }
 
+.members-images{
+	max-width: 50px;
+	max-height: 50px;
+	vertical-align: text-top;
+	margin-right: 5px;
+}
+
+.members-images:hover{
+	cursor: pointer;
+}
+
 
 /* Extra small devices (phones, 289 and up) */
 @media only screen and (min-width: 289) {
