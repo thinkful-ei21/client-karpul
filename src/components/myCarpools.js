@@ -1,6 +1,6 @@
 import React from 'react';
 import CarpoolForm from './carpool-form';
-import {  fetchUserCarpools  } from '../actions/carpools';
+import {  fetchUserCarpools, deleteCarpool, leaveCarpool  } from '../actions/carpools';
 import './carpools.css';
 import {showModal} from '../actions/modals';
 import { connect } from 'react-redux';
@@ -31,12 +31,12 @@ class MyCarpools extends React.Component{
     return <CarpoolForm />
   }
 
-  leaveCarpool() {
-    // return this.props.dispatch(leaveCarpool())
+  leaveCarpool(id) {
+    return this.props.dispatch(leaveCarpool(id))
   }
 
-  removeCarpool() {
-    // return this.props.dispatch(removeCarpool())
+  removeCarpool(id) {
+    return this.props.dispatch(deleteCarpool(id))
   }
 
   renderResults() {
@@ -67,11 +67,11 @@ class MyCarpools extends React.Component{
   {/* TODO: */}
         {/* ternary to render button for host vs member */}
         <button
-            onClick={e => this.leaveCarpool(carpool)}
+            onClick={e => this.leaveCarpool(carpool.id)}
             className="leave-button">Leave</button>
-        <button
-          onClick={e => this.removeCarpool(carpool)}
-          className="leave-button">Remove</button>
+        {/* <button
+          onClick={e => this.removeCarpool(carpool.id)}
+          className="leave-button">Remove</button> */}
       </div>
     </li>
   ));
