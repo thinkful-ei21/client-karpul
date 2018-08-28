@@ -58,8 +58,7 @@ button:hover {
   cursor: pointer;
 }
 
-
-.login-form > button, .carpool-form > button  {
+  button {
   width: 260px;
   height: 45px;
   padding: 10px;
@@ -75,6 +74,15 @@ button:hover {
   -o-border-radius: 3px;
 }
 
+.join-button, .leave-button {
+  width: fit-content;
+  position: absolute;
+  padding: 0 8px 1%;
+	top: 0;
+  right: 5px;
+  margin-top: 5px;
+}
+
 button.close-modal-button {
   width: 20px;
   height: 25px;
@@ -82,8 +90,7 @@ button.close-modal-button {
   margin-left: 10px;
 }
 
-
-.login-form > button:hover {
+.login-form > button:hover, button:hover {
   color: rgb(117, 29, 29);
   background-color: white;
   border: 1px solid rgb(117, 29, 29);

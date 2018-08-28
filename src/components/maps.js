@@ -11,7 +11,9 @@ export class Maps extends Component {
       height: 800,
       latitude: 45.52165,
       longitude: -122.67685,
-      zoom: 14
+      // latitude: 0,
+      // longitude: 0,
+      zoom: 8
   }
 }
 componentDidMount(){

@@ -121,24 +121,39 @@ export const updateCarpool = () => dispatch => {
 }
 
 /* User clicking "Request To Join" button */
-export const REQUEST_CARPOOL_INVITE_REQUEST = 'REQUEST_CARPOOL_INVITE_REQUEST';
-export const requestCarpoolInviteRequest = () => ({
-    type: REQUEST_CARPOOL_INVITE_REQUEST
+export const JOIN_CARPOOL_REQUEST = 'JOIN_CARPOOL_REQUEST';
+export const joinCarpoolRequest = () => ({
+    type: JOIN_CARPOOL_REQUEST
 })
 
-export const REQUEST_CARPOOL_INVITE_SUCCESS = 'REQUEST_CARPOOL_INVITE_SUCCESS';
-export const requestCarpoolInviteSuccess = () => ({
-    type: REQUEST_CARPOOL_INVITE_SUCCESS
+export const JOIN_CARPOOL_SUCCESS = 'JOIN_CARPOOL_SUCCESS';
+export const joinCarpoolSuccess = () => ({
+    type: JOIN_CARPOOL_SUCCESS
 })
 
-export const REQUEST_CARPOOL_INVITE_ERROR = 'REQUEST_CARPOOL_INVITE_ERROR';
-export const requestCarpoolInviteError = err => ({
-    type: REQUEST_CARPOOL_INVITE_ERROR,
+export const JOIN_CARPOOL_ERROR = 'JOIN_CARPOOL_ERROR';
+export const joinCarpoolError = err => ({
+    type: JOIN_CARPOOL_ERROR,
     err
 })
 
-export const requestCarpoolInvite = () => dispatch => {
-
+export const joinCarpool = carpoolId => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    console.log(carpoolId);
+    return fetch(`${API_BASE_URL}/carpools`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify(carpoolId)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => fetchUserCarpools())
+        .catch(err => {
+            dispatch(joinCarpoolError(err))
+        })
 }
 
 export const createNewCarpool = carpool => (dispatch, getState) => {
