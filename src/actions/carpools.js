@@ -146,7 +146,7 @@ export const joinCarpool = carpoolId => (dispatch, getState) => {
             'content-type': 'application/json',
             Authorization: `Bearer ${authToken}`
         },
-        body: JSON.stringify(carpoolId)
+        body: JSON.stringify({carpoolId: carpoolId})
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
