@@ -1,0 +1,15 @@
+.time-picker {
+  width: 250px;
+  margin: 10px auto;
+  padding: 0;
+}
+
+.arrival-time-label,
+.details-label,
+.available-seats-label {
+  display: block;
+}
+
+.end-address-label, .start-address-label {
+  /* color: rgb(117, 29, 29); */
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import {Field, reduxForm, focus, Form, FormSection} from 'redux-form';
 import Input from './input';
 import Address from './address';
+import './carpool-form.css';
+import TimePicker from 'react-time-picker';
 import {hideModal} from '../actions/modals';
 import { createNewCarpool } from '../actions/carpools';
 import {  fetchUserCarpools  } from '../actions/carpools';
@@ -10,11 +12,20 @@ import {required, nonEmpty} from '../validators';
 import '../styles/carpool-form.css';
 
 export class CarpoolForm extends React.Component {
+
+    state = {
+        arrivalTime: '8:00',
+      }
+
+
     onSubmit(values) {
         return this.props.dispatch(createNewCarpool(values))
         .then (() => this.props.dispatch(hideModal()))
         .then(() => this.props.dispatch(fetchUserCarpools()))
     }
+
+
+  onTimeSelect = arrivalTime => this.setState({ arrivalTime })
 
     render() {
         let error;
@@ -36,7 +47,7 @@ export class CarpoolForm extends React.Component {
                 )}>
                 {error}
 
-                <label htmlFor="startAddress">Carpool Title</label>
+                <label className="carpool-title-label" htmlFor="startAddress">Carpool Title</label>
                 <Field
                     component={Input}
                     type="text"
@@ -45,45 +56,50 @@ export class CarpoolForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
                 
-                <label htmlFor="startAddress">Start Address</label>
+                <label className="start-address-label" htmlFor="startAddress">Start Address</label>
                 <FormSection name="startAddress">
                     <Address />
                 </FormSection>
 
-                <label htmlFor="endAddress">End Address</label>
+                <label className="end-address-label" htmlFor="endAddress">End Address</label>
                 <FormSection name="endAddress">
                     <Address />
                 </FormSection>
 
-                <label htmlFor="arrivalTime">Arrival Time</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="arrivalTime"
-                    id="arrivalTime"
-                    validate={[required, nonEmpty]}
+                <label className="arrival-time-label" htmlFor="arrivalTime">Arrival Time</label>
+
+                <TimePicker
+                 className="time-picker"
+                 onChange={this.onTimeSelect}
+                 value={this.state.arrivalTime}
+                 name="arrivalTime"
+                 id="arrivalTime"
+                 validate={[required, nonEmpty]}
                 />
 
-                <label htmlFor="seats">Seats</label>
+                <label className="available-seats-label" htmlFor="seats">Seats</label>
                 <Field
                     component="select"
                     type="select"
-                    name="seats"
+                    name="openSeats"
                     id="seats"
                     className="seat-selector"
                 >
                     <option 
-                    className="seat-selector" value="1">1</option>
+                    className="seat-selector" value="1" selected>1</option>
                     <option 
                     className="seat-selector" value="2">2</option>
                     <option 
                     className="seat-selector" value="3">3</option>
                     <option 
                     className="seat-selector" value="4">4</option>
+                    <option 
+                    className="seat-selector" value="0">Full</option>
                 </Field>
 
-                <label htmlFor="details">Details</label>
+                <label className="details-label" htmlFor="details">Details</label>
                 <Field
+                    className="details-input"
                     component="textarea"
                     type="textarea"
                     name="details"
