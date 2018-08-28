@@ -31,8 +31,12 @@ class MyCarpools extends React.Component{
     return <CarpoolForm />
   }
 
+  leaveCarpool() {
+    // return this.props.dispatch(leaveCarpool())
+  }
+
   removeCarpool() {
-    // return this.props.dispatch(removeCarpools())
+    // return this.props.dispatch(removeCarpool())
   }
 
   renderResults() {
@@ -56,8 +60,11 @@ class MyCarpools extends React.Component{
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
         </div>
         <button
-            onClick={e => this.removeCarpool(carpool)}
+            onClick={e => this.leaveCarpool(carpool)}
             className="leave-button">Leave</button>
+        <button
+          onClick={e => this.removeCarpool(carpool)}
+          className="leave-button">Remove</button>
       </div>
     </li>
   ));
