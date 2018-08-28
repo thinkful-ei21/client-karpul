@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchNearbyCarpools } from '../actions/carpools';
+import { joinCarpool } from '../actions/carpools';
 import {connect} from 'react-redux';
 import ProximitySearchForm from './proximity-search-form';
 import './carpools.css';
@@ -8,10 +8,6 @@ class FindCarpools extends React.Component {
 
   componentDidMount() {
     console.log(this.props.nearbyCarpools)
-  }
-
-  joinCarpool() {
-    console.log('Join carpool')
   }
 
   renderResults() {
@@ -28,7 +24,7 @@ class FindCarpools extends React.Component {
       <div className="carpool-item">
           <div className="carpool-item-text">
             <button
-              onClick={e => this.joinCarpool(carpool)}
+              onClick={() => this.props.dispatch(joinCarpool(carpool._id))} // get carpool ID from here
               className="remove-button"> + </button>
             <h2 className="title">{carpool.carpoolTitle}</h2>
             <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{carpool.arrivalTime}</span><br/>
