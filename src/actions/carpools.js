@@ -138,6 +138,7 @@ export const joinCarpoolError = err => ({
 })
 
 export const joinCarpool = carpoolId => (dispatch, getState) => {
+    console.log(carpoolId);
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/carpools`, {
         method: 'PUT',
