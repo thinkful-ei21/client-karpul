@@ -3,7 +3,7 @@ import {Field, reduxForm, focus, Form, FormSection} from 'redux-form';
 import Input from './input';
 import Address from './address';
 import './carpool-form.css';
-import TimePicker from 'react-time-picker';
+import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 import {hideModal} from '../actions/modals';
 import { createNewCarpool } from '../actions/carpools';
 import {  fetchUserCarpools  } from '../actions/carpools';
@@ -12,20 +12,29 @@ import {required, nonEmpty} from '../validators';
 import '../styles/carpool-form.css';
 
 export class CarpoolForm extends React.Component {
-
-    state = {
-        arrivalTime: '8:00',
+    constructor(props) {
+        super(props);
+        this.state = {
+          days: [],
+          openSeats: "1"
+        };
       }
 
-
     onSubmit(values) {
+        values.days = this.state.days;
         return this.props.dispatch(createNewCarpool(values))
         .then (() => this.props.dispatch(hideModal()))
         .then(() => this.props.dispatch(fetchUserCarpools()))
     }
 
+    chooseDays = (myDays) => {
+        this.setState({
+          days: myDays
+        });
+        console.log(myDays)
+      }
 
-  onTimeSelect = arrivalTime => this.setState({ arrivalTime })
+    onTimeSelect = arrivalTime => this.setState({ arrivalTime })
 
     render() {
         let error;
@@ -55,7 +64,7 @@ export class CarpoolForm extends React.Component {
                     id="carpoolTitle"
                     validate={[required, nonEmpty]}
                 />
-                
+
                 <label className="start-address-label" htmlFor="startAddress">Start Address</label>
                 <FormSection name="startAddress">
                     <Address />
@@ -67,8 +76,6 @@ export class CarpoolForm extends React.Component {
                 </FormSection>
 
                 <label className="arrival-time-label" htmlFor="arrivalTime">Arrival Time</label>
-
-
                 <Field
                     component={Input}
                     type="time"
@@ -79,6 +86,22 @@ export class CarpoolForm extends React.Component {
                     id="arrivalTime"
                     validate={[required]}
                 />
+
+                <label className="days-label" htmlFor="days">Days of Week</label>
+                <CheckboxGroup
+                    checkboxDepth={2} // This is needed to optimize the checkbox group
+                    className="days-checkbox"
+                    name="days"
+                    value={this.state.days}
+                    onChange={this.chooseDays}>
+                    <label><Checkbox value="Mon"/>Mon</label>
+                    <label><Checkbox value="Tues"/>Tues</label>
+                    <label><Checkbox value="Wed"/>Wed</label>
+                    <label><Checkbox value="Thurs"/>Thurs</label>
+                    <label><Checkbox value="Fri"/>Fri</label>
+                    <label><Checkbox value="Sat"/>Sat</label>
+                    <label><Checkbox value="Sun"/>Sun</label>
+                </CheckboxGroup>
 
                 {/* <Field
                     component={Input}
@@ -101,15 +124,13 @@ export class CarpoolForm extends React.Component {
                     className="seat-selector"
                 >
                     <option 
-                    className="seat-selector" value="1" defaultValue>1</option>
+                    className="seat-selector" value="1">1</option>
                     <option 
                     className="seat-selector" value="2">2</option>
                     <option 
                     className="seat-selector" value="3">3</option>
                     <option 
                     className="seat-selector" value="4">4</option>
-                    <option 
-                    className="seat-selector" value="0">Full</option>
                 </Field>
 
                 <label className="details-label" htmlFor="details">Details</label>

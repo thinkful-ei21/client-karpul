@@ -11,6 +11,7 @@
     "fs": "0.0.1-security",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
+    "react-checkbox-group": "^4.0.1",
     "react-dom": "^16.2.0",
     "react-map-gl": "^3.3.4",
     "react-redux": "^5.0.4",

@@ -34,7 +34,7 @@ form.carpool-form {
 input[type="text"],
 input[type="password"],
 input[type="textarea"],
-.seat-selector, .details-input  {
+.seat-selector, .details-input {
 	width: 250px;
 	height: 30px;
   margin: 10px auto;
