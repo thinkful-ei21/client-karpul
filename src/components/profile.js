@@ -134,7 +134,6 @@ export class Profile extends React.Component{
           />
             <button
                 type="submit"
-                disabled={this.props.pristine || this.props.submitting}
                 >
                 Save Changes
             </button>
