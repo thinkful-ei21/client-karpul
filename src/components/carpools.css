@@ -78,6 +78,31 @@ button.remove-button:hover {
 	cursor: pointer;
 }
 
+.hosttip {
+	display: inline-block;
+	width: 50px;
+}
+
+.hosttip .hosttiptext {
+	visibility: hidden;
+	width: 80px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	/* opacity: 0.8; */
+
+	/* Position the tooltip */
+	position: absolute;
+	left: 70px;
+	z-index: 1;
+}
+
+.hosttip:hover .hosttiptext {
+	visibility: visible;
+}
+
 
 /* Extra small devices (phones, 289 and up) */
 @media only screen and (min-width: 289) {
