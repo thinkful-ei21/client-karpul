@@ -45,21 +45,6 @@ li {
 	-o-border-radius: 3px;
 }
 
- .remove-button {
-	border: solid rgb(123, 123, 123) 1px;
-	line-height: 80%;
-	border-radius: 50%;
-  position: absolute;
-  padding: 0 8px 1%;
-	top: 10px;
-	right: 10px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
-	font-size: 200%;
-};
-
 button.remove-button:hover {
   cursor: pointer;
   background-color: darkcyan;

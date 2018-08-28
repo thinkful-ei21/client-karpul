@@ -10,6 +10,13 @@ class FindCarpools extends React.Component {
     console.log(this.props.nearbyCarpools)
   }
 
+<<<<<<< HEAD
+=======
+  joinCarpool() {
+    // return this.props.dispatch(joinCarpool())
+  }
+
+>>>>>>> 905cc7becc4cecd8c4c8000e586a8f330b43d74e
   renderResults() {
 
     if (this.props.error) {
@@ -22,6 +29,7 @@ class FindCarpools extends React.Component {
     <li className="carpool-result"
       key={index}>
       <div className="carpool-item">
+<<<<<<< HEAD
           <div className="carpool-item-text">
             <button
               onClick={() => this.props.dispatch(joinCarpool(carpool._id))} // get carpool ID from here
@@ -34,9 +42,24 @@ class FindCarpools extends React.Component {
             </span><br/>
             <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
           </div>
+=======
+        <div className="carpool-item-text">
+          <button
+            onClick={e => this.joinCarpool(carpool)}
+            className="join-button">Join</button>
+          <h2 className="title">{carpool.carpoolTitle}</h2> 
+          <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{carpool.arrivalTime}</span><br/>
+          <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetNumber} {carpool.startAddress.streetName} {carpool.startAddress.city}, {carpool.startAddress.state} {carpool.startAddress.zipcode}
+          </span><br/>
+          <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetNumber} {carpool.endAddress.streetName} {carpool.endAddress.city}, {carpool.endAddress.state} {carpool.endAddress.zipcode}
+          </span><br/>
+          <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
+>>>>>>> 905cc7becc4cecd8c4c8000e586a8f330b43d74e
         </div>
-      </li>
-    ));
+       
+      </div>
+    </li>
+  ));
 
     return  <ul className="carpool-list"> {carpool} </ul>;
 }
