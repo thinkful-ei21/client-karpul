@@ -7,21 +7,16 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoiZGJyaWFuNDYzIiwiYSI6ImNqbDQxYzd6YTI3OTMzdXBnOTJ
 export class Maps extends Component {
   state = {
     viewport: {
-      width: 1040,
-      height: 800,
-      latitude: 45.52165,
-      longitude: -122.67685,
-      // latitude: 0,
-      // longitude: 0,
-      zoom: 3
+      width: this.props.mapbox.width,
+      height: this.props.mapbox.height,
+      longitude: this.props.mapbox.longitude,
+      latitude: this.props.mapbox.latitude,
+      zoom: this.props.mapbox.zoom
+    }
   }
-}
-componentDidMount(){
-  console.log(this.props.coordinates[0].longitude);
-}
 
-handleClick(e) {
-  console.log(e.target.value)
+componentDidMount(){
+
 }
 
 render(){
@@ -61,7 +56,8 @@ render(){
 }
 
 const mapStateToProps = state => ({
-  carpools: state.carpools.nearbyCarpools
+  carpools: state.carpools.nearbyCarpools,
+  mapbox: state.mapbox
 })
 
 export default connect(mapStateToProps)(Maps);
