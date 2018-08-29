@@ -2,7 +2,8 @@ import React from 'react';
 // import './input.css'
 
 
-export default class Input extends React.Component {
+
+export default class SearchInput extends React.Component {
     componentDidUpdate(prevProps) {
         if (!prevProps.meta.active && this.props.meta.active) {
             this.input.focus();
@@ -21,7 +22,7 @@ export default class Input extends React.Component {
                 <div className="form-warning">{this.props.meta.warning}</div>
             );
         }
-
+       
         return (
             <div className="form-input">
                 <div className="form-label">
@@ -37,6 +38,7 @@ export default class Input extends React.Component {
                         id={this.props.input.name}
                         type={this.props.type}
                         ref={input => (this.input = input)}
+                       
                     />
                 </div>
             </div>
