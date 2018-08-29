@@ -10,6 +10,7 @@
     "cloudinary": "^1.11.0",
     "fs": "0.0.1-security",
     "jwt-decode": "^2.2.0",
+    "places.js": "^1.9.1",
     "react": "^16.2.0",
     "react-checkbox-group": "^4.0.1",
     "react-dom": "^16.2.0",

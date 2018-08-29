@@ -1,0 +1,27 @@
+.algolia-autocomplete {
+    width: 100%;
+  }
+
+  .algolia-places {
+    width: 400px;
+  }
+
+  .ap-input-icon {
+      display: none;
+  }
+
+  .ap-icon-clear {
+      display: none;
+  }
+
+  .ap-icon-pin {
+      display: none;
+  }
+
+  .ap-input {
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+
+  
+  

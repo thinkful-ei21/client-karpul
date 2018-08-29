@@ -13,17 +13,11 @@ export default class Address extends React.Component {
       <div>
         <fieldset className="address-fieldset">
           <Field 
-            name="streetNumber" 
+            name="streetAddress" 
             component={Input}
             type="text" 
-            label="Street Number"
+            label="Street Address"
           />
-          <Field 
-            name="streetName"
-            component={Input}
-            type="text"
-            label="Street Name"
-            />
 
           <Field
             name="city" 
@@ -36,11 +30,6 @@ export default class Address extends React.Component {
             type="text"
             label="State"/>
 
-          <Field 
-            name="zipcode" 
-            component={Input}
-            type="text"
-            label="Zip Code" />
         </fieldset>
       </div>
     )
