@@ -5,8 +5,6 @@ import './carpools.css';
 import {showModal} from '../actions/modals';
 import { connect } from 'react-redux';
 
-
-
 class MyCarpools extends React.Component{
   constructor(props) {
     super(props)
@@ -80,7 +78,6 @@ class MyCarpools extends React.Component{
     </li>
   ));
 
-      
     return  <div>
               <ul className="carpool-list"> {carpool} </ul>
             </div>;

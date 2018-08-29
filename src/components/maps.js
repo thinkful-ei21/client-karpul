@@ -13,7 +13,7 @@ export class Maps extends Component {
       longitude: -122.67685,
       // latitude: 0,
       // longitude: 0,
-      zoom: 8
+      zoom: 3
   }
 }
 componentDidMount(){

@@ -54,7 +54,6 @@ export class CarpoolForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-
                 <label className="carpool-title-label" htmlFor="startAddress">Carpool Title</label>
                 <Field
                     component={Input}
@@ -145,6 +144,7 @@ export class CarpoolForm extends React.Component {
                 <button type="submit" className="create-carpool-button" disabled={this.props.pristine || this.props.submitting}>
                     Create Carpool
                 </button>
+                <button onClick={() => this.props.dispatch(hideModal())}>Cancel</button>
             </Form>
         );
     }
