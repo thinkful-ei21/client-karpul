@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CarpoolForm from './carpool-form';
 import {  fetchUserCarpools, deleteCarpool, leaveCarpool  } from '../actions/carpools';
 import './carpools.css';
@@ -31,12 +33,30 @@ class MyCarpools extends React.Component{
 
   leaveCarpool(id) {
     return this.props.dispatch(leaveCarpool(id))
+    .then(this.notifyLeave())
     .then(this.props.dispatch(fetchUserCarpools()))
   }
 
   removeCarpool(id) {
     return this.props.dispatch(deleteCarpool(id))
+    .then(this.notifyRemove())
     .then(this.props.dispatch(fetchUserCarpools()))
+  }
+
+  notifyLeave = () => {
+    return toast.success(`You left ${this} group`, {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: true
+    });
+  }
+
+  notifyRemove = () => {
+    return toast.success(`You removed ${this} group`, {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: true
+    });
   }
 
   renderResults() {
@@ -72,11 +92,11 @@ class MyCarpools extends React.Component{
            })}</span><br/>
         </div>
         {
-          this.props.currentUser._id === carpool.host.id
-          ? <button
-          onClick={e => this.removeCarpool(carpool.id)}
-          className="leave-button">Remove</button>
-          : <button
+        this.props.currentUser._id === carpool.host.id
+        ? <button
+            onClick={e => this.removeCarpool(carpool.id)}
+            className="leave-button">Remove</button>
+        : <button
             onClick={e => this.leaveCarpool(carpool.id)}
             className="leave-button">Leave</button>
         }
@@ -93,6 +113,7 @@ class MyCarpools extends React.Component{
 
     return (
       <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
+        <ToastContainer />
         <button onClick={()=>this.props.dispatch(showModal("carpool-form"))}>Create Karpül</button>
         <ul className="carpool-item">
           {this.renderResults()}

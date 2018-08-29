@@ -13,13 +13,10 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard">
-            <div className="header-username">
-                Welcome {this.props.username}
-                
-            </div>
-            
-            <Tab />
-            
+                <div className="header-username">
+                    Welcome {this.props.username}
+                </div>
+                <Tab />
             </div>
 
         );

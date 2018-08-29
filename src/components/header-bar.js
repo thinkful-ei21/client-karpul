@@ -3,7 +3,6 @@ import './header-bar.css';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import ProximitySearchForm from './proximity-search-form'
 import {fetchPic} from '../actions/users'
 
 export class HeaderBar extends React.Component {

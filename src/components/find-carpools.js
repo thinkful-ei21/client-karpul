@@ -1,6 +1,8 @@
 import React from 'react';
 import { joinCarpool } from '../actions/carpools';
 import {connect} from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {showModal} from '../actions/modals';
 import ProximitySearchForm from './proximity-search-form';
 import './carpools.css';
@@ -9,6 +11,14 @@ class FindCarpools extends React.Component {
 
   componentDidMount() {
     // console.log(this.props.nearbyCarpools)
+  }
+
+  notify = () => {
+    return toast.success(`You Joined ${this} Group`, {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: true
+    });
   }
 
   renderResults() {
@@ -24,7 +34,11 @@ class FindCarpools extends React.Component {
       <div className="carpool-item">
         <div className="carpool-item-text">
           <button
-            onClick={() => this.props.dispatch(joinCarpool(carpool.id))}
+            onClick={() => {
+              this.notify();
+              this.props.dispatch(joinCarpool(carpool.id))
+            }
+          }
             className="join-button">Join</button>
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{carpool.days.map((day) => `${day} `)}</span><br/>
@@ -68,18 +82,17 @@ coor = [
     return (
       <div>
 
-        <h1>Find Karpüls</h1>
         <ProximitySearchForm />
 
         <div className="coor">
           <Maps coordinates={this.coor}/>
         </div>
-
+        <ToastContainer />
         <div className="carpool-results" aria-live="polite" aria-atomic="true" role="complementary">
 
-        <ul className="carpool-item">
-          {this.renderResults()}
-        </ul>
+          <ul className="carpool-item">
+           {this.renderResults()}
+          </ul>
         </div>
       </div>
     )
