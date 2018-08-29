@@ -8,7 +8,7 @@ import Maps from './maps';
 class FindCarpools extends React.Component {
 
   componentDidMount() {
-    console.log(this.props.nearbyCarpools)
+    // console.log(this.props.nearbyCarpools)
   }
 
   renderResults() {
