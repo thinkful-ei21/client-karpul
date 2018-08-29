@@ -33,10 +33,12 @@ class MyCarpools extends React.Component{
 
   leaveCarpool(id) {
     return this.props.dispatch(leaveCarpool(id))
+    .then(this.props.dispatch(fetchUserCarpools()))
   }
 
   removeCarpool(id) {
     return this.props.dispatch(deleteCarpool(id))
+    .then(this.props.dispatch(fetchUserCarpools()))
   }
 
   renderResults() {
@@ -45,6 +47,7 @@ class MyCarpools extends React.Component{
         return <strong>{this.props.error}</strong>;
     }
     const userCarpools = this.props.carpools.userCarpools;
+    let carpoolHost;
     const carpool = userCarpools.map((carpool, index) => (
     <li className="carpool-result"
       key={index}>
@@ -64,14 +67,15 @@ class MyCarpools extends React.Component{
           <span className="carpool-details"><span className="details-title">Members: 
           </span>{carpool.users.map((user, index)=> <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>)}</span><br/>
         </div>
-  {/* TODO: */}
-        {/* ternary to render button for host vs member */}
-        <button
+        {
+          this.props.currentUser._id === carpool.host.id
+          ? <button
+          onClick={e => this.removeCarpool(carpool.id)}
+          className="leave-button">Remove</button>
+          : <button
             onClick={e => this.leaveCarpool(carpool.id)}
             className="leave-button">Leave</button>
-        {/* <button
-          onClick={e => this.removeCarpool(carpool.id)}
-          className="leave-button">Remove</button> */}
+        }
       </div>
     </li>
   ));
