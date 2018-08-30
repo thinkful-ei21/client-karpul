@@ -92,7 +92,7 @@ render(){
 }
 
 const mapStateToProps = state => ({
-  carpools: state.carpools.nearbyCarpools
+  carpools: state.carpools.nearbyCarpools.results
 })
 
 export default connect(mapStateToProps)(Maps);

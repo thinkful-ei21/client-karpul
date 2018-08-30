@@ -57,16 +57,16 @@ export const carpoolProximitySearchError = err => ({
     err
 })
 
-export const fetchNearbyCarpools = address => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    console.log(address);
+export const fetchNearbyCarpools = values => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;    
     dispatch(carpoolProximitySearchRequest());
-    return fetch(`${API_BASE_URL}/findCarpool?address=${address.proximitySearch}`, {
+    return fetch(`${API_BASE_URL}/findCarpool?address=${values.proximitySearch}&days=${values.days}&from=${values.fromTime}&to=${values.toTime}`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
             Authorization: `Bearer ${authToken}`
-        }
+        },
+        
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())

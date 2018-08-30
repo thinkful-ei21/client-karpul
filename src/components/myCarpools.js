@@ -59,6 +59,15 @@ class MyCarpools extends React.Component{
     });
   }
 
+  renderArrivalTime(arrivalTime){
+    if( arrivalTime.hrs){
+      if(arrivalTime.mins < 10){
+        return arrivalTime.hrs + ':0' + arrivalTime.mins;
+      }
+      return arrivalTime.hrs + ':' + arrivalTime.mins;
+    }
+    return arrivalTime;
+  }
   renderResults() {
 
     if (this.props.error) {
@@ -73,7 +82,7 @@ class MyCarpools extends React.Component{
         <div className="carpool-item-text">
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{carpool.days.map((day) => `${day} `)}</span><br/>
-          <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{carpool.arrivalTime}</span><br/>
+          <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{`${this.renderArrivalTime(carpool.arrivalTime)}`}</span><br/>
           <span className="open-seats"><span className="seats-title">Open Seats: </span>{carpool.openSeats}</span><br/>
           <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetAddress} {carpool.startAddress.city}, {carpool.startAddress.state}
           </span><br/>
