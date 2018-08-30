@@ -3,6 +3,8 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
+import {grabQueryGeocode} from './mapbox';
+
 /* For My Carpools Page */
 export const FETCH_USER_CARPOOLS_REQUEST = 'FETCH_USER_CARPOOLS_REQUEST';
 export const fetchUserCarpoolsRequest = () => ({
@@ -71,6 +73,7 @@ export const fetchNearbyCarpools = values => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(carpools => dispatch(carpoolProximitySearchSuccess(carpools)))
+        // .then(geocode => grabQueryGeocode(geocode))
         .catch(err => {
             dispatch(carpoolProximitySearchError(err))
         })

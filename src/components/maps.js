@@ -7,52 +7,63 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoiZGJyaWFuNDYzIiwiYSI6ImNqbDQxYzd6YTI3OTMzdXBnOTJ
 
 export class Maps extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      viewport: {
-        width: 1024,
-        height: 600,
-        latitude: 45.52165,
-        longitude: -122.67685,
-        zoom: 12
-      }
-    }
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       viewport: {
+//         width: 1024,
+//         height: 600,
+//         latitude: 45.52165,
+//         longitude: -122.67685,
+//         zoom: 12
+//       }
+//     }
 
-    const width = window.innerWidth;
+//     const width = window.innerWidth;
 
-    if (width < 800) {
-      this.state = {
-        viewport: {
-          width: 600,
-          height: 300,
-          latitude: 45.52165,
-          longitude: -122.67685,
-          zoom: 12
-        }
-      }
-    }
+//     if (width < 800) {
+//       this.state = {
+//         viewport: {
+//           width: 600,
+//           height: 300,
+//           latitude: 45.52165,
+//           longitude: -122.67685,
+//           zoom: 12
+//         }
+//       }
+//     }
 
-    if (width < 600) {
-      this.state = {
-        viewport: {
-          width: 300,
-          height: 200,
-          latitude: 45.52165,
-          longitude: -122.67685,
-          zoom: 12
-        }
-      }
+//     if (width < 600) {
+//       this.state = {
+//         viewport: {
+//           width: 300,
+//           height: 200,
+//           latitude: 45.52165,
+//           longitude: -122.67685,
+//           zoom: 12
+//         }
+//       }
+//     }
+//   }
+
+
+// componentDidMount(){
+//   // console.log(this.props.coordinates[0].longitude);
+// }
+
+
+  state = {
+    viewport: {
+      width: this.props.mapbox.width,
+      height: this.props.mapbox.height,
+      longitude: this.props.mapbox.longitude,
+      latitude: this.props.mapbox.latitude,
+      zoom: this.props.mapbox.zoom
     }
   }
 
-
 componentDidMount(){
-  // console.log(this.props.coordinates[0].longitude);
-}
 
-handleClick(e) {
-  console.log(e.target.value)
 }
 
 render(){
@@ -92,7 +103,8 @@ render(){
 }
 
 const mapStateToProps = state => ({
-  carpools: state.carpools.nearbyCarpools.results
+  carpools: state.carpools.nearbyCarpools.results,
+  mapbox: state.mapbox
 })
 
 export default connect(mapStateToProps)(Maps);

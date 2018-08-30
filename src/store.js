@@ -7,6 +7,7 @@ import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import usersReducer from './reducers/users';
 import modalsReducer from './reducers/modals';
+import mapboxReducer from './reducers/mapbox';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 const store = createStore(
@@ -16,7 +17,8 @@ const store = createStore(
         auth: authReducer,
         protectedData: protectedDataReducer,
         users: usersReducer,
-        modals: modalsReducer
+        modals: modalsReducer,
+        mapbox: mapboxReducer
     }),
     applyMiddleware(thunk)
 );
