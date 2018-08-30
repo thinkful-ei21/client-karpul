@@ -50,7 +50,7 @@ class FindCarpools extends React.Component {
               this.props.dispatch(joinCarpool(carpool.id))
             }
           }
-            className="join-button">Join</button>
+            className="join-button">Request Join</button>
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{carpool.days.map((day) => `${day} `)}</span><br/>
           <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{`${this.renderArrivalTime(carpool.arrivalTime)}`}</span><br/>
