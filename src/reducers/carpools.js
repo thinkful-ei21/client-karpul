@@ -18,7 +18,10 @@ import {
 
 const initialState = {
   userCarpools: [],
-  nearbyCarpools: [],
+  nearbyCarpools: {
+    geoCoord: [],
+    results: []
+  },
   selectedCarpool: {},
   pendingRequests: null,
   loading: false,
