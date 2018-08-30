@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactMapGL , {Marker} from 'react-map-gl';
 import {connect} from 'react-redux';
+import {showModal} from '../actions/modals';
 import './map.css';
 ///i will place this in a env file or something, i just wanted to give you guys the key first so you know it works
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZGJyaWFuNDYzIiwiYSI6ImNqbDQxYzd6YTI3OTMzdXBnOTJlNGxuaWIifQ.dfN-ws3FQ17D47nnLzovSw';
@@ -58,17 +59,23 @@ handleClick(e) {
 render(){
 
   let allMarkers = [];
+  let allStartMarkers = [];
   if (this.props.carpools) {
     this.props.carpools.map(carpool => {
       allMarkers.push(carpool.endAddress.location.coordinates);
+      allStartMarkers.push(carpool.startAddress.location.coordinates)
     })
   }
 
   let pins = allMarkers.map((mark, index) => {
+    // console.log(allStartMarkers[index][0])
     return (
-      <li key={index} onClick={(e) => this.handleClick(e)}>
+      <li key={index} onClick={() => {this.props.dispatch(showModal("find-carpool-modal", this.props.carpools[index]))}}>
         <Marker className="markers" longitude={mark[0]} latitude={mark[1]}>
-          {index + 1}
+          Click To Expand
+        </Marker>
+        <Marker className="startMarkers" longitude={allStartMarkers[index][0]} latitude={allStartMarkers[index][1]}>
+          Start
         </Marker>
       </li>
     )

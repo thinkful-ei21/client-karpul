@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import Example from './example'
 import CarpoolForm from './carpool-form';
 import ProfileModal from './profile-modal';
+import FindCarpoolModal from './find-carpool-modal'
+import FindCarpoolProfileModal from './find-carpool-profile-modal'
 
 // import {setEventEditIndex} from '../actions/event-list'
 
@@ -20,6 +22,13 @@ class Modal extends Component {
     if (this.props.page === "profile-modal"){
       return <ProfileModal  user={this.props.id}/>
     }
+    if (this.props.page === 'find-carpool-modal'){
+      return <FindCarpoolModal carpool={this.props.id}/>
+    }
+    if (this.props.page === 'find-carpool-profile-modal'){
+      return <FindCarpoolProfileModal carpool={this.props.id}/>
+    }
+
   }
   render() {
 
