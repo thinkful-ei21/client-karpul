@@ -8,6 +8,16 @@ import './carpools.css';
 
 export function FindCarpoolModal(props){
 
+    function renderArrivalTime(arrivalTime){
+      if( arrivalTime.hrs){
+        if(arrivalTime.mins < 10){
+          return arrivalTime.hrs + ':0' + arrivalTime.mins;
+        }
+        return arrivalTime.hrs + ':' + arrivalTime.mins;
+      }
+      return arrivalTime;
+    }
+
     function notify ()  {
         return toast.success(`You Joined ${this} Group`, {
           position: "top-right",
@@ -15,7 +25,7 @@ export function FindCarpoolModal(props){
           hideProgressBar: true
         });
       }
-    
+    console.log(props.carpool)
     return (
         <div className="carpool-item">
         <div className="carpool-item-text">
@@ -28,7 +38,7 @@ export function FindCarpoolModal(props){
             className="join-button">Join</button>
           <h2 className="title">{props.carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{props.carpool.days.map((day) => `${day} `)}</span><br/>
-          <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{props.carpool.arrivalTime}</span><br/>
+          <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{renderArrivalTime(props.carpool.arrivalTime)}</span><br/>
           <span className="open-seats"><span className="seats-title">Open Seats: </span>{props.carpool.openSeats}</span><br/>
           <span className="address"><span className="address-title">Start Address: </span>{props.carpool.startAddress.streetAddress} {props.carpool.startAddress.city}, {props.carpool.startAddress.state}
           </span><br/>

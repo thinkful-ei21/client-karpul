@@ -79,7 +79,7 @@ render(){
   }
 
   let pins = allMarkers.map((mark, index) => {
-    // console.log(allStartMarkers[index][0])
+    // console.log(this.props.carpools[index])
     return (
       <li key={index} onClick={() => {this.props.dispatch(showModal("find-carpool-modal", this.props.carpools[index]))}}>
         <Marker className="markers" longitude={mark[0]} latitude={mark[1]}>
