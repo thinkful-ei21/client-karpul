@@ -1,4 +1,5 @@
 import {API_BASE_URL} from '../config';
+import {fetchUserCarpools} from '../actions/carpools'
 
 import {normalizeResponseErrors} from './utils';
 
@@ -31,5 +32,6 @@ export const requestRequest = (carpoolId, userId, accepted) => (dispatch, getSta
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
   .then(() => dispatch(fetchRequestSuccess()))
+  .then(() => dispatch(fetchUserCarpools()))
   .catch(err => dispatch(fetchRequestError(err)))
 }
