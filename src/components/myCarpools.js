@@ -83,7 +83,6 @@ class MyCarpools extends React.Component{
         return <strong>{this.props.error}</strong>;
     }
     const userCarpools = this.props.carpools.userCarpools;
-    console.log(userCarpools)
     const carpool = userCarpools.map((carpool, index) => (
     <li className="carpool-result"
       key={index}>
@@ -98,27 +97,36 @@ class MyCarpools extends React.Component{
           <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetAddress} {carpool.endAddress.city}, {carpool.endAddress.state}
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
-          {/* <span className="carpool-details"><span className="details-title">Host: 
-          </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("profile-modal", carpool.host))}} className="members-images"/>}</span><br/> */}
           <span className="carpool-details"><span className="details-title">Members: 
           </span>{carpool.users.map((user, index)=> {
             if(user.id === carpool.host.id){
               return (
                 <div key={index} >
-                  <div className="hosttip" key="host"><img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span></div>
+                  <div className="hosttip" key="host"><img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
+                  </div><br />
+                  <span className="requests"><span className="request-title">Pending Requests: </span>
+                    {carpool.pendingRequests.map((user, index) => {
+                      return (<div key={index} >
+                        {console.log(user.profilePicUrl)}
+                       <img className="members-images" src={user.profilePicUrl} key={index} 
+                            onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                        <button
+                          onClick={e => this.acceptRequest(carpool.id, user.id, true)}
+                          className="accept-button">Accept</button>
+                        <button
+                          onClick={e => this.denyRequest(carpool.id, user.id, false)}
+                          className="deny-button">Deny</button>
+                      </div>
+                      )
+                    })
+                  }
+                  </span><br/>
                 </div>
                 )
             } else {
               return (
-
               <div className="member-request" key={index} >
                 <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
-                <button
-                  onClick={e => this.acceptRequest(carpool.id, user.id, true)}
-                  className="accept-button">Accept</button>
-                <button
-                  onClick={e => this.denyRequest(carpool.id, user.id, false)}
-                  className="deny-button">Deny</button>
               </div>
               )
             }
