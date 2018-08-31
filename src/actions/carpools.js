@@ -73,7 +73,7 @@ export const fetchNearbyCarpools = values => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(carpools => dispatch(carpoolProximitySearchSuccess(carpools)))
-        // .then(geocode => grabQueryGeocode(geocode))
+        .then(carpools => dispatch(grabQueryGeocode(carpools.carpools.geoCoord)))
         .catch(err => {
             dispatch(carpoolProximitySearchError(err))
         })

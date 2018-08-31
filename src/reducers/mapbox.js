@@ -3,11 +3,9 @@ import {
 } from '../actions/mapbox';
 
 const initialState = {
-  width: 1040,
-  height: 800,
   longitude: -97.65,
   latitude: 41.85,
-  zoom: 3,
+  zoom: 3
 }
 
 export default function reducer(state = initialState, action) {
@@ -19,7 +17,7 @@ export default function reducer(state = initialState, action) {
       ...state,
       longitude: action.geocode[0],
       latitude: action.geocode[1],
-      zoom: 7
+      zoom: 11
     }
 
     default:
