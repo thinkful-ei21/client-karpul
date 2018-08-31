@@ -6,6 +6,7 @@ import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 import {required, nonEmpty} from '../validators';
 import { fetchNearbyCarpools } from '../actions/carpools';
 import './proximity-search-form.css'
+import { grabQueryGeocode } from '../actions/mapbox';
 var places = require('places.js');
 var placesAutocomplete;
   var options;
@@ -39,7 +40,7 @@ export class ProximitySearchForm extends React.Component {
   }
 
   onSubmit(values) {
-    values.days = this.state.days;    
+    values.days = this.state.days;
     return this.props.dispatch(fetchNearbyCarpools(values));
   }
 

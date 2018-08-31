@@ -8,6 +8,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cloudinary": "^1.11.0",
+    "d3-ease": "^1.0.5",
     "fs": "0.0.1-security",
     "jwt-decode": "^2.2.0",
     "places.js": "^1.9.1",
