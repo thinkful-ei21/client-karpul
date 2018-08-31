@@ -108,7 +108,6 @@ class MyCarpools extends React.Component{
                   <span className="requests">
                       {/* <span className="request-title">Pending Requests: </span> */}
                         {carpool.pendingRequests.map((member, index) => {
-                        {console.log('member: ', member.id, 'carpool: ', carpool.id)}
                         return (
                             <div key={index} ><hr />
                               <img className="members-images" src={member.profilePicUrl} key={index} 
@@ -125,31 +124,6 @@ class MyCarpools extends React.Component{
                         }
                     </span><br/>
                 </div>
-                )
-              }
-            if(user.id === carpool.host.id ) {  //&& carpool.pendingRequest !== []
-                return (
-                  <div>
-                    {/* <span className="requests">
-                      <span className="request-title">Pending Requests: </span>
-                        {carpool.pendingRequests.map((member, index) => {
-                        {console.log('member: ', member.id, 'carpool: ', carpool.id)}
-                        return (
-                            <div key={index} >
-                              <img className="members-images" src={member.profilePicUrl} key={index} 
-                                onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
-                              <button
-                                onClick={e => this.acceptRequest(carpool.id, member.id, true)}
-                                className="accept-button">Accept</button>
-                              <button
-                                onClick={e => this.denyRequest(carpool.id, member.id, false)}
-                                className="deny-button">Deny</button>
-                            </div>
-                            )
-                          })
-                        }
-                    </span><br/> */}
-                  </div>
                 )
               } else {
                 return (
