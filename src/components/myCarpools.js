@@ -80,7 +80,7 @@ class MyCarpools extends React.Component{
   renderResults() {
 
     if (this.props.error) {
-        return <strong>{this.props.error}</strong>;
+      return <strong>{this.props.error}</strong>;
     }
     const userCarpools = this.props.carpools.userCarpools;
     const carpool = userCarpools.map((carpool, index) => (
@@ -97,67 +97,51 @@ class MyCarpools extends React.Component{
           <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetAddress} {carpool.endAddress.city}, {carpool.endAddress.state}
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
-          <span className="carpool-details"><span className="details-title">Members: </span>
-          {carpool.users.map((user, index)=> {
-            if(user.id === carpool.host.id){
-              return (
-                <div key={index} >
-                  <div className="hosttip" key="host">
-                  <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
+          <span className="carpool-members"><span className="members-title">Members: </span>
+            {carpool.users.map((user, index)=> {
+              if(user.id === carpool.host.id){
+                return (
+                  <div key={index}>
+                    <div className="hosttip" key="host">
+                    <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
+                    </div>
                   </div>
-                  {/* <span className="requests">
-                      <span className="request-title">Pending Requests: </span>
+                )
+                } else {
+                  return (
+                    <div key={index}>
+                      <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                    </div>
+                  )
+                }
+              })}
+              <span className="carpool-members">
+                {carpool.pendingRequests.length > 0 ? <span className="members-title">Pending Requests: </span> : 
+                <span></span>}
+              </span>
+              {carpool.users.map((user, index) => {
+              if(this.props.currentUser._id === carpool.host.id) {
+                return (
+                  <div key={index} >
+                    <span className="member-requests">
                         {carpool.pendingRequests.map((member, index) => {
                         return (
-                            <div key={index} >
-                              <img className="members-images" src={member.profilePicUrl} key={index} 
-                                onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
-                              <button
-                                onClick={e => this.acceptRequest(carpool.id, member.id, true)}
-                                className="accept-button">Accept</button>
-                              <button
-                                onClick={e => this.denyRequest(carpool.id, member.id, false)}
-                                className="deny-button">Deny</button>
-                            </div>
-                            )
-                          })
-                        }
-                    </span><br/> */}
-                </div>
-                )
-              } else {
-                return (
-                  <div className="member-request" key={index} >
-                    <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                          <div key={index} >
+                            <img className="request-members-images" src={member.profilePicUrl} key={index} 
+                              onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                            <button
+                              onClick={e => this.acceptRequest(carpool.id, member.id, true)}
+                              className="accept-button">Accept</button>
+                            <button
+                              onClick={e => this.denyRequest(carpool.id, member.id, false)}
+                              className="deny-button">Deny</button>
+                          </div>
+                        )})}
+                      </span><br/>
                   </div>
-                )
-              }
-            })}
-            {carpool.users.map((user, index)=> {
-            if(carpool.pendingRequests.length >= 1 )  {
-            if((this.props.currentUser._id === carpool.host.id) && (carpool.pendingRequests)) {
-              return (
-                <div key={index} >
-                  <span className="requests">
-                    <span className="request-title">Pending Requests: </span>
-                      {carpool.pendingRequests.map((member, index) => {
-                      return (
-                        <div key={index} >
-                          <img className="request-members-images" src={member.profilePicUrl} key={index} 
-                            onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
-                          <button
-                            onClick={e => this.acceptRequest(carpool.id, member.id, true)}
-                            className="accept-button">Accept</button>
-                          <button
-                            onClick={e => this.denyRequest(carpool.id, member.id, false)}
-                            className="deny-button">Deny</button>
-                        </div>
-                      )})}
-                    </span><br/>
-                </div>
-              )} 
+                )} 
+              })
             }
-            })}
             </span>
            <br/>
         </div>
