@@ -104,12 +104,12 @@ class MyCarpools extends React.Component{
                 <div key={index} >
                   <div className="hosttip" key="host">
                   <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
-                  </div><br />
-                  <span className="requests">
-                      {/* <span className="request-title">Pending Requests: </span> */}
+                  </div>
+                  {/* <span className="requests">
+                      <span className="request-title">Pending Requests: </span>
                         {carpool.pendingRequests.map((member, index) => {
                         return (
-                            <div key={index} ><hr />
+                            <div key={index} >
                               <img className="members-images" src={member.profilePicUrl} key={index} 
                                 onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
                               <button
@@ -122,17 +122,42 @@ class MyCarpools extends React.Component{
                             )
                           })
                         }
-                    </span><br/>
+                    </span><br/> */}
                 </div>
                 )
               } else {
                 return (
-                <div className="member-request" key={index} ><hr />
-                  <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
-                </div>
+                  <div className="member-request" key={index} >
+                    <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                  </div>
                 )
               }
-              })}
+            })}
+            {carpool.users.map((user, index)=> {
+            if(carpool.pendingRequests.length >= 1 )  {
+            if((this.props.currentUser._id === carpool.host.id) && (carpool.pendingRequests)) {
+              return (
+                <div key={index} >
+                  <span className="requests">
+                    <span className="request-title">Pending Requests: </span>
+                      {carpool.pendingRequests.map((member, index) => {
+                      return (
+                        <div key={index} >
+                          <img className="request-members-images" src={member.profilePicUrl} key={index} 
+                            onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                          <button
+                            onClick={e => this.acceptRequest(carpool.id, member.id, true)}
+                            className="accept-button">Accept</button>
+                          <button
+                            onClick={e => this.denyRequest(carpool.id, member.id, false)}
+                            className="deny-button">Deny</button>
+                        </div>
+                      )})}
+                    </span><br/>
+                </div>
+              )} 
+            }
+            })}
             </span>
            <br/>
         </div>

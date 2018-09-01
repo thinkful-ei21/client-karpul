@@ -30,6 +30,11 @@ form.login-form, form.carpool-form {
   -o-border-radius: 5px;
 }
 
+
+form.login-form{
+  margin-top: 100px;
+}
+
 form.carpool-form {
   height: 500px;
 }
