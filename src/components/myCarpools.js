@@ -68,7 +68,7 @@ class MyCarpools extends React.Component{
     });
   }
 
-  renderArrivalTime(arrivalTime){
+  renderArrivalTime(arrivalTime) {
     if( arrivalTime.hrs){
       if(arrivalTime.mins < 10){
         return arrivalTime.hrs + ':0' + arrivalTime.mins;
@@ -77,6 +77,7 @@ class MyCarpools extends React.Component{
     }
     return arrivalTime;
   }
+
   renderResults() {
 
     if (this.props.error) {
@@ -102,6 +103,7 @@ class MyCarpools extends React.Component{
               if(user.id === carpool.host.id){
                 return (
                   <div key={index}>
+                    {/* The Host */}
                     <div className="hosttip" key="host">
                     <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
                     </div>
@@ -110,21 +112,25 @@ class MyCarpools extends React.Component{
                 } else {
                   return (
                     <div key={index}>
+                    {/* Non-host Members */}
                       <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
                     </div>
                   )
                 }
               })}
-              <span className="carpool-members">
-                {carpool.pendingRequests.length > 0 ? <span className="members-title">Pending Requests: </span> : 
-                <span></span>}
-              </span>
-              {carpool.users.map((user, index) => {
-              if(this.props.currentUser._id === carpool.host.id) {
-                return (
-                  <div key={index} >
-                    <span className="member-requests">
+              {/* Pending Member Requests */}
+              <span className="pending-carpool-members">
+                <span className="pending-title">
+                  {(carpool.pendingRequests.length > 0 && this.props.currentUser._id === carpool.host.id) ? <span className="members-title">Pending Requests: </span> : <span></span>}
+                </span>
+                {carpool.users.map((user, index) => {
+                  let uniqueMember;
+                if(this.props.currentUser._id === carpool.host.id) {
+                  return (
+                    <div key={index} >
+                      <span className="member-requests">
                         {carpool.pendingRequests.map((member, index) => {
+                          console.log(member)
                         return (
                           <div key={index} >
                             <img className="request-members-images" src={member.profilePicUrl} key={index} 
@@ -138,10 +144,11 @@ class MyCarpools extends React.Component{
                           </div>
                         )})}
                       </span><br/>
-                  </div>
-                )} 
-              })
-            }
+                    </div>
+                  )}
+                })
+              }
+              </span>
             </span>
            <br/>
         </div>

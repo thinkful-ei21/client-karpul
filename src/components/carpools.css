@@ -24,6 +24,10 @@ li {
   margin-bottom: 0;
 }
 
+.carpool-item {
+	min-width: 300px;
+}
+
 .carpool-item-text {
 	display: inline-block;
   width: 95%;
@@ -71,7 +75,7 @@ button.remove-button:hover {
 	display: block;
 }
 
-.members-images {
+.members-images, .host-image {
 	max-width: 50px;
 	max-height: 50px;
 	vertical-align: text-top;
@@ -79,12 +83,29 @@ button.remove-button:hover {
 	float: left;
 }
 
+.host-image {
+	float: none;
+}
+
+
+.pending-carpool-members {
+	position: relative;
+	top: 0;
+	left: 0;
+	float: left;
+	clear: left;
+}
+
 .request-members-images {
 	max-width: 50px;
 	max-height: 50px;
 	vertical-align: text-top;
-	margin-right: 5px;
+	margin: 5px 0 0 0;
 	float: left;
+}
+
+.no-pending-requests {
+	display: none;
 }
 
 .member-requests {
@@ -111,7 +132,7 @@ button.remove-button:hover {
 
 	/* Position the tooltip */
 	position: absolute;
-	left: 70px;
+	left: 20px;
 	z-index: 1;
 }
 
