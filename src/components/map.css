@@ -6,37 +6,49 @@
 
 .markers {
   margin-top: -50px;
-  width: 14px;
-  height: 50px;
+  margin-left: -5px;
+  /* border-top: solid; */
+  /* border-top-color: #385C74; */
+  /* width: 14px; */
+  /* height: 50px; */
   padding-top: 10px;
   padding-left: 2px;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
-  border-bottom-left-radius: 150%;
-  border-bottom-right-radius: 150%;
+  border-top-left-radius: 60%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
   font-size: 0;
+  background-color: transparent;
+  width: 0; 
+  height: 0; 
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  opacity: 0.8;
+  border-top: 50px solid rgb(78, 129, 163);
 }
 
 .markers:hover {
   margin-top: -60px;
   width: 14px;
   height: 60px;
-  background-color: red;
   font-size: 0px;
+  opacity: 1;
+  border-top: 50px solid red;
+  background-color: transparent;
 }
 
 .markers:hover + .startMarkers {
   margin-top: -50px;
   width: 14px;
   height: 50px;
-  background-color: lightblue;
+  background-color: transparent;
   /* font-size: 0; */
   visibility: visible;
 }
 
 .startMarkers {
   /* position: fixed; */
-  margin-top: -50px;
+  /* margin-top: -50px;
   width: 14px;
   height: 100px;
   padding-top: 10px;
@@ -44,8 +56,30 @@
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
   border-bottom-left-radius: 150%;
-  border-bottom-right-radius: 150%;
+  border-bottom-right-radius: 150%;*/
   font-size: 15px;
   /* background-color: blueviolet;s */
   visibility: hidden;
+  color: black;
+  margin-top: -50px;
+  margin-left: -5px;
+  /* border-top: solid; */
+  /* border-top-color: #385C74; */
+  /* width: 14px; */
+  /* height: 50px; */
+  padding-bottom: 0px;
+  padding-left: 2px;
+  border-top-left-radius: 60%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  /* font-size: 0; */
+  background-color: transparent;
+  width: 0; 
+  height: 0; 
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  opacity: 1;
+  border-top: 50px solid rgb(138, 230, 0);
+
 }

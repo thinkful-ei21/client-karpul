@@ -37,7 +37,9 @@ export class ProximitySearchForm extends React.Component {
         }
       });
     }
+    this.props.initialize({fromTime: "09:00:00", toTime: "17:00:00", searchRadius: "5"})
   }
+  
 
   onSubmit(values) {
     values.days = this.state.days;
@@ -103,7 +105,7 @@ export class ProximitySearchForm extends React.Component {
                     <label><Checkbox value="Sat"/>Sat</label>
                     <label><Checkbox value="Sun"/>Sun</label>
                 </CheckboxGroup>
-
+        <div className="to-time-containter">
         <label className="from-time-label" htmlFor="fromTime">FROM</label>
         <Field
             component={Input}
@@ -114,7 +116,9 @@ export class ProximitySearchForm extends React.Component {
             name="fromTime"
             id="fromTime"            
         />
-
+        </div>
+        
+        <div className="to-time-containter">
         <label className="to-time-label" htmlFor="toTime">TO</label>
         <Field
             component={Input}
@@ -125,6 +129,25 @@ export class ProximitySearchForm extends React.Component {
             name="toTime"
             id="toTime"            
         />
+        </div>
+
+        <label className="searchRadius-label" htmlFor="searchRadius">Search Radius</label>
+          <Field
+              component="select"
+              type="textarea"
+              className="time-picker"
+              name="searchRadius"
+              id="searchRadius"
+              label="Search Radius"
+              aria-label="Search Radius"
+              aria-required="true"
+              validate={[]}
+          >     
+                <option value='1'>1 mile</option>
+                <option value="5">5 miles</option>
+                <option value="10">10 miles</option>
+          </Field>
+
         <button type="submit" className="proximity-search-button" disabled={this.props.pristine || this.props.submitting}>
           Search
         </button>
