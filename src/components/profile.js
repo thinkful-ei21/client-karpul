@@ -12,7 +12,7 @@ const bioLength = length({min: 0, max: 250});
 
 export class Profile extends React.Component{
   
-    constructor(props) {                                                                                                                                                                                                                                                                                                                                                                                                                
+    constructor(props) { 
         super(props);
         // Don't call this.setState() here!
         this.state = { edit: false };
@@ -164,7 +164,6 @@ export class Profile extends React.Component{
   }
 
   onSubmit(values) {
-      console.log("triggered")
     const {city, state, bio, phoneNumber} = values
     const userData = {city, state, bio, id: this.props.currentUser._id, phone: phoneNumber}
     return this.props.dispatch(updateUserData(userData)).then(this.setState({edit: false}))
