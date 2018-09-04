@@ -43,6 +43,7 @@ export class ProximitySearchForm extends React.Component {
 
   onSubmit(values) {
     values.days = this.state.days;
+    // document.getElementById("proximity-search-button").scrollIntoView()
     return this.props.dispatch(fetchNearbyCarpools(values));
   }
 
@@ -148,7 +149,7 @@ export class ProximitySearchForm extends React.Component {
                 <option value="10">10 miles</option>
           </Field>
 
-        <button type="submit" className="proximity-search-button" disabled={this.props.pristine || this.props.submitting}>
+        <button type="submit" className="proximity-search-button" id="proximity-search-button" disabled={this.props.pristine || this.props.submitting}>
           Search
         </button>
       </Form>

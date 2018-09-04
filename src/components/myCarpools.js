@@ -82,12 +82,14 @@ class MyCarpools extends React.Component{
 
     if (this.props.error) {
       return <strong>{this.props.error}</strong>;
+      {console.log("triggered")}
     }
     const userCarpools = this.props.carpools.userCarpools;
     const carpool = userCarpools.map((carpool, index) => (
     <li className="carpool-result"
       key={index}>
       <div className="carpool-item">
+      
         <div className="carpool-item-text">
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{carpool.days.map((day) => `${day} `)}</span><br/>
@@ -161,10 +163,10 @@ class MyCarpools extends React.Component{
     </li>
   ));
 
-    return  
-      <div>
+    return  <div>
         <ul className="carpool-list"> {carpool} </ul>
       </div>;
+    
 }
 
   render(){
@@ -174,8 +176,10 @@ class MyCarpools extends React.Component{
         <ToastContainer />
         <button onClick={()=>this.props.dispatch(showModal("carpool-form"))}>Create Karpül</button>
         <ul className="carpool-item">
+          
           {this.renderResults()}
         </ul>
+        
       </div>
     )
   }
