@@ -78,31 +78,6 @@ class MyCarpools extends React.Component{
     return arrivalTime;
   }
 
-  // renderPendingRequests() {
-  //   {carpool.users.map((user, index) => {
-  //     if(this.props.currentUser._id === carpool.host.id) {
-  //       return (
-  //         <div key={index} >
-  //           <span className="member-requests">
-  //             {carpool.pendingRequests.map((member, index) => {
-  //             return (
-  //               <div key={index} >
-  //                 <img className="request-members-images" src={member.profilePicUrl} key={index} 
-  //                   onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
-  //                 <button
-  //                   onClick={e => this.acceptRequest(carpool.id, member.id, true)}
-  //                   className="accept-button">Accept</button>
-  //                 <button
-  //                   onClick={e => this.denyRequest(carpool.id, member.id, false)}
-  //                   className="deny-button">Deny</button>
-  //               </div>
-  //             )})}
-  //           </span><br/>
-  //         </div>
-  //       )}})
-  //     }
-  // }
-
   renderResults() {
 
     if (this.props.error) {
@@ -148,38 +123,26 @@ class MyCarpools extends React.Component{
                 <span className="pending-title">
                   {(carpool.pendingRequests.length > 0 && this.props.currentUser._id === carpool.host.id) ? <span className="members-title">Pending Requests: </span> : <span></span>}
                 </span>
-                {
-                  console.log(carpool.users)
-                }
-                {carpool.users.map((user, index) => {
-                  // let memArr = [];
-                  // let uniqueMember;
-                  // memArr.push(user);
-                  // console.log(memArr);
-                if(this.props.currentUser._id === carpool.host.id) {
-                  return (
-                    <div key={index} >
-                      <span className="member-requests">
-                        {carpool.pendingRequests.map((member, index) => {
-                          // let memArr = [];
-                          // memArr.push(member);
-                          // console.log(member, memArr);
-                        return (
-                          <div key={index} >
-                            <img className="request-members-images" src={member.profilePicUrl} key={index} 
-                              onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
-                            <button
-                              onClick={e => this.acceptRequest(carpool.id, member.id, true)}
-                              className="accept-button">Accept</button>
-                            <button
-                              onClick={e => this.denyRequest(carpool.id, member.id, false)}
-                              className="deny-button">Deny</button>
-                          </div>
-                        )})}
-                      </span><br/>
-                    </div>
-                  )}
-                })
+                {console.log(carpool.users)}
+                {this.props.currentUser._id === carpool.host.id ? (
+                  <div key={index} >
+                    <span className="member-requests">
+                      {carpool.pendingRequests.map((member, index) => {
+                      return (
+                        <div key={index} >
+                          <img className="request-members-images" src={member.profilePicUrl} key={index} 
+                            onClick={()=>{this.props.dispatch(showModal("profile-modal", member))}}/>
+                          <button
+                            onClick={e => this.acceptRequest(carpool.id, member.id, true)}
+                            className="accept-button">Accept</button>
+                          <button
+                            onClick={e => this.denyRequest(carpool.id, member.id, false)}
+                            className="deny-button">Deny</button>
+                        </div>
+                      )})}
+                    </span><br/>
+                  </div>
+                ) : ''
               }
               </span>
             </span>
@@ -198,9 +161,10 @@ class MyCarpools extends React.Component{
     </li>
   ));
 
-    return  <div>
-              <ul className="carpool-list"> {carpool} </ul>
-            </div>;
+    return  
+      <div>
+        <ul className="carpool-list"> {carpool} </ul>
+      </div>;
 }
 
   render(){
