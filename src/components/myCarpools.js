@@ -78,6 +78,31 @@ class MyCarpools extends React.Component{
     return arrivalTime;
   }
 
+  // renderPendingRequests() {
+  //   {carpool.users.map((user, index) => {
+  //     if(this.props.currentUser._id === carpool.host.id) {
+  //       return (
+  //         <div key={index} >
+  //           <span className="member-requests">
+  //             {carpool.pendingRequests.map((member, index) => {
+  //             return (
+  //               <div key={index} >
+  //                 <img className="request-members-images" src={member.profilePicUrl} key={index} 
+  //                   onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+  //                 <button
+  //                   onClick={e => this.acceptRequest(carpool.id, member.id, true)}
+  //                   className="accept-button">Accept</button>
+  //                 <button
+  //                   onClick={e => this.denyRequest(carpool.id, member.id, false)}
+  //                   className="deny-button">Deny</button>
+  //               </div>
+  //             )})}
+  //           </span><br/>
+  //         </div>
+  //       )}})
+  //     }
+  // }
+
   renderResults() {
 
     if (this.props.error) {
@@ -123,14 +148,22 @@ class MyCarpools extends React.Component{
                 <span className="pending-title">
                   {(carpool.pendingRequests.length > 0 && this.props.currentUser._id === carpool.host.id) ? <span className="members-title">Pending Requests: </span> : <span></span>}
                 </span>
+                {
+                  console.log(carpool.users)
+                }
                 {carpool.users.map((user, index) => {
-                  let uniqueMember;
+                  // let memArr = [];
+                  // let uniqueMember;
+                  // memArr.push(user);
+                  // console.log(memArr);
                 if(this.props.currentUser._id === carpool.host.id) {
                   return (
                     <div key={index} >
                       <span className="member-requests">
                         {carpool.pendingRequests.map((member, index) => {
-                          console.log(member)
+                          // let memArr = [];
+                          // memArr.push(member);
+                          // console.log(member, memArr);
                         return (
                           <div key={index} >
                             <img className="request-members-images" src={member.profilePicUrl} key={index} 
