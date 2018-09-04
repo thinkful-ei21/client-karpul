@@ -43,6 +43,7 @@ class FindCarpools extends React.Component {
       key={index}>
       <div className="carpool-item">
         <div className="carpool-item-text">
+        {console.log(carpool)}
           {carpool.host.id === this.props.currentUser._id 
           ? <div className="hosttip"><button
               disabled="disabled"
@@ -54,6 +55,12 @@ class FindCarpools extends React.Component {
               disabled="disabled"
               className="join-button">Request Join</button>
               <span className="hosttiptext join-request">You already joined this carpool</span>
+              </div>
+          : carpool.pendingRequests.includes(this.props.currentUser._id)
+          ? <div className="hosttip"><button
+              disabled="disabled"
+              className="join-button">Request Join</button>
+              <span className="hosttiptext join-request">Request Pending</span>
               </div>
           : <button
               onClick={() => {
