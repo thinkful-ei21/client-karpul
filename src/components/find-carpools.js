@@ -61,11 +61,7 @@ class FindCarpools extends React.Component {
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
           <span className="carpool-details"><span className="details-title">Host: 
-<<<<<<< HEAD
-          </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("profile-modal", carpool.host))}} className="host-image"/>}</span><br/>
-=======
           </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("host-profile-modal", carpool.host))}} className="members-images"/>}</span><br/>
->>>>>>> hostModalUpdate
         </div>
        
       </div>
