@@ -38,19 +38,30 @@ class FindCarpools extends React.Component {
     }
 
     const nearbyCarpools = this.props.nearbyCarpools;
-    console.log(nearbyCarpools)
     const carpool = nearbyCarpools.map((carpool, index) => (
     <li className="carpool-result"
       key={index}>
       <div className="carpool-item">
         <div className="carpool-item-text">
-          <button
-            onClick={() => {
+          {carpool.host.id === this.props.currentUser._id 
+          ? <div className="hosttip"><button
+              disabled="disabled"
+              className="join-button">Request Join</button>
+              <span className="hosttiptext join-request">Unable to join carpools you host</span>
+              </div>
+          : carpool.users.includes(this.props.currentUser._id)
+          ? <div className="hosttip"><button
+              disabled="disabled"
+              className="join-button">Request Join</button>
+              <span className="hosttiptext join-request">You already joined this carpool</span>
+              </div>
+          : <button
+              onClick={() => {
               this.notify();
               this.props.dispatch(joinCarpool(carpool.id))
             }
-          }
-            className="join-button">Request Join</button>
+          } className="join-button">Request Join</button>}
+
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{carpool.days.map((day) => `${day} `)}</span><br/>
           <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{`${this.renderArrivalTime(carpool.arrivalTime)}`}</span><br/>
@@ -61,9 +72,8 @@ class FindCarpools extends React.Component {
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{carpool.details}</span><br/>
           <span className="carpool-details"><span className="details-title">Host: 
-          </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("host-profile-modal", carpool.host))}} className="members-images"/>}</span><br/>
+          </span>{<img src={carpool.host.profilePicUrl} onClick={()=>{this.props.dispatch(showModal("host-profile-modal", carpool.host))}} className="members-images host-image"/>}</span><br/>
         </div>
-       
       </div>
     </li>
   ));
@@ -111,7 +121,8 @@ coor = [
 }
 
 const mapStateToProps = state => ({
-  nearbyCarpools: state.carpools.nearbyCarpools.results
+  nearbyCarpools: state.carpools.nearbyCarpools.results,
+  currentUser: state.auth.currentUser
 })
 
 export default connect(mapStateToProps)(FindCarpools);
