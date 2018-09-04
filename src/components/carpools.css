@@ -154,6 +154,19 @@ button:disabled:hover {
 	z-index: 1;
 }
 
+.hosttiptext.join-request.join-request-host {
+	background-color: rgb(197, 30, 30);
+}
+
+.hosttiptext.join-request.join-request-already {
+	background-color: rgb(226, 223, 43);
+	color: black;
+}
+
+.hosttiptext.join-request.join-request-pending {
+	background-color: green;
+}
+
 .hosttip:hover .hosttiptext {
 	visibility: visible;
 }

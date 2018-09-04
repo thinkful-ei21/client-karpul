@@ -56,19 +56,19 @@ class FindCarpools extends React.Component {
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button">Request Join</button>
-              <span className="hosttiptext join-request">Unable to join carpools you host</span>
+              <span className="hosttiptext join-request join-request-host">Unable to join carpools you host</span>
               </div>
           : carpool.users.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button">Request Join</button>
-              <span className="hosttiptext join-request">You already joined this carpool</span>
+              <span className="hosttiptext join-request join-request-already">You already joined this carpool</span>
               </div>
           : carpool.pendingRequests.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button">Request Join</button>
-              <span className="hosttiptext join-request">Request Pending</span>
+              <span className="hosttiptext join-request join-request-pending">Request Pending</span>
               </div>
           : <button
               onClick={() => {
