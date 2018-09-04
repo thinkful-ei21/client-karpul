@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Example from './example'
 import CarpoolForm from './carpool-form';
 import ProfileModal from './profile-modal';
+import HostProfileModal from './host-profile-modal';
 import FindCarpoolModal from './find-carpool-modal'
 import FindCarpoolProfileModal from './find-carpool-profile-modal'
 
@@ -27,6 +28,9 @@ class Modal extends Component {
     }
     if (this.props.page === 'find-carpool-profile-modal'){
       return <FindCarpoolProfileModal carpool={this.props.id}/>
+    }
+    if (this.props.page === "host-profile-modal"){
+      return <HostProfileModal  user={this.props.id}/>
     }
 
   }
