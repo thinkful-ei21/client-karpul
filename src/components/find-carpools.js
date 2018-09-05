@@ -31,7 +31,7 @@ class FindCarpools extends React.Component {
     let openSeatIds = this.props.nearbyCarpools.map(carpools => carpools.id);
     let riderCapacity = Number(carpool.openSeats);
 
-    if (riderCapacity === NaN || carpool.openSeats === null) {
+    if (riderCapacity === isNaN || carpool.openSeats === null) {
       'Carpool Full';
     }
 
