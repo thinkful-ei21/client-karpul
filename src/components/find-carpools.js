@@ -36,7 +36,6 @@ class FindCarpools extends React.Component {
     }
 
     let currentUserCount;
-
     openSeatIds.map(id => {
       if(!id === carpool.id) {
         return;
@@ -47,22 +46,22 @@ class FindCarpools extends React.Component {
     })
 
     let seatsRemaining = riderCapacity - currentUserCount;
-
     return riderCapacity >= 1 && seatsRemaining > 0 ? seatsRemaining : 'Carpool Full'
 
   }
 
   renderResults() {
-
+   
     if (this.props.error) {
       return <strong>{this.props.error}</strong>;
     }
     const nearbyCarpools = this.props.nearbyCarpools;
     const carpool = nearbyCarpools.map((carpool, index) => (
+      
     <li className="carpool-result"
       key={index}>
       <div className="carpool-item">
-        <div className="carpool-item-text">
+        <div className="carpool-item-text"> 
           {carpool.host.id === this.props.currentUser._id 
           ? <div className="hosttip"><button
               disabled="disabled"
@@ -80,6 +79,12 @@ class FindCarpools extends React.Component {
               disabled="disabled"
               className="join-button">Request Join</button>
               <span className="hosttiptext join-request join-request-pending">Request Pending</span>
+              </div>
+          : this.renderOpenSeats(carpool) === 'Carpool Full'
+          ? <div className="hosttip"><button
+              disabled="disabled"
+              className="join-button">Request Join</button>
+              <span className="hosttiptext join-request join-request-host">Carpool Full</span>
               </div>
           : <button
               onClick={() => {
