@@ -32,13 +32,28 @@ class FindCarpools extends React.Component {
   }
 
   renderOpenSeats(carpool) {
-    let openSeatsLength = this.props.nearbyCarpools.map(carpool => carpool.users.length);
-    let openSeats = Number(carpool.openSeats) - openSeatsLength;
-    if(carpool.openSeats === NaN || carpool.openSeats === null) {
-      return;
+    let openSeatIds = this.props.nearbyCarpools.map(carpools => carpools.id);
+    let riderCapacity = Number(carpool.openSeats);
+
+    if (riderCapacity === NaN || carpool.openSeats === null) {
+      'Carpool Full';
     }
-    console.log(Number(carpool.openSeats), openSeatsLength);
-    return carpool.openSeats >= 1 ? openSeatsLength : "Carpool Full"
+
+    let currentUserCount;
+
+    openSeatIds.map(id => {
+      if(!id === carpool.id) {
+        return;
+      } else if (id === carpool.id) {
+        currentUserCount = carpool.users.length;
+      }
+      return currentUserCount;
+    })
+
+    let seatsRemaining = riderCapacity - currentUserCount;
+
+    return riderCapacity >= 1 && seatsRemaining > 0 ? seatsRemaining : 'Carpool Full'
+
   }
 
   renderResults() {
@@ -110,11 +125,11 @@ coor = [
 ]
   render(){
 
-    if (this.props.nearbyCarpools) {
-      this.props.nearbyCarpools.map((carpool, index) => {
-        console.log(`${index}: ${carpool.startAddress.location.coordinates}`)
-      })
-    }
+    // if (this.props.nearbyCarpools) {
+    //   this.props.nearbyCarpools.map((carpool, index) => {
+    //     console.log(`${index}: ${carpool.startAddress.location.coordinates}`)
+    //   })
+    // }
 
     return (
       <div>
