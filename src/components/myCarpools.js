@@ -54,7 +54,7 @@ class MyCarpools extends React.Component{
   }
 
   notifyLeave = () => {
-    return toast.success(`Leaving Group`, {
+    return toast.info(`Leaving Group`, {
       position: "top-right",
       autoClose: 2500,
       hideProgressBar: true
@@ -62,7 +62,7 @@ class MyCarpools extends React.Component{
   }
 
   notifyRemove = () => {
-    return toast.success(`Removing Group`, {
+    return toast.info(`Removing Group`, {
       position: "top-right",
       autoClose: 2500,
       hideProgressBar: true

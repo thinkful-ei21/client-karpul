@@ -1,5 +1,5 @@
 import React from 'react';
-import { joinCarpool } from '../actions/carpools';
+import { joinCarpool, fetchUserCarpools } from '../actions/carpools';
 import {connect} from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,7 +10,7 @@ import Maps from './maps';
 class FindCarpools extends React.Component {
 
   notify = () => {
-    return toast.success(`You Joined ${this} Group`, {
+    return toast.info(`Your request was sent`, {
       position: "top-right",
       autoClose: 2500,
       hideProgressBar: true
@@ -90,6 +90,7 @@ class FindCarpools extends React.Component {
               onClick={() => {
               this.notify();
               this.props.dispatch(joinCarpool(carpool.id))
+              this.props.dispatch(fetchUserCarpools())
             }
           } className="join-button">Request Join</button>}
 
