@@ -15,15 +15,15 @@ body {
 
 form.login-form, form.carpool-form {
   margin:  0 auto;
+  margin-top: 100px;
   display: block;
   padding: 10px 10px 40px 10px;
   font-size: 20px;
   font-weight: 700;
-  color: black;
-  border: 2px solid rgb(117, 29, 29);
+  color: black;  
   border-radius: 5px;
   width: 320px;
-  overflow: scroll;
+  overflow: auto;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;

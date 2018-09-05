@@ -12,8 +12,8 @@ import MyCarpools from './myCarpools';
 import Help from './help';
 import FindCarpools from './find-carpools';
 import Profile from './profile';
-import Modal from './modal'
-
+import Modal from './modal';
+import './app.css';
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
@@ -47,16 +47,18 @@ export class App extends React.Component {
     render() {
         return (
             <div className="app">
-                <HeaderBar />
+                <HeaderBar />                 
                 <Modal />
-                <Route exact path="/" component={LandingPage} />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/profile" component={Profile} />
-                <Route exact path="/find-carpool" component={FindCarpools} />
-                <Route exact path="/my-carpools" component={MyCarpools} />
-                <Route exact path="/help" component={Help} />
-                <Route exact path="/register" component={RegistrationPage} />
-                <Route path="/carpools/:carpool" component={CarpoolPage} />
+                <div>
+                    <div className="imageHolder">
+                        <div className="verticalPadding"/>
+                        <img src={require('./Clipart.jpg')}/>
+                        <div className="verticalPadding"/>
+                    </div>                    
+                    <Route exact path="/" component={LandingPage} />
+                    <Route path="/dashboard" component={Dashboard} />
+                    <Route exact path="/register" component={RegistrationPage} />  
+                </div>                                              
             </div>
         );
     }

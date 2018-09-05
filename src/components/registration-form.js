@@ -39,7 +39,7 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <h2>Register</h2>
+                <h2>Create An Account</h2>
                 {error}
                 <Field component={Input}
                     type="text"
@@ -88,9 +88,10 @@ export class RegistrationForm extends React.Component {
                     Register
                 </button>
                 <br />
+                <br />
                 or
                 <Link to="/" className="login-link">
-                    <h2 className="register-text">Login</h2>
+                    <h2 className="register-text">Already a memeber ??</h2>
                 </Link>
             </form>
            

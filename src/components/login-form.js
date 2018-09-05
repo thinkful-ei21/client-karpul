@@ -40,7 +40,7 @@ export class LoginForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <h2>Login</h2>
+                <h2> Sign In </h2>
                 {error}
                 <Field
                     component={Input}
@@ -67,8 +67,9 @@ export class LoginForm extends React.Component {
                     Log in
                 </button>
                 <br />
+                <br />
                 or
-                <Link to="/register" className="register-link"><h2 className="register-text">Register</h2></Link>
+                <Link to="/register" className="register-link"><h6 className="register-text">Not a member ??</h6></Link>
             </Form>
         );
     }
