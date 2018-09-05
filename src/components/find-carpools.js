@@ -9,10 +9,6 @@ import './carpools.css';
 import Maps from './maps';
 class FindCarpools extends React.Component {
 
-  componentDidMount() {
-    // console.log(this.props.nearbyCarpools)
-  }
-
   notify = () => {
     return toast.success(`You Joined ${this} Group`, {
       position: "top-right",
@@ -124,12 +120,6 @@ coor = [
   },
 ]
   render(){
-
-    // if (this.props.nearbyCarpools) {
-    //   this.props.nearbyCarpools.map((carpool, index) => {
-    //     console.log(`${index}: ${carpool.startAddress.location.coordinates}`)
-    //   })
-    // }
 
     return (
       <div>
