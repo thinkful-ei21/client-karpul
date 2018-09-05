@@ -23,7 +23,7 @@ form.login-form, form.carpool-form {
   border: 2px solid rgb(117, 29, 29);
   border-radius: 5px;
   width: 320px;
-  overflow: scroll;
+  overflow: auto;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;

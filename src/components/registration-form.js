@@ -38,8 +38,8 @@ export class RegistrationForm extends React.Component {
                 role="complementary"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
-                )}>
-                <h2>Register</h2>
+                )}>     
+                <h2>Sign Up</h2>           
                 {error}
                 <Field component={Input}
                     type="text"
@@ -88,9 +88,10 @@ export class RegistrationForm extends React.Component {
                     Register
                 </button>
                 <br />
+                <br />                
                 or
                 <Link to="/" className="login-link">
-                    <h2 className="register-text">Login</h2>
+                    <h2 className="register-text">Already have an account??</h2>
                 </Link>
             </form>
            

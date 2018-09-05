@@ -10,17 +10,7 @@ import {required, nonEmpty} from '../validators';
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
-    }
-
-    // handleUploadFile = (event) => {
-    //     const data = new FormData();
-    //     data.append('file', event.target.files[0]);
-    //     data.append('name', 'some value user types');
-    //     data.append('description', 'some value user types');
-    //     // '/files' is your node.js route that triggers our middleware
-    //     axios.post(`${API_BASE_URL}files`, data).then((response) => {
-    //       console.log(response); // do something with the response
-    //     });}
+    }   
 
     render() {
         let error;
@@ -39,8 +29,8 @@ export class LoginForm extends React.Component {
                 role="complementary"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
-                )}>
-                <h2>Login</h2>
+                )}> 
+                <h2>Sign In</h2>               
                 {error}
                 <Field
                     component={Input}
@@ -67,8 +57,9 @@ export class LoginForm extends React.Component {
                     Log in
                 </button>
                 <br />
+                <br />
                 or
-                <Link to="/register" className="register-link"><h2 className="register-text">Register</h2></Link>
+                <Link to="/register" className="register-link"><h2 className="register-text">Don't have an account??</h2></Link>                
             </Form>
         );
     }
