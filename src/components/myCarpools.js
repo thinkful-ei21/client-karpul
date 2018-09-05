@@ -125,7 +125,6 @@ class MyCarpools extends React.Component{
                 <span className="pending-title">
                   {(carpool.pendingRequests.length > 0 && this.props.currentUser._id === carpool.host.id) ? <span className="members-title">Pending Requests: </span> : <span></span>}
                 </span>
-                {console.log(carpool.users)}
                 {this.props.currentUser._id === carpool.host.id ? (
                   <div key={index} >
                     <span className="member-requests">
