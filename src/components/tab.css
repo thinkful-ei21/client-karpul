@@ -31,3 +31,51 @@ ul.tabContainer li a:hover {
 ul.tabContainer li a.active {
   background-color: salmon;
 }
+
+ul.tabContainer li a.icon {
+  display: none;
+}
+
+
+@media only screen and (max-width: 420px) {
+
+ul.tabContainer {
+  margin-top: 60px;
+}
+
+ul.tabContainer.responsive li.first-menu-spot{
+  height: 45px;
+}
+
+ul.tabContainer li a {display: none;}
+
+ul.tabContainer li a.icon {
+    float: right;
+    display: block;
+}
+
+ul.tabContainer li.icon-li {
+  float: right;
+  display: block;
+}
+
+/* ul.tabContainer.responsive {position: relative;} */
+  ul.tabContainer.responsive li a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.tabContainer.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  ul.tabContainer.responsive li a{
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  
+}

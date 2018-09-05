@@ -129,3 +129,29 @@ button.close-modal-button {
   font-size: 22px;
   margin-bottom: 0;
 }
+
+@media only screen and (max-width: 420px) {
+  .dashboard {
+    margin-top: 110px;
+  }
+
+  form.login-form{
+    margin-top: 30px;
+    font-size: 16px;
+  }
+
+  .join-button, .leave-button {
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  button {
+    margin-top: 0;
+  }
+
+  input[type="text"]{
+    height: 24px;
+    font-size: 18px;
+  }
+  
+}

@@ -177,7 +177,7 @@ button.remove-button:hover {
 		display: grid;
 		grid-template-columns: 100%;
 		grid-gap: 20px;
-		margin-left: -25px;
+		/* margin-left: -25px; */
 	}
 
 	.carpool-item {
@@ -195,11 +195,19 @@ button.remove-button:hover {
 }
 
 /* Xtra large devices (landscape tablets, 354 and down) */
-@media only screen and (max-width: 354px) {
+@media only screen and (max-width: 420px) {
 
 	button.new-search-button {
 		width: 31%;
 		font-size: 98%;
+	}
+
+	.carpool-result {
+		margin: 5px;
+	}
+
+	.title {
+		margin-bottom: 10px;
 	}
 }
 

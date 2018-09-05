@@ -107,3 +107,33 @@
   }
 }
 
+@media only screen and (max-width: 420px) {
+  .log-out-button {
+    display: none;
+  }
+
+  .header-bar {
+    height: 60px;
+  }
+
+  .header-bar > h1 {
+    text-align: left;
+    font-size: 30px;
+    margin-top: 15px;
+  }
+
+  .header-profile-pic-container{
+    right: 10px;
+    top: -10px;
+  }
+
+  .header-username {
+    position: fixed;
+    font-size: 16px;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100px;
+    margin-top: 15px;
+  }
+}

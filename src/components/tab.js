@@ -21,6 +21,15 @@ export default class Tab extends React.Component{
     }
   }
 
+  menuFunction() {
+    var x = document.getElementById("tabContainer");
+    if (x.className === "tabContainer") {
+        x.className += " responsive";
+    } else {
+        x.className = "tabContainer";
+    }
+}
+
   renderTabComponent(){
     switch(this.state.active){
       case 'profile':
@@ -44,12 +53,14 @@ export default class Tab extends React.Component{
   render(){
     return (
       <div>
-        <ul className="tabContainer">
+        <ul className="tabContainer" id="tabContainer">
+          <li className="first-menu-spot"></li>
           <li><a className={this.generateActiveStyle('profile')} onClick={() => this.setState({active: 'profile'})}>Profile</a></li>
           <li><a className={this.generateActiveStyle('findCarpools')} onClick={() => this.setState({active: 'findCarpools'})}>Find Karpüls</a></li>
           <li><a className={this.generateActiveStyle('myCarpools')} onClick={() => this.setState({active: 'myCarpools'})}>My Karpüls</a></li>
-          <li><a className={this.generateActiveStyle('GPS')} onClick={() => this.setState({active: 'GPS'})}>GPS</a></li>
-          <li><a className={this.generateActiveStyle('help')} onClick={() => this.setState({active: 'help'})}>Help</a></li>
+          {/* <li><a className={this.generateActiveStyle('GPS')} onClick={() => this.setState({active: 'GPS'})}>GPS</a></li>
+          <li><a className={this.generateActiveStyle('help')} onClick={() => this.setState({active: 'help'})}>Help</a></li> */}
+          <li className="icon-li"><a className="icon" onClick={() => this.menuFunction()}>Menu</a></li>
         </ul>
         {this.renderTabComponent()}
     </div>);

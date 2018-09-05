@@ -65,3 +65,26 @@
   width: 400px;
   -webkit-border-radius: 5px;
 }
+
+@media only screen and (max-width: 420px) {
+
+  .profile-container {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 16px;
+    padding-bottom: 10px;
+    bottom: 0;
+  }
+  .pic-container {
+    font-size: 22px;
+  }
+
+
+  .dashboard {
+    margin-top: 120px;
+  }
+
+  
+	
+}

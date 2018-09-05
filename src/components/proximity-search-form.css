@@ -41,4 +41,14 @@
       padding-top: 10px;
   }
   
-  
+  @media only screen and (max-width: 420px) {
+
+    .algolia-places {
+        width: 100%;;
+      }
+    
+    .ap-input {
+        font-size: 10px;
+    }
+
+  }
