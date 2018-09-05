@@ -6,8 +6,20 @@ import Tab from './tab';
 
 
 export class Dashboard extends React.Component {
+
+        state = {
+          active:'profile'
+        };
+    
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
+    }
+
+    changeTab = (tab, url) => {
+        this.props.history.replace(url)
+        this.setState({
+            active: tab
+        })
     }
 
     render() {
@@ -16,7 +28,8 @@ export class Dashboard extends React.Component {
                 <div className="header-username">
                     Welcome {this.props.username}
                 </div>
-                <Tab />
+                <Tab history={this.props.history} changeTab={this.changeTab}
+                active={this.props.active || this.state.active}/>
             </div>
 
         );
@@ -29,6 +42,7 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         protectedData: state.protectedData.data,
+
     };
 };
 

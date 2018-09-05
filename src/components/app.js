@@ -50,11 +50,12 @@ export class App extends React.Component {
                 <HeaderBar />
                 <Modal />
                 <Route exact path="/" component={LandingPage} />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/profile" component={Profile} />
-                <Route exact path="/find-carpool" component={FindCarpools} />
-                <Route exact path="/my-carpools" component={MyCarpools} />
-                <Route exact path="/help" component={Help} />
+                <Route exact path="/dashboard" component={(props) => <Dashboard active={'profile'} {...props}/>} />
+                <Route exact path="/profile" component={(props) => <Dashboard active={'profile'} {...props}/>} />
+                <Route exact path="/find-carpools" component={(props) => <Dashboard active={'findCarpools'} {...props}/>} />
+                <Route exact path="/my-carpools" component={(props) => <Dashboard active={'myCarpools'} {...props}/>} />
+                {/* <Route exact path="/gps" component={(props) => <Dashboard active={'gps'} {...props}/>} /> */}
+                <Route exact path="/help" component={(props) => <Dashboard active={'help'} {...props}/>} />
                 <Route exact path="/register" component={RegistrationPage} />
                 <Route path="/carpools/:carpool" component={CarpoolPage} />
             </div>

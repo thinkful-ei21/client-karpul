@@ -31,36 +31,44 @@ class FindCarpools extends React.Component {
     return arrivalTime;
   }
 
+  renderOpenSeats(carpool) {
+    let openSeatsLength = this.props.nearbyCarpools.map(carpool => carpool.users.length);
+    let openSeats = Number(carpool.openSeats) - openSeatsLength;
+    if(carpool.openSeats === NaN || carpool.openSeats === null) {
+      return;
+    }
+    console.log(Number(carpool.openSeats), openSeatsLength);
+    return carpool.openSeats >= 1 ? openSeatsLength : "Carpool Full"
+  }
+
   renderResults() {
 
     if (this.props.error) {
       return <strong>{this.props.error}</strong>;
     }
-
     const nearbyCarpools = this.props.nearbyCarpools;
     const carpool = nearbyCarpools.map((carpool, index) => (
     <li className="carpool-result"
       key={index}>
       <div className="carpool-item">
         <div className="carpool-item-text">
-        {console.log(carpool)}
           {carpool.host.id === this.props.currentUser._id 
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button">Request Join</button>
-              <span className="hosttiptext join-request">Unable to join carpools you host</span>
+              <span className="hosttiptext join-request join-request-host">Unable to join carpools you host</span>
               </div>
           : carpool.users.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button">Request Join</button>
-              <span className="hosttiptext join-request">You already joined this carpool</span>
+              <span className="hosttiptext join-request join-request-already">You already joined this carpool</span>
               </div>
           : carpool.pendingRequests.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button">Request Join</button>
-              <span className="hosttiptext join-request">Request Pending</span>
+              <span className="hosttiptext join-request join-request-pending">Request Pending</span>
               </div>
           : <button
               onClick={() => {
@@ -72,7 +80,8 @@ class FindCarpools extends React.Component {
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{carpool.days.map((day) => `${day} `)}</span><br/>
           <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{`${this.renderArrivalTime(carpool.arrivalTime)}`}</span><br/>
-          <span className="open-seats"><span className="seats-title">Open Seats: </span>{carpool.openSeats}</span><br/>
+          <span className="open-seats"><span className="seats-title">Open Seats: </span>
+          {this.renderOpenSeats(carpool)}</span><br/>
           <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetAddress} {carpool.startAddress.city}, {carpool.startAddress.state}
           </span><br/>
           <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetAddress} {carpool.endAddress.city}, {carpool.endAddress.state}

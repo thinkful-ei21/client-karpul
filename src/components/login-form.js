@@ -4,23 +4,23 @@ import {Link} from 'react-router-dom';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
-import axios from 'axios';
-import {API_BASE_URL} from '../config';
+// import axios from 'axios';
+// import {API_BASE_URL} from '../config';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
     }
 
-    handleUploadFile = (event) => {
-        const data = new FormData();
-        data.append('file', event.target.files[0]);
-        data.append('name', 'some value user types');
-        data.append('description', 'some value user types');
-        // '/files' is your node.js route that triggers our middleware
-        axios.post(`${API_BASE_URL}files`, data).then((response) => {
-          console.log(response); // do something with the response
-        });}
+    // handleUploadFile = (event) => {
+    //     const data = new FormData();
+    //     data.append('file', event.target.files[0]);
+    //     data.append('name', 'some value user types');
+    //     data.append('description', 'some value user types');
+    //     // '/files' is your node.js route that triggers our middleware
+    //     axios.post(`${API_BASE_URL}files`, data).then((response) => {
+    //       console.log(response); // do something with the response
+    //     });}
 
     render() {
         let error;
