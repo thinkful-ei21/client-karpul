@@ -12,7 +12,8 @@ import MyCarpools from './myCarpools';
 import Help from './help';
 import FindCarpools from './find-carpools';
 import Profile from './profile';
-import Modal from './modal'
+import Modal from './modal';
+import './app.css';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {

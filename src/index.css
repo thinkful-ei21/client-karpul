@@ -24,6 +24,7 @@ form.login-form, form.carpool-form {
   border-radius: 5px;
   width: 320px;
   overflow: auto;
+  background-color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;

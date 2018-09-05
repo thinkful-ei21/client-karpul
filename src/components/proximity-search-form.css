@@ -1,3 +1,9 @@
+form{
+    background-color: white;
+    width: 300px;
+    margin: 50px auto;
+    padding-top: 60px;
+}
 .algolia-autocomplete {
     width: 100%;
   }
@@ -21,6 +27,9 @@
   .ap-input {
       padding-left: 5px;
       padding-right: 5px;
+      margin: 0 auto 0 -100px !important; 
+      width:30px;
+      
   }
 
   .proximity-search-button{
@@ -48,6 +57,7 @@
       }
     
     .ap-input {
+        width: 300px;
         font-size: 10px;
     }
 

@@ -42,6 +42,7 @@ li {
 	text-align: start;
 	border-radius: 3px;
 	position: relative;
+	background-color: white;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
