@@ -7,6 +7,7 @@
 .markers {
   margin-top: -50px;
   margin-left: -5px;
+
   padding-top: 10px;
   padding-left: 2px;
   border-top-left-radius: 60%;
@@ -43,6 +44,7 @@
 }
 
 .startMarkers {
+  
   font-size: 15px;
   visibility: hidden;
   color: black;
@@ -63,8 +65,4 @@
   opacity: 1;
   border-top: 50px solid rgb(138, 230, 0);
 
-}
-
-.overlays {
-  display: none;
 }
