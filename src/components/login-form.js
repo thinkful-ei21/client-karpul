@@ -65,7 +65,8 @@ export class LoginForm extends React.Component {
                     <br />
                     <br />
                     or
-                    <Link to="/register" className="register-link"><h2 className="register-text">Don't have an account??</h2></Link>                                
+                    <Link to="/register" className="register-link"><h2 className="register-text">Don't have an account??</h2></Link>
+                    <p>Need a test account?<br />Username: Jondoe<br />Password: password01</p>
                 </Form>
             </div>
         );
