@@ -187,6 +187,7 @@ export const leaveCarpool = carpoolId => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
+    .then(() => dispatch(fetchUserCarpools()))
     .catch(err => {
         dispatch(leaveCarpoolError(err))
     })

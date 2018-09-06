@@ -2,6 +2,7 @@ import React from 'react';
 import Profile from './profile';
 import FindCarpools from './find-carpools';
 import MyCarpools from './myCarpools';
+import { fetchNearbyCarpools } from '../actions/carpools';
 import './tab.css';
 export default class Tab extends React.Component{
 
@@ -43,7 +44,9 @@ export default class Tab extends React.Component{
           <li><a className={this.generateActiveStyle('profile')} 
             onClick={() => this.props.changeTab('profile', '/profile')}>Profile</a></li>
           <li><a className={this.generateActiveStyle('findCarpools')} 
-            onClick={() => this.props.changeTab('findCarpools', '/find-carpools')}>Find Karpüls</a></li>
+            onClick={() => { const values = {fromTime: "09:00:00", toTime: "17:00:00", searchRadius: "5", proximitySearch: "", days: Array(0)}
+            fetchNearbyCarpools(values);
+              this.props.changeTab('findCarpools', '/find-carpools')}}>Find Karpüls</a></li>
           <li><a className={this.generateActiveStyle('myCarpools')} 
             onClick={() => this.props.changeTab('myCarpools', '/my-carpools')}>My Karpüls</a></li>
           <li className="icon-li"><a className="icon" 

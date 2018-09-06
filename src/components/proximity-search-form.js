@@ -36,12 +36,15 @@ export class ProximitySearchForm extends React.Component {
         }
       });
     }
+    
     this.props.initialize({fromTime: "09:00:00", toTime: "17:00:00", searchRadius: "5"})
+    
   }
   
 
   onSubmit(values) {
     values.days = this.state.days;
+    console.log(values)
     return this.props.dispatch(fetchNearbyCarpools(values));
   }
 
