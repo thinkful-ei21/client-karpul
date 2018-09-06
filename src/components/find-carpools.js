@@ -5,9 +5,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {showModal} from '../actions/modals';
 import ProximitySearchForm from './proximity-search-form';
+import {fetchPic} from '../actions/users'
 import './carpools.css';
 import Maps from './maps';
 class FindCarpools extends React.Component {
+
+  componentDidMount(){
+    this.props.dispatch(fetchPic(this.props.currentUser.username))
+  }
 
   notify = () => {
     return toast.info(`Your request was sent`, {

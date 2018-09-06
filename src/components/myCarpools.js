@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CarpoolForm from './carpool-form';
 import {  fetchUserCarpools, deleteCarpool, leaveCarpool  } from '../actions/carpools';
+import {fetchPic} from '../actions/users'
 import {requestRequest} from '../actions/request';
 import './carpools.css';
 import {showModal} from '../actions/modals';
@@ -21,7 +22,8 @@ class MyCarpools extends React.Component{
 
   }
 
-  componentDidMount() {
+  componentDidMount(){
+    this.props.dispatch(fetchPic(this.props.currentUser.username))
     this.getMyCarpools();
   }
 
