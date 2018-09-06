@@ -9,6 +9,7 @@ body {
   text-align: center;
   height: 100%;
   background-color: #110E0E;
+  font-family: 'Cabin', sans-serif;
 }
 
 form.login-form, form.carpool-form, form.proximity-search-form {
@@ -18,7 +19,6 @@ form.login-form, form.carpool-form, form.proximity-search-form {
   font-size: 20px;
   font-weight: 400;
   color: black;
-  /* border: 2px solid rgb(117, 29, 29); */
   border-radius: 5px;
   width: 320px;
   overflow: auto;
@@ -71,6 +71,7 @@ button {
   font-size: 18px;
   margin: 20px 0 0 0;
   border-radius: 3px;
+  font-family: 'Cabin', sans-serif;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -159,7 +160,6 @@ button.close-modal-button {
   }
 
   form.login-form{
-    /* margin-top: 30px; */
     font-size: 16px;
     margin: 0 auto;
     width: 100%;
@@ -168,6 +168,7 @@ button.close-modal-button {
   .join-button, .leave-button {
     height: 30px;
     font-size: 16px;
+    width: fit-content;
   }
   
   button {

@@ -91,7 +91,6 @@ export class ProximitySearchForm extends React.Component {
               id="proximitySearch"              
               validate={[required, nonEmpty]}
           />
-        {/* <button type="submit" className="proximity-search-button"  disabled={this.props.pristine || this.props.submitting} /> */}
           <label className="days-label" htmlFor="days">Days of Week</label>
                 <CheckboxGroup
                     checkboxDepth={2} // This is needed to optimize the checkbox group
