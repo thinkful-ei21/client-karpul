@@ -29,13 +29,13 @@ export function FindCarpoolModal(props){
     return (
         <div className="carpool-item">
         <div className="carpool-item-text">
-          <button
+          {/* <button
             onClick={() => {
               notify();
               props.dispatch(joinCarpool(props.carpool.id))
             }
           }
-            className="join-button">Join</button>
+            className="join-button">Join</button> */}
           <h2 className="title">{props.carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{props.carpool.days.map((day) => `${day} `)}</span><br/>
           <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{renderArrivalTime(props.carpool.arrivalTime)}</span><br/>
@@ -46,8 +46,8 @@ export function FindCarpoolModal(props){
           </span><br/>
           <span className="carpool-details"><span className="details-title">Details: </span>{props.carpool.details}</span><br/>
           <span className="carpool-details"><span className="details-title">Host: 
-          </span>{<img src={props.carpool.host.profilePicUrl} onClick={()=>{props.dispatch(showModal("find-carpool-profile-modal", props.carpool))}} className="members-images"/>}</span><br/>
-          <button onClick={() => props.dispatch(hideModal())}>Close</button>
+          </span>{<img src={props.carpool.host.profilePicUrl} onClick={()=>{props.dispatch(showModal("find-carpool-profile-modal", props.carpool))}} className="members-images host-image"/>}</span><br/>
+          <button className="close-model-button" onClick={() => props.dispatch(hideModal())}>Close</button>
         </div>
        
       </div>
