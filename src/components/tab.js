@@ -15,6 +15,7 @@ export default class Tab extends React.Component{
     var x = document.getElementById("tabContainer");
     if (x.className === "tabContainer") {
         x.className += " responsive";
+        x.classList.toggle("change")
     } else {
         x.className = "tabContainer";
     }
@@ -46,7 +47,13 @@ export default class Tab extends React.Component{
           <li><a className={this.generateActiveStyle('myCarpools')} 
             onClick={() => this.props.changeTab('myCarpools', '/my-carpools')}>My Karpüls</a></li>
           <li className="icon-li"><a className="icon" 
-            onClick={() => this.menuFunction()}>Menu</a></li>
+            onClick={() => this.menuFunction()}>
+            <div class="burger">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+            </a></li>
         </ul>
         {this.renderTabComponent()}
     </div>);

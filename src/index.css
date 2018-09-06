@@ -155,7 +155,7 @@ button.close-modal-button {
 
 @media only screen and (max-width: 420px) {
   .dashboard {
-    margin-top: 110px;
+    margin-top: 150px;
   }
 
   form.login-form{
@@ -174,8 +174,7 @@ button.close-modal-button {
     margin-top: 0;
   }
 
-  input[type="text"]{
-    height: 24px;
+  input[type="text"] {
     font-size: 18px;
   }
 
