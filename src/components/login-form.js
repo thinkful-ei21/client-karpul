@@ -30,7 +30,7 @@ export class LoginForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}> 
-                <img src={require('./carpool.jpg')} alt="image"/>
+                {/* <img src={require('./carpool.jpg')} alt="image"/> */}
                 <h2>Sign In</h2>               
                 {error}                
                 <Field
@@ -60,7 +60,7 @@ export class LoginForm extends React.Component {
                 <br />
                 <br />
                 or
-                <Link to="/register" className="register-link"><h2 className="register-text">Don't have an account??</h2></Link>                                
+                <Link to="/register" className="register-link"><h2 className="register-text">Don't have an account??</h2></Link>                                                
             </Form>
         );
     }

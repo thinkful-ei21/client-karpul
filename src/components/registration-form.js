@@ -39,7 +39,7 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>  
-                <img src={require('./carpool.jpg')} alt="image"/>   
+                {/* <img src={require('./carpool.jpg')} alt="image"/>    */}
                 <h2>Sign Up</h2>           
                 {error}
                 <Field component={Input}
