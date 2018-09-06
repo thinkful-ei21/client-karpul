@@ -154,5 +154,17 @@ button.close-modal-button {
     height: 24px;
     font-size: 18px;
   }
+
+  .home {
+    padding-top: 20vh;
+  }
   
+  form.carpool-form {
+    width: 100%;
+  }
+  
+  .create-carpool-button {
+    margin-bottom: 5px;
+  }
+
 }

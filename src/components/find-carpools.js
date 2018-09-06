@@ -1,5 +1,5 @@
 import React from 'react';
-import { joinCarpool } from '../actions/carpools';
+import { joinCarpool, fetchUserCarpools } from '../actions/carpools';
 import {connect} from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,12 +9,8 @@ import './carpools.css';
 import Maps from './maps';
 class FindCarpools extends React.Component {
 
-  componentDidMount() {
-    // console.log(this.props.nearbyCarpools)
-  }
-
   notify = () => {
-    return toast.success(`You Joined ${this} Group`, {
+    return toast.info(`Your request was sent`, {
       position: "top-right",
       autoClose: 2500,
       hideProgressBar: true
@@ -32,26 +28,40 @@ class FindCarpools extends React.Component {
   }
 
   renderOpenSeats(carpool) {
-    let openSeatsLength = this.props.nearbyCarpools.map(carpool => carpool.users.length);
-    let openSeats = Number(carpool.openSeats) - openSeatsLength;
-    if(carpool.openSeats === NaN || carpool.openSeats === null) {
-      return;
+    let openSeatIds = this.props.nearbyCarpools.map(carpools => carpools.id);
+    let riderCapacity = Number(carpool.openSeats);
+
+    if (riderCapacity === isNaN || carpool.openSeats === null) {
+      'Carpool Full';
     }
-    console.log(Number(carpool.openSeats), openSeatsLength);
-    return carpool.openSeats >= 1 ? openSeatsLength : "Carpool Full"
+
+    let currentUserCount;
+    openSeatIds.map(id => {
+      if(!id === carpool.id) {
+        return;
+      } else if (id === carpool.id) {
+        currentUserCount = carpool.users.length;
+      }
+      return currentUserCount;
+    })
+
+    let seatsRemaining = riderCapacity - currentUserCount;
+    return riderCapacity >= 1 && seatsRemaining > 0 ? seatsRemaining : 'Carpool Full'
+
   }
 
   renderResults() {
-
+   
     if (this.props.error) {
       return <strong>{this.props.error}</strong>;
     }
     const nearbyCarpools = this.props.nearbyCarpools;
     const carpool = nearbyCarpools.map((carpool, index) => (
+      
     <li className="carpool-result"
       key={index}>
       <div className="carpool-item">
-        <div className="carpool-item-text">
+        <div className="carpool-item-text"> 
           {carpool.host.id === this.props.currentUser._id 
           ? <div className="hosttip"><button
               disabled="disabled"
@@ -70,10 +80,17 @@ class FindCarpools extends React.Component {
               className="join-button">Request Join</button>
               <span className="hosttiptext join-request join-request-pending">Request Pending</span>
               </div>
+          : this.renderOpenSeats(carpool) === 'Carpool Full'
+          ? <div className="hosttip"><button
+              disabled="disabled"
+              className="join-button">Request Join</button>
+              <span className="hosttiptext join-request join-request-host">Carpool Full</span>
+              </div>
           : <button
               onClick={() => {
               this.notify();
               this.props.dispatch(joinCarpool(carpool.id))
+              this.props.dispatch(fetchUserCarpools())
             }
           } className="join-button">Request Join</button>}
 
@@ -109,12 +126,6 @@ coor = [
   },
 ]
   render(){
-
-    if (this.props.nearbyCarpools) {
-      this.props.nearbyCarpools.map((carpool, index) => {
-        console.log(`${index}: ${carpool.startAddress.location.coordinates}`)
-      })
-    }
 
     return (
       <div>

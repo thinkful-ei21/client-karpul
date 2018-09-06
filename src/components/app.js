@@ -8,10 +8,6 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import CarpoolPage from './carpool-page';
 import {refreshAuthToken} from '../actions/auth';
-import MyCarpools from './myCarpools';
-import Help from './help';
-import FindCarpools from './find-carpools';
-import Profile from './profile';
 import Modal from './modal';
 import './app.css';
 

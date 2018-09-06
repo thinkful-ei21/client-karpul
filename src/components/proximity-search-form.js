@@ -23,7 +23,6 @@ export class ProximitySearchForm extends React.Component {
 
   componentDidMount(){
     if(document.querySelector('#proximitySearch')){
-      console.log("triggered")
       placesAutocomplete = places({
         container: document.querySelector('#proximitySearch'),
         countries: ['US'],

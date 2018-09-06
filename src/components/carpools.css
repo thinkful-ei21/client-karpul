@@ -32,6 +32,13 @@ li {
   width: 95%;
   margin-top: -15px;
 	padding: 10px;
+	text-align: left;
+}
+
+.close-model-button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 .carpool-result {
@@ -213,7 +220,7 @@ button:disabled:hover {
 	}
 
 	.carpool-item {
-		width: 280px;
+		width: 100%;
 	}
 
 	button.new-search-button {
@@ -229,6 +236,8 @@ button:disabled:hover {
 /* Xtra large devices (landscape tablets, 354 and down) */
 @media only screen and (max-width: 420px) {
 
+	
+
 	button.new-search-button {
 		width: 31%;
 		font-size: 98%;
@@ -241,6 +250,8 @@ button:disabled:hover {
 	.title {
 		margin-bottom: 10px;
 	}
+
+	
 }
 
 /* Medium devices (landscape tablets, 600 and up) */
