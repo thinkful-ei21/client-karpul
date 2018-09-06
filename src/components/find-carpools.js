@@ -7,7 +7,8 @@ import {showModal} from '../actions/modals';
 import ProximitySearchForm from './proximity-search-form';
 import './carpools.css';
 import Maps from './maps';
-class FindCarpools extends React.Component {
+
+export class FindCarpools extends React.Component {
 
   componentDidMount() {
     // console.log(this.props.nearbyCarpools)
