@@ -14,7 +14,6 @@ export function LandingPage(props) {
     return (
         <div className="home">
             <LoginForm />  
-            <About />  
         </div>
     );
 }

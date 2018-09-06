@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus, Form} from 'redux-form';
-import {required, nonEmpty, phoneNumber, length} from '../validators';
+import {required, phoneNumber, length} from '../validators';
 import {connect} from 'react-redux';
 import Input from './input';
 import axios from 'axios'
@@ -61,6 +61,7 @@ export class Profile extends React.Component{
               component="select"
               type="textarea"
               name="state"
+              className="state-selector"
               id="state"
               label="State"
               aria-label="State"

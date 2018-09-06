@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CarpoolForm from './carpool-form';
 import {  fetchUserCarpools, deleteCarpool, leaveCarpool  } from '../actions/carpools';
+import {fetchPic} from '../actions/users'
 import {requestRequest} from '../actions/request';
 import './carpools.css';
 import {showModal} from '../actions/modals';
@@ -15,12 +16,14 @@ class MyCarpools extends React.Component{
     this.state = { 
       currentUser: null,
       errorMessage: '',
-      carpools: []
+      carpools: [],
+      nearbyCarpools: []
     }
 
   }
 
-  componentDidMount() {
+  componentDidMount(){
+    this.props.dispatch(fetchPic(this.props.currentUser.username))
     this.getMyCarpools();
   }
 
@@ -53,7 +56,7 @@ class MyCarpools extends React.Component{
   }
 
   notifyLeave = () => {
-    return toast.success(`Leaving Group`, {
+    return toast.info(`Leaving Group`, {
       position: "top-right",
       autoClose: 2500,
       hideProgressBar: true
@@ -61,7 +64,7 @@ class MyCarpools extends React.Component{
   }
 
   notifyRemove = () => {
-    return toast.success(`Removing Group`, {
+    return toast.info(`Removing Group`, {
       position: "top-right",
       autoClose: 2500,
       hideProgressBar: true
@@ -78,11 +81,23 @@ class MyCarpools extends React.Component{
     return arrivalTime;
   }
 
+  renderOpenSeats(carpool) {
+    let riderCapacity = Number(carpool.openSeats);
+    let currentUserCount = carpool.users.length;
+    let seatsRemaining = riderCapacity - currentUserCount;
+    
+    if (riderCapacity === NaN || carpool.openSeats === null) {
+      'Carpool Full';
+    }
+
+    return riderCapacity >= 1 && seatsRemaining > 0 ? seatsRemaining : 'Carpool Full'
+
+  }
+
   renderResults() {
 
     if (this.props.error) {
       return <strong>{this.props.error}</strong>;
-      {console.log("triggered")}
     }
     const userCarpools = this.props.carpools.userCarpools;
     const carpool = userCarpools.map((carpool, index) => (
@@ -94,7 +109,7 @@ class MyCarpools extends React.Component{
           <h2 className="title">{carpool.carpoolTitle}</h2>
           <span className="days"><span className="days-title">Days: </span>{carpool.days.map((day) => `${day} `)}</span><br/>
           <span className="arrival-time"><span className="arrival-title">Destination Arrival Time: </span>{`${this.renderArrivalTime(carpool.arrivalTime)}`}</span><br/>
-          <span className="open-seats"><span className="seats-title">Open Seats: </span>{carpool.openSeats}</span><br/>
+          <span className="open-seats"><span className="seats-title">Open Seats: </span>{this.renderOpenSeats(carpool)}</span><br/>
           <span className="address"><span className="address-title">Start Address: </span>{carpool.startAddress.streetAddress} {carpool.startAddress.city}, {carpool.startAddress.state}
           </span><br/>
           <span className="address"><span className="address-title">End Address: </span>{carpool.endAddress.streetAddress} {carpool.endAddress.city}, {carpool.endAddress.state}
@@ -188,6 +203,7 @@ const mapStateToProps = state => {
   const user = state.auth.currentUser;
   return {
     carpools: state.carpools,
+    nearbyCarpools: state.carpools.nearbyCarpools.results,
     currentUser: user,
     loggedIn: user !== null
   };

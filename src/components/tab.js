@@ -3,7 +3,6 @@ import Profile from './profile';
 import FindCarpools from './find-carpools';
 import MyCarpools from './myCarpools';
 import './tab.css';
-
 export default class Tab extends React.Component{
 
   generateActiveStyle(tab){
@@ -22,7 +21,6 @@ export default class Tab extends React.Component{
 }
 
   renderTabComponent(){
-    console.log(this.props)
     switch(this.props.active){
       case 'profile':
       return <Profile />
@@ -37,7 +35,6 @@ export default class Tab extends React.Component{
   }
 
   render(){
-    console.log(this.props)
     return (
       <div>
         <ul className="tabContainer" id="tabContainer">

@@ -1,19 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
-
+import './app.css';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import CarpoolPage from './carpool-page';
 import {refreshAuthToken} from '../actions/auth';
-import MyCarpools from './myCarpools';
-import Help from './help';
-import FindCarpools from './find-carpools';
-import Profile from './profile';
-import Modal from './modal';
-import './app.css';
+import Modal from './modal'
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {

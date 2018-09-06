@@ -94,24 +94,12 @@ export class CarpoolForm extends React.Component {
                     onChange={this.chooseDays}>
                     <label><Checkbox value="Mon"/>Mon</label>
                     <label><Checkbox value="Tues"/>Tues</label>
-                    <label><Checkbox value="Wed"/>Wed</label>
+                    <label><Checkbox value="Wed"/>Wed</label><br />
                     <label><Checkbox value="Thurs"/>Thurs</label>
                     <label><Checkbox value="Fri"/>Fri</label>
                     <label><Checkbox value="Sat"/>Sat</label>
                     <label><Checkbox value="Sun"/>Sun</label>
                 </CheckboxGroup>
-
-                {/* <Field
-                    component={Input}
-                    type="time"
-                    className="time-picker"
-                    onChange={this.onTimeSelect}
-                    value={this.state.arrivalTime}
-                    name="arrivalTime"
-                    id="arrivalTime"
-                    validate={[required]}
-                /> */}
-
 
                 <label className="available-seats-label" htmlFor="seats">Seats</label>
                 <Field

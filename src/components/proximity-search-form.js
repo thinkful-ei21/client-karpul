@@ -23,7 +23,6 @@ export class ProximitySearchForm extends React.Component {
 
   componentDidMount(){
     if(document.querySelector('#proximitySearch')){
-      console.log("triggered")
       placesAutocomplete = places({
         container: document.querySelector('#proximitySearch'),
         countries: ['US'],
@@ -99,7 +98,7 @@ export class ProximitySearchForm extends React.Component {
                     onChange={this.chooseDays}>
                     <label><Checkbox value="Mon"/>Mon</label>
                     <label><Checkbox value="Tues"/>Tues</label>
-                    <label><Checkbox value="Wed"/>Wed</label>
+                    <label><Checkbox value="Wed"/>Wed</label><br />
                     <label><Checkbox value="Thurs"/>Thurs</label>
                     <label><Checkbox value="Fri"/>Fri</label>
                     <label><Checkbox value="Sat"/>Sat</label>
