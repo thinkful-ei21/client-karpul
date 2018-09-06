@@ -8,7 +8,8 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import CarpoolPage from './carpool-page';
 import {refreshAuthToken} from '../actions/auth';
-import Modal from './modal'
+import Modal from './modal';
+import './app.css';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
