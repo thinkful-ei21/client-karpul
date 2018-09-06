@@ -12,6 +12,7 @@ class FindCarpools extends React.Component {
 
   componentDidMount(){
     this.props.dispatch(fetchPic(this.props.currentUser.username))
+    
   }
 
   notify = () => {
@@ -92,10 +93,11 @@ class FindCarpools extends React.Component {
               <span className="hosttiptext join-request join-request-host">Carpool Full</span>
               </div>
           : <button
-              onClick={() => {
+              onClick={(e) => {
+              if(e.target.disabled === false){e.target.disabled = true}
               this.notify();
-              this.props.dispatch(joinCarpool(carpool.id))
-              this.props.dispatch(fetchUserCarpools())
+              this.props.dispatch(joinCarpool(carpool.id)).then(this.props.dispatch(fetchUserCarpools()))
+              
             }
           } className="join-button">Request Join</button>}
 
