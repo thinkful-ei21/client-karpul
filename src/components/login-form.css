@@ -57,6 +57,11 @@ margin: 0 30px 0 0;
 text-align: center;
 }
 
+.error-placeholder {
+  height: 1em;
+  background-color: black;
+}
+
 @media only screen and (max-width: 420px) {
   .login-form {
 		margin-top: 30px;

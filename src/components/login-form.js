@@ -19,13 +19,14 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
+
+
         return (
             <div>
                 <div className="info">
-                    <h1>"Travel with 'Karpul' and help reduce Global Warming"</h1>
-                    <h2>Search by 'Destination', 'Arrival Time' or 'Miles from destination'</h2>
+                    <h1>Travel with Karpul and help reduce Global Warming!</h1>
+                    <h2>Simple user interface allows users to join carpools in three easy steps</h2>
                     <h3>Know your carpool members from their profile</h3>
-                    <h4>Send a request to the 'Host' to join the 'Karpul'</h4>
                 </div>
                 <Form
                     className="login-form"
@@ -35,8 +36,8 @@ export class LoginForm extends React.Component {
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}> 
-                    <h2>Sign In</h2>               
-                    {error}                
+                    <h2>Sign In</h2>
+                    {error}
                     <Field
                         component={Input}
                         type="text"

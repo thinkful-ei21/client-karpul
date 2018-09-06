@@ -51,10 +51,10 @@ export default class Tab extends React.Component{
             onClick={() => this.props.changeTab('myCarpools', '/my-carpools')}>My Karpüls</a></li>
           <li className="icon-li"><a className="icon" 
             onClick={() => this.menuFunction()}>
-            <div class="burger">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
+            <div className="burger">
+              <div className="bar1"></div>
+              <div className="bar2"></div>
+              <div className="bar3"></div>
             </div>
             </a></li>
         </ul>
