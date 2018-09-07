@@ -43,8 +43,7 @@ export class ProximitySearchForm extends React.Component {
   
 
   onSubmit(values) {
-    values.days = this.state.days;
-    console.log(values)
+    values.days = this.state.days;    
     return this.props.dispatch(fetchNearbyCarpools(values));
   }
 
