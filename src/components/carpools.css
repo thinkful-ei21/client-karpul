@@ -170,7 +170,7 @@ button:disabled.join-button.join-request-host {
 }
 
 button:disabled.join-button.join-request-already {
-	color: rgb(226, 223, 43);
+	color: rgb(255, 187, 0);
 	background-color: transparent;
 	font-weight: bold;
 }
