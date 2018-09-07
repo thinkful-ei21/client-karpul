@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <div className="header-username">
-                    Welcome {this.props.username}
+                    {/* Welcome {this.props.username} */}
                 </div>
                 <Tab history={this.props.history} changeTab={this.changeTab}
                 active={this.props.active || this.state.active}/>

@@ -1,6 +1,7 @@
 .header-bar {
-  background-color: rgb(50, 92, 116);
-  color: white;
+  /* background-color: rgb(50, 92, 116); */
+  background-color: white;
+  color: rgb(50, 92, 116);
   height: 80px;
 	width: 100%;
   padding: 0;
@@ -25,12 +26,11 @@
   margin-top: 30px;
   margin-right: 220px;
   font-size: 20px;
-  color: white;
+  color: rgb(50, 92, 116);
   padding: 0;
   top: 0;
   right: 0;
 	text-align: center;
-  /* margin-top: -30px; */
   position: fixed;
   z-index: 2;
 }
@@ -82,38 +82,51 @@
 
 }
 
-@media only screen and (max-width: 550px) {
-  .header-bar {
-    height: 130px;
-  }
+@media only screen and (max-width: 800px) {
+
   .header-bar > h1 {
     margin-left: 10px;
+    font-size: 40px;
   }
 
-  .header-bar > button  {
+  .header-bar > button, .log-out-button  {
     position: absolute;
     border-radius: 8px;
-    top: 80px;
+    /*top: 80px;
+    */top: 10px;
+    right: 100px;
     padding: 2px 0;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+  .header-username {
+    display: none;
   }
+
+  .header-bar {
+    height: 60px;
+  }
+
+  .header-profile-pic-container{
+    /* right: 10px; */
+    top: -10px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 
 }
 
-@media only screen and (max-width: 440px) {
-
-  .header-bar > h1 {
-    text-align: center;
-  }
-}
 
 @media only screen and (max-width: 420px) {
   .log-out-button {
     top: 10px;
     right: 10px;
-  }
-
-  .header-bar {
-    height: 60px;
   }
 
   .header-bar > h1 {
@@ -131,17 +144,5 @@
     margin-right: auto;
   }
 
-  /* .header-username {
-    position: fixed;
-    font-size: 16px;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-    width: 100px;
-    margin-top: 15px;
-  } */
-
-  .header-username {
-    display: none;
-  }
+ 
 }

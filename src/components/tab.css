@@ -1,35 +1,51 @@
 ul.tabContainer{
   list-style-type: none;
-  margin: 79px 0;
+  /* margin: 79px 0; */
+  margin: 0 auto;
   padding: 0;
   width: 100%;
   overflow: hidden;
-  background-color: lightblue;
-  top: 0;
-  right: 0;
+  /* background-color: lightblue; */
+  top: 15px;
+  right: 200px;
 	text-align: center;
   position: fixed;
   z-index: 1;
 }
 
 ul.tabContainer li {
-  float: left;
+  float: right;
 }
 
 ul.tabContainer li a {
   display: block;
-  color: black;
+  color: rgb(50, 92, 116);
+  font-weight: bold;
   text-align: center;
+  font-size: 25px;
   padding: 14px 16px;
   text-decoration: none;
 }
 
+
 ul.tabContainer li a:hover {
-  background-color: grey;
+  /*background-color: grey;
+  */cursor: pointer;
+  /*border: 1px solid white;
+  */color: #FBB872;
+  transition:  color 0.6s;
+  -webkit-transition:  color 0.6s;
+  -moz-transition:  color 0.6s;
+  -ms-transition:  color 0.6s;
+  -o-transition:  color 0.6s;
 }
 
+
 ul.tabContainer li a.active {
-  background-color: salmon;
+  /* background-color: salmon; */
+  /* color: #110E0E; */
+  /* border-bottom: 3px solid white; */
+  color: #FBB872;
 }
 
 ul.tabContainer li a.icon {
@@ -48,7 +64,7 @@ ul.tabContainer li a.icon {
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: white;
+  background-color: rgb(50, 92, 116);
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -66,17 +82,22 @@ ul.tabContainer li a.icon {
 }
 
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 800px) {
 
 ul.tabContainer {
-  margin-top: 60px;
+  margin: -5px 0 0 0;
+  top: 0;
+  right: 0;
+  width: 200px;
 }
 
 ul.tabContainer.responsive li.first-menu-spot{
   height: 45px;
 }
 
-ul.tabContainer li a {display: none;}
+ul.tabContainer li a {
+  display: none;
+}
 
 ul.tabContainer li a.icon {
     float: right;
@@ -94,17 +115,30 @@ ul.tabContainer li.icon-li {
     right: 0;
     top: 0;
   }
+
   ul.tabContainer.responsive li {
     float: none;
     display: block;
-    text-align: left;
-  }
+    text-align: right;
+    color: rgb(50, 92, 116);
+    /* background-color: rgb(50, 92, 116); */
+    background-color: white;
+    transition:  display 0.8s;
+    -webkit-transition:  display 0.8s;
+    -moz-transition:  display 0.8s;
+    -ms-transition:  display 0.8s;
+    -o-transition:  display 0.8s;
+}
 
   ul.tabContainer.responsive li a{
     float: none;
     display: block;
-    text-align: left;
+    text-align: right;
+    border: none;
+    color: rgb(50, 92, 116);
   }
 
-  
+  .bar1, .bar2, .bar3 {
+    background-color: rgb(50, 92, 116);
+  }
 }
