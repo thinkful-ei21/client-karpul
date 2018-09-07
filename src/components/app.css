@@ -2,10 +2,10 @@
   /* background-image: url('https://www.publicdomainpictures.net/pictures/150000/velka/the-freeway.jpg'); 
   background-image: url('carpool_fade.jpg'); */
   background-position: center; 
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: contain; 
   z-index: 0; 
-  /* height: 1200px; */
+  height: 100%;
   margin-top: -30px;
   padding-top: 30px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f8a26b+0,fed163+54&1+0,0.81+100 */
