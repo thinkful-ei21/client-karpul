@@ -37,7 +37,7 @@ class Modal extends Component {
   render() {
 
     return (
-      <div className="modal">
+      <div className="modal" role="complementary" aria-live="polite">
         { this.props.isShowing &&
           <div>
             <div className="modal-backdrop"></div>

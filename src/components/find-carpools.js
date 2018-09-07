@@ -136,7 +136,6 @@ coor = [
 
     return (
       <div>
-
         <ProximitySearchForm />
         <div className="coor">
           <Maps coordinates={this.coor}/>

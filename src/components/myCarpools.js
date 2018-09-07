@@ -190,10 +190,8 @@ class MyCarpools extends React.Component{
         <ToastContainer />
         <button onClick={()=>this.props.dispatch(showModal("carpool-form"))}>Create Karpül</button>
         <ul className="carpool-item">
-          
           {this.renderResults()}
         </ul>
-        
       </div>
     )
   }

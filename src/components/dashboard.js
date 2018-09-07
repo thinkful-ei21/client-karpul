@@ -25,7 +25,7 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard">
-                <div className="header-username">
+                <div className="header-username" role="complementary" aria-live="polite">
                     Welcome {this.props.username}
                 </div>
                 <Tab history={this.props.history} changeTab={this.changeTab}
