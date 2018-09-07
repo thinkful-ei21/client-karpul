@@ -3,15 +3,20 @@
 Karpul is a carpool app that allows users to find and create carpools.   
 The live app can be found [here](http://karpul-client.surge.sh/) and the live server can be found [here](https://karpul-server.herokuapp.com/) on heroku.
 
-### libraries and tools
+### Libraries and Tools
 
 - Node.js, Express.js,
 - React.js, Redux.js,
-- bcrypt, passport,
+- bcrypt.js, passport.js,
 - mongoose, MongoDB
-- mapbox, cloudinary
 - Heroku for the server
-- surge for hosting the client
+- Surge for hosting the client
+
+### APIs
+- Mapbox https://www.mapbox.com/ - mapping coordinates and location pin rendering
+- Here https://www.here.com/en - takes location address and converts to latitude and longitude
+- Algolia https://community.algolia.com/places/ - implements auto complete for address input
+- Cloudinary https://cloudinary.com/ - image uploading and hosting
 
 ### Features
 
@@ -25,6 +30,12 @@ In order to see the map we need the mapbox api. In order for the map to display 
 In order for the maps to work we need to use a react-mapbox-wrapper.
 This allows us to manipulate the state (dimension and features) of the map with react, and later with redux.  
 In order for us to gain coordinates for locations on the map from addresses that are given to us we need an api that performs geocoding. There are several apis that perform this task. We used here.com for this.
+
+### Wireframes
+
+![wireframe-01](https://user-images.githubusercontent.com/8137381/45229626-34b81180-b27b-11e8-9477-c295edc79991.png)
+![wireframe-02](https://user-images.githubusercontent.com/8137381/45229637-3bdf1f80-b27b-11e8-8b55-3c43e27fcaed.png)
+![wireframe-03](https://user-images.githubusercontent.com/8137381/45229644-413c6a00-b27b-11e8-8639-a8ef3f790301.png)
 
 ### Screenshots
 
