@@ -58,7 +58,7 @@ class MyCarpools extends React.Component{
   notifyLeave = () => {
     return toast.info(`Leaving Group`, {
       position: "top-right",
-      autoClose: 2500,
+      autoClose: 3500,
       hideProgressBar: true
     });
   }
@@ -66,7 +66,7 @@ class MyCarpools extends React.Component{
   notifyRemove = () => {
     return toast.info(`Removing Group`, {
       position: "top-right",
-      autoClose: 2500,
+      autoClose: 3500,
       hideProgressBar: true
     });
   }
@@ -122,7 +122,7 @@ class MyCarpools extends React.Component{
                   <div key={index}>
                     {/* The Host */}
                     <div className="hosttip" key="host">
-                    <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
+                    <img className="members-images" src={user.profilePicUrl} key={index} alt={user.username} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
                     </div>
                   </div>
                 )
@@ -130,7 +130,7 @@ class MyCarpools extends React.Component{
                   return (
                     <div key={index}>
                     {/* Non-host Members */}
-                      <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                      <img className="members-images" src={user.profilePicUrl} alt={user.username} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
                     </div>
                   )
                 }
@@ -147,7 +147,7 @@ class MyCarpools extends React.Component{
                       return (
                         <div key={index} >
                           <img className="request-members-images" src={member.profilePicUrl} key={index} 
-                            onClick={()=>{this.props.dispatch(showModal("profile-modal", member))}}/>
+                            alt={member.username} onClick={()=>{this.props.dispatch(showModal("profile-modal", member))}}/>
                           <button
                             onClick={e => this.acceptRequest(carpool.id, member.id, true)}
                             className="accept-button">Accept</button>
@@ -190,10 +190,8 @@ class MyCarpools extends React.Component{
         <ToastContainer />
         <button onClick={()=>this.props.dispatch(showModal("carpool-form"))}>Create Karpül</button>
         <ul className="carpool-item">
-          
           {this.renderResults()}
         </ul>
-        
       </div>
     )
   }
