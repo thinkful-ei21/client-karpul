@@ -122,7 +122,7 @@ class MyCarpools extends React.Component{
                   <div key={index}>
                     {/* The Host */}
                     <div className="hosttip" key="host">
-                    <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
+                    <img className="members-images" src={user.profilePicUrl}  alt={user.username} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/><span className="hosttiptext">Host</span>
                     </div>
                   </div>
                 )
@@ -130,7 +130,7 @@ class MyCarpools extends React.Component{
                   return (
                     <div key={index}>
                     {/* Non-host Members */}
-                      <img className="members-images" src={user.profilePicUrl} key={index} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
+                      <img className="members-images" src={user.profilePicUrl} key={index} alt={user.username} onClick={()=>{this.props.dispatch(showModal("profile-modal", user))}}/>
                     </div>
                   )
                 }
@@ -146,7 +146,7 @@ class MyCarpools extends React.Component{
                       {carpool.pendingRequests.map((member, index) => {
                       return (
                         <div key={index} >
-                          <img className="request-members-images" src={member.profilePicUrl} key={index} 
+                          <img className="request-members-images" src={member.profilePicUrl} alt='user pic' key={index} 
                             onClick={()=>{this.props.dispatch(showModal("profile-modal", member))}}/>
                           <button
                             onClick={e => this.acceptRequest(carpool.id, member.id, true)}
