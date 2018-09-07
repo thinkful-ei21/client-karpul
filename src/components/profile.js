@@ -61,6 +61,7 @@ export class Profile extends React.Component{
               component="select"
               type="textarea"
               name="state"
+              className="state-selector"
               id="state"
               label="State"
               aria-label="State"

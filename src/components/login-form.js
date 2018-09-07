@@ -4,23 +4,11 @@ import {Link} from 'react-router-dom';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
-// import axios from 'axios';
-// import {API_BASE_URL} from '../config';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
-    }
-
-    // handleUploadFile = (event) => {
-    //     const data = new FormData();
-    //     data.append('file', event.target.files[0]);
-    //     data.append('name', 'some value user types');
-    //     data.append('description', 'some value user types');
-    //     // '/files' is your node.js route that triggers our middleware
-    //     axios.post(`${API_BASE_URL}files`, data).then((response) => {
-    //       console.log(response); // do something with the response
-    //     });}
+    }   
 
     render() {
         let error;
@@ -31,45 +19,56 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
+
+
         return (
-            <Form
-                className="login-form"
-                aria-live="polite"
-                aria-atomic="true"
-                role="complementary"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
-                <h2>Login</h2>
-                {error}
-                <Field
-                    component={Input}
-                    type="text"
-                    name="username"
-                    label="Username"
-                    id="username"
-                    aria-label="Username"
-                    aria-required="true"
-                    validate={[required, nonEmpty]}
-                    autoFocus
-                />
-                <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    id="password"
-                    label="Password"
-                    aria-label="Password"
-                    aria-required="true"
-                    validate={[required, nonEmpty]}
-                />
-                <button disabled={this.props.pristine || this.props.submitting}>
-                    Log in
-                </button>
-                <br />
-                or
-                <Link to="/register" className="register-link"><h2 className="register-text">Register</h2></Link>
-            </Form>
+            <div>
+                <div className="info">
+                    <h1>Travel with Karpul and help reduce Global Warming!</h1>
+                    <h2>Simple user interface allows users to join carpools in three easy steps</h2>
+                    <h3>Know your carpool members from their profile</h3>
+                </div>
+                <Form
+                    className="login-form"
+                    aria-live="polite"
+                    aria-atomic="true"
+                    role="complementary"
+                    onSubmit={this.props.handleSubmit(values =>
+                        this.onSubmit(values)
+                    )}> 
+                    <h2>Sign In</h2>
+                    {error}
+                    <Field
+                        component={Input}
+                        type="text"
+                        name="username"
+                        label="Username"
+                        id="username"
+                        aria-label="Username"
+                        aria-required="true"
+                        validate={[required, nonEmpty]}
+                        autoFocus
+                    />
+                    <Field
+                        component={Input}
+                        type="password"
+                        name="password"
+                        id="password"
+                        label="Password"
+                        aria-label="Password"
+                        aria-required="true"
+                        validate={[required, nonEmpty]}
+                    />
+                    <button disabled={this.props.pristine || this.props.submitting}>
+                        Log in
+                    </button>
+                    <br />
+                    <br />
+                    or
+                    <Link to="/register" className="register-link"><h2 className="register-text">Don't have an account??</h2></Link>
+                    <p>Need a test account?<br />Username: Jondoe<br />Password: password01</p>
+                </Form>
+            </div>
         );
     }
 }

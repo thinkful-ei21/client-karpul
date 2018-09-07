@@ -49,6 +49,7 @@ li {
 	text-align: start;
 	border-radius: 3px;
 	position: relative;
+	background-color: white;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
@@ -145,7 +146,6 @@ button:disabled:hover {
 	text-align: center;
 	border-radius: 6px;
 	padding: 5px 0;
-	/* opacity: 0.8; */
 
 	/* Position the tooltip */
 	position: absolute;
@@ -215,7 +215,6 @@ button:disabled:hover {
 		display: grid;
 		grid-template-columns: 100%;
 		grid-gap: 20px;
-		/* margin-left: -25px; */
 	}
 
 	.carpool-item {

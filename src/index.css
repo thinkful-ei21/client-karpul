@@ -2,28 +2,27 @@
   box-sizing: border-box;
 }
 
-.dashboard {
-  margin-top: 150px;
-}
-
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   text-align: center;
+  height: 100%;
+  background-color: #110E0E;
+  font-family: 'Cabin', sans-serif;
 }
 
-form.login-form, form.carpool-form {
+form.login-form, form.carpool-form, form.proximity-search-form {
   margin:  0 auto;
   display: block;
   padding: 10px 10px 40px 10px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
   color: black;
-  border: 2px solid rgb(117, 29, 29);
   border-radius: 5px;
   width: 320px;
-  overflow: scroll;
+  overflow: auto;
+  background-color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -42,7 +41,7 @@ form.carpool-form {
 input[type="text"],
 input[type="password"],
 input[type="textarea"],
-.seat-selector, .details-input {
+.seat-selector, .details-input, .state-selector {
 	width: 250px;
 	height: 30px;
   margin: 10px auto;
@@ -60,15 +59,13 @@ fieldset.address-fieldset {
   margin: 10px 0;
   padding: 5px;
   border: none;
-  
+}
+.state-selector > option, .seat-selector > option {
+  width: 250px;
 }
 
-.seat-selector {
-  font-size: 70%
-}
-
-.details-input {
-  height: 4em;
+fieldset.address-fieldset {
+  margin: 15px 0;
 }
 
 button:hover {
@@ -85,10 +82,39 @@ button {
   font-size: 18px;
   margin: 20px 0 0 0;
   border-radius: 3px;
+  font-family: 'Cabin', sans-serif;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
+}
+
+.info {
+  margin: 100px auto -80px auto;
+  padding: 5px 10px;
+  background-color: white;
+  width: 600px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.dashboard {
+  margin-top: 150px;
+}
+
+.seat-selector {
+  font-size: 70%
+}
+
+.details-input {
+  height: 4em;
+}
+
+.days-checkbox {
+  font-size: 19px;
 }
 
 .join-button, .leave-button {
@@ -141,30 +167,42 @@ button.close-modal-button {
 
 @media only screen and (max-width: 420px) {
   .dashboard {
-    margin-top: 110px;
+    margin-top: 150px;
   }
 
   form.login-form{
-    margin-top: 30px;
     font-size: 16px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .join-button, .leave-button {
     height: 30px;
     font-size: 16px;
+    width: fit-content;
   }
   
   button {
     margin-top: 0;
   }
 
-  input[type="text"]{
-    height: 24px;
+  input[type="text"] {
     font-size: 18px;
   }
 
+  .info {
+    width: 100%;
+    margin: -80px auto 20px auto;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
   .home {
     padding-top: 20vh;
+    width: 100%;
   }
   
   form.carpool-form {

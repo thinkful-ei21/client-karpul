@@ -99,7 +99,6 @@ class MyCarpools extends React.Component{
     if (this.props.error) {
       return <strong>{this.props.error}</strong>;
     }
-    console.log(this.props.carpools.userCarpools)
     const userCarpools = this.props.carpools.userCarpools;
     const carpool = userCarpools.map((carpool, index) => (
     <li className="carpool-result"
