@@ -51,7 +51,16 @@ input[type="textarea"],
 }
 
 fieldset.address-fieldset {
-  margin: 15px 0;
+  margin: 10px auto;
+  padding: 5px;
+  border: none;
+}
+
+.address-end-fieldset {
+  margin: 10px 0;
+  padding: 5px;
+  border: none;
+  
 }
 
 .seat-selector {

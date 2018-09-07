@@ -6,17 +6,17 @@ import SearchInput from './search-input';
 var places = require('places.js');
 var placesAutocomplete;
 
-export default class Address extends React.Component {
+export default class AddressEnd extends React.Component {
 
   static defaultProps = {
     name: "address"
   }
 
   componentDidMount(){
-    if(document.querySelector('.address-fieldset input')){
+    if(document.querySelector('.address-end-fieldset input')){
       console.log("triggered")
         placesAutocomplete = places({
-        container: document.querySelector(".address-fieldset input"),
+        container: document.querySelector(".address-end-fieldset input"),
         countries: ['US'],
         appId: 'plKVDLCDNM8Z',
         apiKey: '39480e11ee39e841bac900f118a4b901',
@@ -25,8 +25,6 @@ export default class Address extends React.Component {
         autocompleteOptions: {
             autoselect: false,
             minLength: 3,
-            autoselectOnBlur: true,
-            hint: false,
         }
         });
     }
@@ -36,14 +34,13 @@ export default class Address extends React.Component {
   render() {
     return (
       <div>
-        <fieldset className="address-fieldset" onBlur={()=>{placesAutocomplete.close(); placesAutocomplete.setVal("")}}>
+        <fieldset className="address-end-fieldset">
           <Field 
             name="streetAddress"
             id="streetAdress" 
             component={SearchInput}
             type="text" 
-            label="Start Address"
-            
+            label="End Address"
           />
 
           {/* <Field

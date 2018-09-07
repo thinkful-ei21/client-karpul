@@ -2,6 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus, Form, FormSection} from 'redux-form';
 import Input from './input';
 import Address from './address';
+import AddressEnd from './addressEnd';
 import './carpool-form.css';
 import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 import {hideModal} from '../actions/modals';
@@ -9,7 +10,10 @@ import { createNewCarpool } from '../actions/carpools';
 import {  fetchUserCarpools  } from '../actions/carpools';
 import {required, nonEmpty} from '../validators';
 
+
 import '../styles/carpool-form.css';
+
+
 
 export class CarpoolForm extends React.Component {
     constructor(props) {
@@ -19,6 +23,8 @@ export class CarpoolForm extends React.Component {
           openSeats: "1"
         };
       }
+
+    
 
     onSubmit(values) {
         values.days = this.state.days;
@@ -63,14 +69,14 @@ export class CarpoolForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
 
-                <label className="start-address-label" htmlFor="startAddress">Start Address</label>
-                <FormSection name="startAddress">
+                {/* <label className="start-address-label" htmlFor="startAddress">Start Address</label> */}
+                <FormSection name="startAddress" id="startAddress">
                     <Address />
                 </FormSection>
 
-                <label className="end-address-label" htmlFor="endAddress">End Address</label>
+                {/* <label className="end-address-label" htmlFor="endAddress">End Address</label> */}
                 <FormSection name="endAddress">
-                    <Address />
+                    <AddressEnd />
                 </FormSection>
 
                 <label className="arrival-time-label" htmlFor="arrivalTime">Arrival Time</label>
