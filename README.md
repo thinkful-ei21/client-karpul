@@ -32,10 +32,8 @@ This allows us to manipulate the state (dimension and features) of the map with 
 In order for us to gain coordinates for locations on the map from addresses that are given to us we need an api that performs geocoding. There are several apis that perform this task. We used here.com for this.
 
 ### Wireframes
-
-![wireframe-01](https://user-images.githubusercontent.com/8137381/45229626-34b81180-b27b-11e8-9477-c295edc79991.png)
-![wireframe-02](https://user-images.githubusercontent.com/8137381/45229637-3bdf1f80-b27b-11e8-8b55-3c43e27fcaed.png)
-![wireframe-03](https://user-images.githubusercontent.com/8137381/45229644-413c6a00-b27b-11e8-8639-a8ef3f790301.png)
+![wireframe-01](https://user-images.githubusercontent.com/8137381/45229734-8eb8d700-b27b-11e8-9178-dce6bce10598.png)
+![wireframe-02](https://user-images.githubusercontent.com/8137381/45229747-94aeb800-b27b-11e8-8d0b-116cb2cdaee1.png)![wireframe-03](https://user-images.githubusercontent.com/8137381/45229741-91b3c780-b27b-11e8-8594-8881d66cdef1.png)
 
 ### Screenshots
 
