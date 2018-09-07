@@ -63,7 +63,7 @@ class FindCarpools extends React.Component {
     }
     const nearbyCarpools = this.props.nearbyCarpools;
     const carpool = nearbyCarpools.map((carpool, index) => (
-      
+
     <li className="carpool-result"
       key={index}>
       <div className="carpool-item">
@@ -71,26 +71,26 @@ class FindCarpools extends React.Component {
           {carpool.host.id === this.props.currentUser._id 
           ? <div className="hosttip"><button
               disabled="disabled"
-              className="join-button">Request Join</button>
-              <span className="hosttiptext join-request join-request-host">Unable to join carpools you host</span>
+              className="join-button join-request-host">You Are Host</button>
+              {/* <span className="hosttiptext join-request join-request-host">Unable to join carpools you host</span> */}
               </div>
           : carpool.users.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
-              className="join-button">Request Join</button>
-              <span className="hosttiptext join-request join-request-already">You already joined this carpool</span>
+              className="join-button join-request-already">Already Joined</button>
+              {/* <span className="hosttiptext join-request join-request-already">You already joined this carpool</span> */}
               </div>
           : carpool.pendingRequests.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
-              className="join-button">Request Join</button>
-              <span className="hosttiptext join-request join-request-pending">Request Pending</span>
+              className="join-button join-request-pending">Request Pending</button>
+              {/* <span className="hosttiptext join-request join-request-pending">Request Pending</span> */}
               </div>
           : this.renderOpenSeats(carpool) === 'Carpool Full'
           ? <div className="hosttip"><button
               disabled="disabled"
-              className="join-button">Request Join</button>
-              <span className="hosttiptext join-request join-request-host">Carpool Full</span>
+              className="join-button join-request-host">Carpool Full</button>
+              {/* <span className="hosttiptext join-request join-request-host">Carpool Full</span> */}
               </div>
           : <button
               onClick={(e) => {
@@ -138,7 +138,6 @@ coor = [
       <div>
 
         <ProximitySearchForm />
-
         <div className="coor">
           <Maps coordinates={this.coor}/>
         </div>

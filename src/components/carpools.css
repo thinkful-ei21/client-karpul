@@ -62,15 +62,17 @@ button.remove-button:hover {
 }
 
 button:disabled {
-	background-color: #aaa;
+	/* background-color: #aaa; */
+	border: none;
+	background-color: none;
 }
 
-button:disabled:hover {
+/* button:disabled:hover {
 	background-color: #aaa;
 	cursor: auto;
   color: white;
   border: solid 2px black;
-}
+} */
 
 .carpool-results h1 {
 	color: rgb(19, 96, 102);
@@ -161,17 +163,27 @@ button:disabled:hover {
 	z-index: 1;
 }
 
-.hosttiptext.join-request.join-request-host {
-	background-color: rgb(197, 30, 30);
+button:disabled.join-button.join-request-host {
+	color: rgb(197, 30, 30);
+	background-color: transparent;
+	font-weight: bold;
 }
 
-.hosttiptext.join-request.join-request-already {
-	background-color: rgb(226, 223, 43);
-	color: black;
+button:disabled.join-button.join-request-already {
+	color: rgb(226, 223, 43);
+	background-color: transparent;
+	font-weight: bold;
 }
 
-.hosttiptext.join-request.join-request-pending {
-	background-color: green;
+button:disabled.join-button.join-request-pending {
+	color: green;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+button:disabled:hover.join-button {
+	cursor: auto;
+	border: none;
 }
 
 .hosttip:hover .hosttiptext {
