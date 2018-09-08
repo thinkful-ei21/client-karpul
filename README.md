@@ -3,6 +3,8 @@
 Karpul is a carpool app that allows users to find and create carpools.   
 The live app can be found [here](http://karpul-client.surge.sh/) and the live server can be found [here](https://karpul-server.herokuapp.com/) on heroku.
 
+Here is a link to the server repo https://github.com/thinkful-ei21/Karpul_server
+
 ### Libraries and Tools
 
 - Node.js, Express.js,
