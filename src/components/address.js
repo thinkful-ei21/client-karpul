@@ -34,7 +34,7 @@ export default class Address extends React.Component {
         });
     }
 
-    placesAutocomplete.on("change", () => {select = true})
+    placesAutocomplete.on("change", () => {select = true;document.activeElement.blur()})
     
     }
 

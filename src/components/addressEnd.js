@@ -31,7 +31,7 @@ export default class AddressEnd extends React.Component {
         }
         });
     }
-    placesAutocomplete.on("change", () => {select = true})
+    placesAutocomplete.on("change", () => {select = true;document.activeElement.blur()})
     }
 
   render() {

@@ -38,7 +38,7 @@ export class ProximitySearchForm extends React.Component {
         }
       });
     }
-    placesAutocomplete.on("change", () => {select = true})
+    placesAutocomplete.on("change", () => {select = true;document.activeElement.blur()})
     this.props.initialize({fromTime: "09:00:00", toTime: "17:00:00", searchRadius: "5"})
     
   }
