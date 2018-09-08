@@ -7,9 +7,15 @@ body {
   padding: 0;
   font-family: sans-serif;
   text-align: center;
-  height: 100%;
-  background-color: #110E0E;
+  min-height: 100%;
+  /* background-color: #110E0E; */
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Cabin', sans-serif;
+  background: -moz-linear-gradient(left, rgba(248,162,107,1) 0%, rgba(254,209,99,0.9) 54%, rgba(254,209,99,0.81) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(248,162,107,1) 0%,rgba(254,209,99,0.9) 54%,rgba(254,209,99,0.81) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(248,162,107,1) 0%,rgba(254,209,99,0.9) 54%,rgba(254,209,99,0.81) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8a26b', endColorstr='#cffed163',GradientType=1 ); /* IE6-9 */
 }
 
 form.login-form, form.carpool-form, form.proximity-search-form {
@@ -92,8 +98,8 @@ button {
 
 .info {
   margin: 100px auto -80px auto;
-  padding: 5px 10px;
-  background-color: white;
+  padding: 0 10px 5px 10px;
+  color: white;
   width: 600px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -166,6 +172,13 @@ button.close-modal-button {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  .info {
+    width: 400px;
+  }
+}
+
+
 @media only screen and (max-width: 420px) {
   .dashboard {
     margin-top: 150px;
@@ -193,7 +206,7 @@ button.close-modal-button {
 
   .info {
     width: 100%;
-    margin: -80px auto 20px auto;
+    margin: -30px auto 20px auto;
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;

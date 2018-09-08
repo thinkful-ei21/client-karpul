@@ -20,9 +20,8 @@ export class LoginForm extends React.Component {
             );
         }
 
-
         return (
-            <div>
+            <div role="complementary">
                 <div className="info">
                     <h1>Travel with Karpul and help reduce Global Warming!</h1>
                     <h2>Simple user interface allows users to join carpools in three easy steps</h2>

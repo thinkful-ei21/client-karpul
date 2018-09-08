@@ -21,8 +21,8 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <div>
-                <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic}/></div>
+                <div role="complementary" aria-live="polite">
+                <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic} alt="profile pic"/></div>
                 <button className="log-out-button" onClick={() => this.logOut()}>Log out</button>
                 </div>
             );

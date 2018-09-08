@@ -83,9 +83,7 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .header-bar {
-    height: 130px;
-  }
+ 
   .header-bar > h1 {
     margin-left: 10px;
   }

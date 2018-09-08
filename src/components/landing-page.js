@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { Redirect} from 'react-router-dom';
-import About from './info';
+import './landing-page.css';
 
 import LoginForm from './login-form';
 export function LandingPage(props) {
