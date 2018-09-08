@@ -9,6 +9,8 @@ import './proximity-search-form.css'
 import { grabQueryGeocode } from '../actions/mapbox';
 var places = require('places.js');
 var placesAutocomplete;
+var select = false;
+const invalid = () => (select ? undefined : 'Invalid Address. Please select from dropdown list.');
   var options;
     
 
@@ -36,7 +38,7 @@ export class ProximitySearchForm extends React.Component {
         }
       });
     }
-    
+    placesAutocomplete.on("change", () => {select = true})
     this.props.initialize({fromTime: "09:00:00", toTime: "17:00:00", searchRadius: "5"})
     
   }
@@ -86,10 +88,12 @@ export class ProximitySearchForm extends React.Component {
         <label htmlFor="proximitySearch">Destination</label>
           <Field
               component={SearchInput}
+              onBlur={()=>{placesAutocomplete.close()}}
+              onChange={()=>{select = false}}
               type="text"
               name="proximitySearch"
               id="proximitySearch"              
-              validate={[required, nonEmpty]}
+              validate={[required, nonEmpty, invalid]}
           />
           <label className="days-label" htmlFor="days">Days of Week</label>
                 <CheckboxGroup

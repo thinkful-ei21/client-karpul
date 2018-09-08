@@ -2,9 +2,12 @@ import React from 'react';
 import {Field} from 'redux-form';
 import Input from './input';
 import SearchInput from './search-input';
-
+import {required, nonEmpty} from '../validators';
 var places = require('places.js');
 var placesAutocomplete;
+
+var select = false;
+const invalid = () => (select ? undefined : 'Invalid Address. Please select from dropdown list.');
 
 export default class AddressEnd extends React.Component {
 
@@ -28,19 +31,21 @@ export default class AddressEnd extends React.Component {
         }
         });
     }
-    
+    placesAutocomplete.on("change", () => {select = true})
     }
 
   render() {
     return (
       <div>
-        <fieldset className="address-end-fieldset">
+        <fieldset className="address-end-fieldset" onBlur={()=>{placesAutocomplete.close()}}>
           <Field 
             name="streetAddress"
             id="streetAdress" 
             component={SearchInput}
+            onChange={()=>{select = false}}
             type="text" 
             label="End Address"
+            validate={[required, invalid]}
           />
 
           {/* <Field
