@@ -9,7 +9,7 @@ Here is a link to the server repo https://github.com/thinkful-ei21/Karpul_server
 
 - Node.js, Express.js,
 - React.js, Redux.js,
-- bcrypt.js, passport.js,
+- bcrypt.js, passport.js, JWT Auth
 - mongoose, MongoDB
 - Heroku for the server
 - Surge for hosting the client
@@ -22,9 +22,12 @@ Here is a link to the server repo https://github.com/thinkful-ei21/Karpul_server
 
 ### Features
 
-This app allows you to find nearby carpools based on the time of day.
-You can also join someone else's carpool by using a fully rendered world map.
-Users are also capable of loading up a profile picture.
+-Users can choose to either host or join carpools
+-Carpools can be customized by time and days of the week
+-Users can search for nearby carpools by destination
+-Application uses custom request/accept system for adding carpool members
+-Users can upload custom profile pictures
+-Detailed information provided about carpools and carpool members
 
 ### Map
 
@@ -32,6 +35,13 @@ In order to see the map we need the mapbox api. In order for the map to display 
 In order for the maps to work we need to use a react-mapbox-wrapper.
 This allows us to manipulate the state (dimension and features) of the map with react, and later with redux.  
 In order for us to gain coordinates for locations on the map from addresses that are given to us we need an api that performs geocoding. There are several apis that perform this task. We used here.com for this.
+
+### Lessons Learned 
+
+-Communication is key!
+-Third party APIs vary in complexity and implementation.
+-The right API to use isn’t always obvious.
+-Using branches is important.
 
 ### Wireframes
 ![wireframe-01](https://user-images.githubusercontent.com/8137381/45229734-8eb8d700-b27b-11e8-9178-dce6bce10598.png)
