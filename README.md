@@ -40,25 +40,15 @@ In order for us to gain coordinates for locations on the map from addresses that
 ### Screenshots
 
 #### Mobile
-![karpul_08-signin-iphone x](https://user-images.githubusercontent.com/8137381/45224840-d9345680-b26f-11e8-930f-4556e2e2723c.png)         ![karpul_09-profile-iphone x](https://user-images.githubusercontent.com/8137381/45224842-d9345680-b26f-11e8-955c-c2e10489b45f.png)
-
-![karpul_10-findcarpool-iphone x](https://user-images.githubusercontent.com/8137381/45224844-d9cced00-b26f-11e8-8fd7-c05207b7880c.png)        ![karpul_11-mycarpools-iphone x](https://user-images.githubusercontent.com/8137381/45224846-da658380-b26f-11e8-8ab8-8face07562b5.png)
+![01_login-phonex](https://user-images.githubusercontent.com/8137381/45250264-3f5ac100-b2e4-11e8-8305-d54ae285e792.png)   ![02_profile-iphonex](https://user-images.githubusercontent.com/8137381/45250265-3f5ac100-b2e4-11e8-8382-63919cc0a757.png)
+![03_findkarpools_iphonex](https://user-images.githubusercontent.com/8137381/45250266-3f5ac100-b2e4-11e8-873f-e1964af725d7.png)   ![04_fidkarpools_2-iphonex](https://user-images.githubusercontent.com/8137381/45250267-3f5ac100-b2e4-11e8-8c4e-778323e0c243.png)
+![05_mycarpools_2-iphonex](https://user-images.githubusercontent.com/8137381/45250268-3f5ac100-b2e4-11e8-9ca6-ccbb79a95d5d.png)   ![06_mycarpools-iphonex](https://user-images.githubusercontent.com/8137381/45250269-3f5ac100-b2e4-11e8-84b5-ff1bb4016dbb.png)
 
 #### Desktop
-
-
-![karpul_01-signin-desktop](https://user-images.githubusercontent.com/8137381/45224935-1a2c6b00-b270-11e8-9b6e-9cde1f67a20c.png)
-
-![karpul_02-profile-desktop](https://user-images.githubusercontent.com/8137381/45224960-2ca6a480-b270-11e8-9b65-4cccbe878fce.png)
-
-![karpul_03-findcarpool-locationsearch-desktop](https://user-images.githubusercontent.com/8137381/45224834-d76a9300-b26f-11e8-87ff-92ee4f1f4351.png)
-
-![karpul_04-findcarpool-desktop](https://user-images.githubusercontent.com/8137381/45224835-d8032980-b26f-11e8-8520-268decc0464f.png)
-
-![karpul_05-findcarpool-map-desktop](https://user-images.githubusercontent.com/8137381/45224836-d89bc000-b26f-11e8-9be3-aaade2b81d23.png)
-
-![karpul_06-findCarpool-map-desktop_2](https://user-images.githubusercontent.com/8137381/45225010-51028100-b270-11e8-9d21-185f2b4172e6.png)
-
-![karpul_07-myCarpool-desktop](https://user-images.githubusercontent.com/8137381/45225024-58298f00-b270-11e8-8ad4-3d2c8a079147.png)
-
+![07_login-desktop](https://user-images.githubusercontent.com/8137381/45250270-3ff35780-b2e4-11e8-818b-cde5d79a7cd5.png)
+![08_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250271-3ff35780-b2e4-11e8-97ef-cc20c5dbe771.png)
+![09_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250272-3ff35780-b2e4-11e8-8aac-5bb30460b1d1.png)
+![10_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250274-3ff35780-b2e4-11e8-9f55-3da8eeebd120.png)
+![14_mycarpools-desktop](https://user-images.githubusercontent.com/8137381/45250275-3ff35780-b2e4-11e8-80ac-f0a42f322a6c.png)
+![15_mycarpools-desktop](https://user-images.githubusercontent.com/8137381/45250276-3ff35780-b2e4-11e8-85b8-bc22b47ef318.png)
 
