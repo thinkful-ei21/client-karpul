@@ -22,12 +22,12 @@ Here is a link to the server repo https://github.com/thinkful-ei21/Karpul_server
 
 ### Features
 
--Users can choose to either host or join carpools
--Carpools can be customized by time and days of the week
--Users can search for nearby carpools by destination
--Application uses custom request/accept system for adding carpool members
--Users can upload custom profile pictures
--Detailed information provided about carpools and carpool members
+- Users can choose to either host or join carpools
+- Carpools can be customized by time and days of the week
+- Users can search for nearby carpools by destination
+- Application uses custom request/accept system for adding carpool members
+- Users can upload custom profile pictures
+- Detailed information provided about carpools and carpool members
 
 ### Map
 
