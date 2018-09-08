@@ -46,9 +46,14 @@ In order for us to gain coordinates for locations on the map from addresses that
 
 #### Desktop
 ![07_login-desktop](https://user-images.githubusercontent.com/8137381/45250270-3ff35780-b2e4-11e8-818b-cde5d79a7cd5.png)
+
 ![08_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250271-3ff35780-b2e4-11e8-97ef-cc20c5dbe771.png)
+
 ![09_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250272-3ff35780-b2e4-11e8-8aac-5bb30460b1d1.png)
+
 ![10_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250274-3ff35780-b2e4-11e8-9f55-3da8eeebd120.png)
+
 ![14_mycarpools-desktop](https://user-images.githubusercontent.com/8137381/45250275-3ff35780-b2e4-11e8-80ac-f0a42f322a6c.png)
+
 ![15_mycarpools-desktop](https://user-images.githubusercontent.com/8137381/45250276-3ff35780-b2e4-11e8-85b8-bc22b47ef318.png)
 
