@@ -2,9 +2,12 @@ import React from 'react';
 import Profile from './profile';
 import FindCarpools from './find-carpools';
 import MyCarpools from './myCarpools';
-import { fetchNearbyCarpools } from '../actions/carpools';
+import {connect} from 'react-redux';
+import {fetchNearbyCarpools} from '../actions/carpools';
+import {clearAuth} from '../actions/auth';
+import {clearAuthToken} from '../local-storage';
 import './tab.css';
-export default class Tab extends React.Component{
+export class Tab extends React.Component{
 
   generateActiveStyle(tab){
     if(tab === this.props.active){
@@ -36,7 +39,18 @@ export default class Tab extends React.Component{
     }
   }
 
+  logOut() {
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
+  }
+
   render(){
+    let logOutButton;
+        if (this.props.loggedIn) {
+            logOutButton = (
+                <button className="log-out-button" onClick={() => this.logOut()}>Logout</button>
+            );
+        }
     return (
       <div>
         <ul className="tabContainer" id="tabContainer">
@@ -49,6 +63,7 @@ export default class Tab extends React.Component{
               this.props.changeTab('findCarpools', '/find-carpools')}}>Find Karpüls</a></li>
           <li><a className={this.generateActiveStyle('myCarpools')} 
             onClick={() => this.props.changeTab('myCarpools', '/my-carpools')}>My Karpüls</a></li>
+          <li><a className={this.generateActiveStyle('logout')}>{logOutButton}</a></li>
           <li className="icon-li"><a className="icon" 
             onClick={() => this.menuFunction()}>
             <div className="burger">
@@ -62,3 +77,11 @@ export default class Tab extends React.Component{
     </div>);
   }
 }
+
+const mapStateToProps = state => (
+  {
+    loggedIn: state.auth.currentUser !== null
+  });
+
+
+export default connect(mapStateToProps)(Tab);

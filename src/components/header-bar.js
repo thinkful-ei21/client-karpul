@@ -11,26 +11,27 @@ export class HeaderBar extends React.Component {
         this.props.dispatch(fetchPic(this.props.username))
     }
 
-    logOut() {
-        this.props.dispatch(clearAuth());
-        clearAuthToken();
-    }
+    // logOut() {
+    //     this.props.dispatch(clearAuth());
+    //     clearAuthToken();
+    // }
 
     render() {
         // Only render the log out button if we are logged in
-        let logOutButton;
-        if (this.props.loggedIn) {
-            logOutButton = (
-                <div>
-                <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic}/></div>
-                <button className="log-out-button" onClick={() => this.logOut()}>Log out</button>
-                </div>
-            );
-        }
+        // let logOutButton;
+        // if (this.props.loggedIn) {
+        //     logOutButton = (
+        //         <div>
+        //         <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic}/></div>
+        //         <button className="log-out-button" onClick={() => this.logOut()}>Log out</button>
+        //         </div>
+        //     );
+        // }
         return (
             <div className="header-bar" role="banner" aria-live="polite" aria-atomic="true">
                 <h1>Karpül</h1>
-                {logOutButton}
+                {/* {logOutButton} */}
+                <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic}/></div>
             </div>
         );
     }
