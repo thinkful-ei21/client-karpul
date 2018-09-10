@@ -1,4 +1,4 @@
-#profilePiclbl{
+#profilePiclbl {
   font-weight: bold;
 }
 
@@ -9,7 +9,7 @@
 
 .pic-container {
   max-width: 300px;
-  margin-left: auto;
+  margin: -40px auto 0 auto;
   margin-right: auto;
   text-align: center;
   font-size: 25px;
@@ -22,13 +22,13 @@
   padding: 20px;
 }
 
-.pic-container img{
+.pic-container img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.pic-container input{
+.pic-container input {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -41,13 +41,11 @@
   margin-top: 20px;
 }
 
-
-.profile-label-container{
+.profile-label-container {
   margin-top: 10px;
 }
 
-
-.profile-container{
+.profile-container {
   margin: 20px auto;
   display: block;
   padding: 4px 10px 40px 10px;
@@ -60,7 +58,7 @@
   -webkit-border-radius: 5px;
 }
 
-.profile-modal-container{
+.profile-modal-container {
   margin: 20px auto;
   display: block;
   padding: 0 10px 40px 10px;
@@ -74,6 +72,17 @@
 
 @media only screen and (max-width: 420px) {
 
+  .profile-modal {
+    margin: 100px auto;
+    padding-bottom: 30px;
+  }
+
+  .profile-modal-container {
+    margin-top: 0;
+    padding: 0;
+    width: 300px;
+  }
+
   .profile-container {
     position: absolute;
     max-width: 320px;
@@ -85,8 +94,10 @@
     padding-bottom: 10px;
     margin-top: 10vh;
   }
+
   .pic-container {
     font-size: 22px;
+    margin: -70px auto -50px auto;
   }
 
   .dashboard {

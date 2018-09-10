@@ -6,7 +6,7 @@ import './profile.css';
 export function ProfileModal(props){
     
     return (
-      <div className="profile-modal">
+      <div className="profile-modal" role="complementary" aria-live="polite">
       <div className="pic-container">
          <h2>{props.user.username}</h2>
           <img src={props.user.profilePicUrl} className="profilePic" alt='User Profile'/> 
@@ -28,7 +28,7 @@ export function ProfileModal(props){
               <label className="profile-labels">About {props.user.firstName}</label>
               <span className="profile-label-data">{props.user.bio}</span>
               </div>
-              <button onClick={() => props.dispatch(hideModal())}>Close</button>
+              <button onClick={() => props.dispatch(hideModal())} className="close-modal-button">Close</button>
           </section>
       </div>
   );

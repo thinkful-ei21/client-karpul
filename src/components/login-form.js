@@ -8,7 +8,7 @@ import {required, nonEmpty} from '../validators';
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
-    }   
+    }
 
     render() {
         let error;
@@ -20,13 +20,12 @@ export class LoginForm extends React.Component {
             );
         }
 
-
         return (
-            <div>
+            <div role="complementary">
                 <div className="info">
                     <h1>Travel with Karpul and help reduce Global Warming!</h1>
-                    <h2>Simple user interface allows users to join carpools in three easy steps</h2>
-                    <h3>Know your carpool members from their profile</h3>
+                    <h2>Simple user interface allows users to join carpools in three easy steps<br /><br />
+                    Know your carpool members from their profile</h2>
                 </div>
                 <Form
                     className="login-form"

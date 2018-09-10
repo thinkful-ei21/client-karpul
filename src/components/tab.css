@@ -20,6 +20,7 @@ ul.tabContainer li {
 
 ul.tabContainer li a {
   display: block;
+  margin-right: -10px;
   color: rgb(50, 92, 116);
   font-weight: bold;
   text-align: center;
@@ -131,9 +132,10 @@ ul.tabContainer li.icon-li {
     -o-transition:  display 0.8s;
 }
 
-  ul.tabContainer.responsive li a{
+  ul.tabContainer.responsive li a {
     float: none;
     display: block;
+    height: 50px;
     text-align: right;
     border: none;
     color: rgb(50, 92, 116);

@@ -19,6 +19,21 @@ input#arrivalTime {
   margin: 10px 0;
 }
 
+.algolia-places {
+  width: 260px;
+  font-size: 14px;
+  font-weight: 500;
+  
+}
+
+.ap-dropdown-menu{
+  text-align: left;
+}
+
+.ap-suggestion-icon {
+  display: none;
+}
+
 .end-address-label, .start-address-label {
   /* color: rgb(117, 29, 29); */
 }

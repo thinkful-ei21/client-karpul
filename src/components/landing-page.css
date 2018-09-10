@@ -2,9 +2,22 @@
   background-image: url('carpool_fade.jpg');
   background-position: center; 
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   z-index: 0; 
-  height: 100%;
-  margin-top: -30px;
-  padding-top: 30px;
+  min-height: 100%;
+  margin-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 0px;
+}
+
+.home-bottom {
+  padding: 200px 0;
+}
+
+@media only screen and (max-width: 420px) {
+
+  .home, .home-bottom {
+    padding: 30px 5px 120px 5px;
+  }
+
 }

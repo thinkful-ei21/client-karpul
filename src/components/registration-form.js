@@ -28,9 +28,9 @@ export class RegistrationForm extends React.Component {
                 </div>
             );
         }
-
+ 
         return (
-            <div>
+            <div className="signup">
             <form
                 className="login-form"
                 aria-live="polite"

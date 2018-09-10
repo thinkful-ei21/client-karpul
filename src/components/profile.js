@@ -30,6 +30,7 @@ export class Profile extends React.Component{
           className="login-form"
           aria-live="polite"
           aria-atomic="true"
+          aria-label="Profile Form"
           role="complementary"
           onSubmit={this.props.handleSubmit(values =>
               this.onSubmit(values)
@@ -142,7 +143,7 @@ export class Profile extends React.Component{
       </Form>
       }
       else {
-          return <section className="login-form profile-container">
+          return <section className="login-form profile-container" role="complementary">
               <div className="profile-label-container">
               <label className="profile-labels">Name</label>
               <span className="profile-label-data">{this.props.userData.firstName} {this.props.userData.lastName}</span>
@@ -191,11 +192,12 @@ export class Profile extends React.Component{
         );
     }
     return (
-      <div>
+      <div role="complementary" aria-live="polite">
       <div className="pic-container">
           <label htmlFor="profilePic" id="profilePiclbl">Profile Pic</label>
           <img src={this.props.profilePic} className="profilePic" alt='Sample Image'/>
-          <input type="file" onChange={this.handleUploadFile} accept="image/*" />   
+          <input type="file" onChange={this.handleUploadFile} accept="image/*" 
+              aria-label="Profile Pic" alt="profile pic" />   
       </div>
         {this.setEditView(error)}
       </div>

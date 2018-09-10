@@ -18,7 +18,7 @@ class FindCarpools extends React.Component {
   notify = () => {
     return toast.info(`Your request was sent`, {
       position: "top-right",
-      autoClose: 2500,
+      autoClose: 3500,
       hideProgressBar: true
     });
   }
@@ -72,25 +72,21 @@ class FindCarpools extends React.Component {
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button join-request-host">You Are Host</button>
-              {/* <span className="hosttiptext join-request join-request-host">Unable to join carpools you host</span> */}
               </div>
           : carpool.users.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button join-request-already">Already Joined</button>
-              {/* <span className="hosttiptext join-request join-request-already">You already joined this carpool</span> */}
               </div>
           : carpool.pendingRequests.includes(this.props.currentUser._id)
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button join-request-pending">Request Pending</button>
-              {/* <span className="hosttiptext join-request join-request-pending">Request Pending</span> */}
               </div>
           : this.renderOpenSeats(carpool) === 'Carpool Full'
           ? <div className="hosttip"><button
               disabled="disabled"
               className="join-button join-request-host">Carpool Full</button>
-              {/* <span className="hosttiptext join-request join-request-host">Carpool Full</span> */}
               </div>
           : <button
               onClick={(e) => {
@@ -136,7 +132,6 @@ coor = [
 
     return (
       <div>
-
         <ProximitySearchForm />
         <div className="coor">
           <Maps coordinates={this.coor}/>

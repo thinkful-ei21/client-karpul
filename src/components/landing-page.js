@@ -13,7 +13,8 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <LoginForm />  
+            <LoginForm />
+            <div className="home-bottom"></div>
         </div>
     );
 }

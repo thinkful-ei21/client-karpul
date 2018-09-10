@@ -2,31 +2,20 @@
   box-sizing: border-box;
 }
 
-#root {
-
-  background-position: center; 
-  background-repeat: no-repeat;
-  background-size: contain; 
-  z-index: 0; 
-  /* height: 1200px; */
-  margin-top: -30px;
-  padding-top: 30px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f8a26b+0,fed163+54&1+0,0.81+100 */
-background: -moz-linear-gradient(left, rgba(248,162,107,1) 0%, rgba(254,209,99,0.9) 54%, rgba(254,209,99,0.81) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(248,162,107,1) 0%,rgba(254,209,99,0.9) 54%,rgba(254,209,99,0.81) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(248,162,107,1) 0%,rgba(254,209,99,0.9) 54%,rgba(254,209,99,0.81) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8a26b', endColorstr='#cffed163',GradientType=1 ); /* IE6-9 */
-
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   text-align: center;
-  height: 100%;
-  background-color: #110E0E;
+  min-height: 100%;
+  /* background-color: #110E0E; */
+  background-position: center; 
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Cabin', sans-serif;
+  background: -moz-linear-gradient(left, rgba(248,162,107,1) 0%, rgba(254,209,99,0.9) 54%, rgba(254,209,99,0.81) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(248,162,107,1) 0%,rgba(254,209,99,0.9) 54%,rgba(254,209,99,0.81) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(248,162,107,1) 0%,rgba(254,209,99,0.9) 54%,rgba(254,209,99,0.81) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8a26b', endColorstr='#cffed163',GradientType=1 ); /* IE6-9 */
 }
 
 form.login-form, form.carpool-form, form.proximity-search-form {
@@ -46,9 +35,20 @@ form.login-form, form.carpool-form, form.proximity-search-form {
   -o-border-radius: 5px;
 }
 
+form.proximity-search-form {
+  margin: -40px auto 0 auto;
+}
 
-form.login-form{
+form.login-form {
   margin-top: 100px;
+}
+
+.signup {
+   margin-top: -60px;
+}
+
+form.login-form h2 {
+  margin-top: 0;
 }
 
 form.carpool-form {
@@ -59,19 +59,36 @@ input[type="text"],
 input[type="password"],
 input[type="textarea"],
 .seat-selector, .details-input, .state-selector {
-	width: 250px;
-	height: 30px;
+  width: 250px;
+  height: 30px;
   margin: 10px auto;
   border: 1px solid rgb(117, 29, 29);
   font-size: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
+fieldset.address-fieldset {
+  margin: 10px auto;
+  padding: 5px;
+  border: none;
+}
+
+.address-end-fieldset {
+  margin: 10px 0;
+  padding: 5px;
+  border: none;
+}
 .state-selector > option, .seat-selector > option {
   width: 250px;
 }
 
 fieldset.address-fieldset {
   margin: 15px 0;
+  
 }
 
 button:hover {
@@ -84,23 +101,25 @@ button {
   padding: 10px;
   background: rgb(50, 97, 116);
   color: white;
+  font-family: 'Cabin', sans-serif;
   border: solid 2px black;
   font-size: 18px;
   margin: 20px 0 0 0;
-  border-radius: 3px;
-  font-family: 'Cabin', sans-serif;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .info {
-  margin: 100px auto -80px auto;
-  padding: 5px 10px;
-  background-color: white;
-  width: 600px;
+  margin: 50px auto -80px auto;
+  /* padding: 0 10px 5px 10px; */
+  color: white;
+  width: 800px;
   border-radius: 8px;
+  font-size: 110%;
+  font-weight: thin;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
@@ -149,13 +168,6 @@ button {
   background-color: red;
 }
 
-button.close-modal-button {
-  width: 20px;
-  height: 25px;
-  padding: 0;
-  margin-left: 10px;
-}
-
 .login-form > button:hover, button:hover {
   color: rgb(117, 29, 29);
   background-color: white;
@@ -171,12 +183,26 @@ button.close-modal-button {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 800px) {
+  .info {
+    width: 600px;
+    margin-top: -30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .info {
+    width: 400px;
+  }
+}
+
+
 @media only screen and (max-width: 420px) {
   .dashboard {
     margin-top: 150px;
   }
 
-  form.login-form{
+  form.login-form {
     font-size: 16px;
     margin: 0 auto;
     width: 100%;
@@ -198,7 +224,7 @@ button.close-modal-button {
 
   .info {
     width: 100%;
-    margin: -80px auto 20px auto;
+    margin: 20px auto 20px auto;
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -207,16 +233,25 @@ button.close-modal-button {
 }
 
   .home {
-    padding-top: 20vh;
     width: 100%;
   }
-  
+
   form.carpool-form {
     width: 100%;
   }
-  
+
   .create-carpool-button {
     margin-bottom: 5px;
+  }
+
+
+  .profile-modal {
+    width: 100%;
+  }
+
+  .close-modal-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
 }

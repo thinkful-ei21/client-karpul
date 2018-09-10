@@ -17,7 +17,7 @@ export class HeaderBar extends React.Component {
     // }
 
     render() {
-        // Only render the log out button if we are logged in
+        // Only render the user image if we are logged in
         // let logOutButton;
         // if (this.props.loggedIn) {
         //     logOutButton = (
@@ -31,7 +31,8 @@ export class HeaderBar extends React.Component {
             <div className="header-bar" role="banner" aria-live="polite" aria-atomic="true">
                 <h1>Karpül</h1>
                 {/* {logOutButton} */}
-                <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic}/></div>
+                {this.props.loggedIn ? <div className="header-profile-pic-container"><img className="header-profile-pic" src={this.props.profilePic}/></div>
+                : ''}
             </div>
         );
     }

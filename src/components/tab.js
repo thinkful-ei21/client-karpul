@@ -52,7 +52,7 @@ export class Tab extends React.Component{
             );
         }
     return (
-      <div>
+      <div role="complementary" aria-live="polite">
         <ul className="tabContainer" id="tabContainer">
           <li className="first-menu-spot"></li>
           <li><a className={this.generateActiveStyle('profile')} 
