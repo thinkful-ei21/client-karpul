@@ -1,5 +1,5 @@
 .home {
-  background-image: url('carpool_fade.jpg');
+  background-image: url('carpool.jpg');
   background-position: center; 
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,7 +7,7 @@
   min-height: 100%;
   margin-top: 30px;
   padding-top: 50px;
-  padding-bottom: 0px;
+  padding-bottom: 150px;
 }
 
 .home-bottom {
