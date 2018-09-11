@@ -85,12 +85,13 @@ export class ProximitySearchForm extends React.Component {
           )}>
 
           {error}
-          <label htmlFor="proximitySearch" aria-label="proximity search">Destination</label>
+          <label htmlFor="proximitySearch" aria-label="proximity search">Destination Address</label>
             <Field
                 component={SearchInput}
                 onBlur={()=>{placesAutocomplete.close()}}
                 onChange={()=>{select = false}}
                 type="text"
+                placeholder="Enter Destination Address"
                 name="proximitySearch"
                 id="proximitySearch"              
                 validate={[required, nonEmpty, invalid]}

@@ -118,12 +118,19 @@ button {
   color: white;
   width: 800px;
   border-radius: 8px;
-  font-size: 110%;
+  font-size: 22px;
   font-weight: thin;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+}
+
+h1.landing {
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  margin: -30px auto;
 }
 
 .dashboard {
@@ -193,6 +200,7 @@ button {
 @media only screen and (max-width: 600px) {
   .info {
     width: 400px;
+    font-size: 110%;
   }
 }
 
@@ -224,6 +232,7 @@ button {
 
   .info {
     width: 100%;
+    font-size: 90%;
     margin: 20px auto 20px auto;
     border-radius: 0;
     -webkit-border-radius: 0;

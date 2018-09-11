@@ -44,7 +44,7 @@ export class App extends React.Component {
     render() {
         return (
             <div className="app">
-                <HeaderBar />
+                {/* <HeaderBar /> */}
                 <Modal />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={(props) => <Dashboard active={'profile'} {...props}/>} />

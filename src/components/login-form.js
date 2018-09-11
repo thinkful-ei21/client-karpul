@@ -22,9 +22,10 @@ export class LoginForm extends React.Component {
 
         return (
             <div role="complementary">
+            <h1 className="landing">Karpül</h1>
                 <div className="info">
-                    <h1>Travel with Karpul and help reduce Global Warming!</h1>
-                    <h2>Simple user interface allows users to join carpools in three easy steps<br /><br />
+                    <h2>Travel with Karpul and help reduce Global Warming!</h2>
+                    <h2>Join carpools in three easy steps<br />
                     Know your carpool members from their profile</h2>
                 </div>
                 <Form
