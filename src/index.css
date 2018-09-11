@@ -43,6 +43,10 @@ form.login-form {
   margin-top: 100px;
 }
 
+form.signup {
+  margin-top: 40px;
+}
+
 form.login-form h2 {
   margin-top: 0;
 }
@@ -219,6 +223,10 @@ h1.landing {
     width: 100%;
   }
 
+  form.signup {
+    margin-top: 40px;
+  }
+
   .join-button, .leave-button {
     height: 30px;
     font-size: 16px;
@@ -255,7 +263,6 @@ h1.landing {
   .create-carpool-button {
     margin-bottom: 5px;
   }
-
 
   .profile-modal {
     width: 100%;

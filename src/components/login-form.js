@@ -24,7 +24,7 @@ export class LoginForm extends React.Component {
 
         return (
             <div role="complementary">
-            <h1 className="landing">Karpül</h1>
+                <h1 className="landing">Karpül</h1>
                 <div className="info">
                     <h2>Travel with Karpul and help reduce Global Warming!</h2>
                     <h2>Join carpools in three easy steps<br />

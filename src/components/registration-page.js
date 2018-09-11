@@ -13,6 +13,7 @@ export function RegistrationPage(props) {
     return (
         <div className="home">
             <RegistrationForm />
+            <div className="home-bottom"></div>
         </div>
     );
 }

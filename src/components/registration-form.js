@@ -31,72 +31,72 @@ export class RegistrationForm extends React.Component {
  
         return (
             <div className="signup">
-            <form
-                className="login-form"
-                aria-live="polite"
-                aria-atomic="true"
-                role="complementary"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>  
-                {/* <img src={require('./carpool.jpg')} alt="image"/>    */}
-                <h2>Sign Up</h2>           
-                {error}
-                <Field component={Input}
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    label="First Name"/>
-                <Field component={Input}
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    label="Last Name"/>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="username"
-                    id="username"
-                    label="User Name"
-                    validate={[required, nonEmpty, isTrimmed]}
-                />
-                <Field
-                    component={Input}
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    label="Phone Number"
-                    validate={[required, passwordLength, isTrimmed]}
-                />
-                <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    label="Password"
-                    validate={[required, passwordLength, isTrimmed]}
-                />
-                <Field
-                    component={Input}
-                    type="password"
-                    name="passwordConfirm"
-                    label="Confirm password"
-                    validate={[required, nonEmpty, matchesPassword]}
-                />
-                <button
-                    type="submit"
-                    disabled={this.props.pristine || this.props.submitting}
-                    >
-                    Register
-                </button>
-                <br />
-                <br />                
-                or
-                <Link to="/" className="login-link">
-                    <h2 className="register-text">Already have an account??</h2>
-                </Link>
-            </form>
+                <h1 className="landing">Karpül</h1>
+                <form
+                    className="login-form signup"
+                    aria-live="polite"
+                    aria-atomic="true"
+                    role="complementary"
+                    onSubmit={this.props.handleSubmit(values =>
+                        this.onSubmit(values)
+                    )}>  
+                    <h2>Sign Up</h2>           
+                    {error}
+                    <Field component={Input}
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        label="First Name"/>
+                    <Field component={Input}
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        label="Last Name"/>
+                    <Field
+                        component={Input}
+                        type="text"
+                        name="username"
+                        id="username"
+                        label="User Name"
+                        validate={[required, nonEmpty, isTrimmed]}
+                    />
+                    <Field
+                        component={Input}
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        label="Phone Number"
+                        validate={[required, passwordLength, isTrimmed]}
+                    />
+                    <Field
+                        component={Input}
+                        type="password"
+                        name="password"
+                        label="Password"
+                        validate={[required, passwordLength, isTrimmed]}
+                    />
+                    <Field
+                        component={Input}
+                        type="password"
+                        name="passwordConfirm"
+                        label="Confirm password"
+                        validate={[required, nonEmpty, matchesPassword]}
+                    />
+                    <button
+                        type="submit"
+                        disabled={this.props.pristine || this.props.submitting}
+                        >
+                        Register
+                    </button>
+                    <br />
+                    <br />                
+                    or
+                    <Link to="/" className="login-link">
+                        <h2 className="register-text">Already have an account??</h2>
+                    </Link>
+                </form>
            
-          </div>
+            </div>
         );
     }
 }
