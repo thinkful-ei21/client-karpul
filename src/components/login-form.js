@@ -14,8 +14,10 @@ export class LoginForm extends React.Component {
         let error;
         if (this.props.error) {
             error = (
-                <div className="form-error" aria-live="polite">
-                    {this.props.error}
+                <div className="error-block">
+                    <div className="form-error" aria-live="polite">
+                        {this.props.error}
+                    </div>
                 </div>
             );
         }
@@ -37,7 +39,9 @@ export class LoginForm extends React.Component {
                         this.onSubmit(values)
                     )}> 
                     <h2>Sign In</h2>
-                    {error}
+                    <div className="error-block">
+                        {error}
+                    </div>
                     <Field
                         component={Input}
                         type="text"

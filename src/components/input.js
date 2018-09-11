@@ -14,13 +14,13 @@ export default class Input extends React.Component {
             error = <div className="form-error">{this.props.meta.error}</div>;
         } else if (!this.props.meta.error || !this.props.meta.touched) {
             error = ( 
-                <div style={{height: '18px'}}></div>)
+                <div style={{height: '20px'}}></div>)
         }
 
         let warning;
         if (this.props.meta.touched && this.props.meta.warning) {
             warning = (
-                <div className="form-warning">{this.props.meta.warning}</div>
+                <div className="form-warning" style={{height: '20px'}}>{this.props.meta.warning}</div>
             );
         }
 

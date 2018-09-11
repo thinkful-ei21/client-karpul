@@ -43,10 +43,6 @@ form.login-form {
   margin-top: 100px;
 }
 
-.signup {
-   margin-top: -60px;
-}
-
 form.login-form h2 {
   margin-top: 0;
 }
@@ -181,8 +177,15 @@ h1.landing {
   border: 1px solid rgb(117, 29, 29);
 }
 
+.error-block {
+  height: 25px;
+}
+
 .form-error {
   color: red;
+  font-size: 15px;
+  line-height: 20px;
+  min-height: 20px;
 }
 
 .register-text, .login-text {
