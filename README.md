@@ -50,24 +50,21 @@ In order for us to gain coordinates for locations on the map from addresses that
 ### Screenshots
 
 #### Mobile
-![01_login-phonex](https://user-images.githubusercontent.com/8137381/45250264-3f5ac100-b2e4-11e8-8305-d54ae285e792.png)   ![02_profile-iphonex](https://user-images.githubusercontent.com/8137381/45250265-3f5ac100-b2e4-11e8-8382-63919cc0a757.png)
+![01_karpul-client surge sh_ iphone x](https://user-images.githubusercontent.com/8137381/45571110-0bb6f400-b81a-11e8-965d-e91330fd904d.png)     ![02_karpul-client surge sh_ iphone x](https://user-images.githubusercontent.com/8137381/45571112-0bb6f400-b81a-11e8-843e-294381be9469.png)
 
-
-![03_findkarpools_iphonex](https://user-images.githubusercontent.com/8137381/45250266-3f5ac100-b2e4-11e8-873f-e1964af725d7.png)   ![04_fidkarpools_2-iphonex](https://user-images.githubusercontent.com/8137381/45250267-3f5ac100-b2e4-11e8-8c4e-778323e0c243.png)
-
-
-![05_mycarpools_2-iphonex](https://user-images.githubusercontent.com/8137381/45250268-3f5ac100-b2e4-11e8-9ca6-ccbb79a95d5d.png)   ![06_mycarpools-iphonex](https://user-images.githubusercontent.com/8137381/45250269-3f5ac100-b2e4-11e8-84b5-ff1bb4016dbb.png)
+![03_karpul-client surge sh_ iphone x](https://user-images.githubusercontent.com/8137381/45571113-0c4f8a80-b81a-11e8-9b4e-25a68d28ed76.png)     ![04_karpul-client surge sh_ iphone x](https://user-images.githubusercontent.com/8137381/45571114-0c4f8a80-b81a-11e8-9106-ed27e7cc2adc.png)
 
 #### Desktop
-![07_login-desktop](https://user-images.githubusercontent.com/8137381/45250270-3ff35780-b2e4-11e8-818b-cde5d79a7cd5.png)
+![05_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571115-0c4f8a80-b81a-11e8-893f-cc8078cfe109.png)
 
-![08_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250271-3ff35780-b2e4-11e8-97ef-cc20c5dbe771.png)
+![06_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571116-0ce82100-b81a-11e8-9b7e-3f2982b28aac.png)
 
-![09_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250272-3ff35780-b2e4-11e8-8aac-5bb30460b1d1.png)
+![07_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571117-0ce82100-b81a-11e8-8504-481133df5cc2.png)
 
-![10_findcarpools-desktop](https://user-images.githubusercontent.com/8137381/45250274-3ff35780-b2e4-11e8-9f55-3da8eeebd120.png)
+![08_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571118-0ce82100-b81a-11e8-988b-156a99816b87.png)
 
-![14_mycarpools-desktop](https://user-images.githubusercontent.com/8137381/45250275-3ff35780-b2e4-11e8-80ac-f0a42f322a6c.png)
+![09_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571119-0ce82100-b81a-11e8-91f7-b90b44e8433c.png)
 
-![15_mycarpools-desktop](https://user-images.githubusercontent.com/8137381/45250276-3ff35780-b2e4-11e8-85b8-bc22b47ef318.png)
+![10_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571120-0ce82100-b81a-11e8-9f6c-7f56d253139e.png)
+
 
