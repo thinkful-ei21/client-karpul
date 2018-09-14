@@ -59,11 +59,12 @@ In order for us to gain coordinates for locations on the map from addresses that
 
 ![06_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571116-0ce82100-b81a-11e8-9b7e-3f2982b28aac.png)
 
-![07_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571117-0ce82100-b81a-11e8-8504-481133df5cc2.png)
-
 ![08_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571118-0ce82100-b81a-11e8-988b-156a99816b87.png)
 
 ![09_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571119-0ce82100-b81a-11e8-91f7-b90b44e8433c.png)
+
+![07_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571117-0ce82100-b81a-11e8-8504-481133df5cc2.png)
+
 
 
 
