@@ -65,6 +65,5 @@ In order for us to gain coordinates for locations on the map from addresses that
 
 ![09_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571119-0ce82100-b81a-11e8-91f7-b90b44e8433c.png)
 
-![10_karpul-client surge sh_ laptop with mdpi screen](https://user-images.githubusercontent.com/8137381/45571120-0ce82100-b81a-11e8-9f6c-7f56d253139e.png)
 
 
