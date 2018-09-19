@@ -25,7 +25,6 @@ export function FindCarpoolModal(props){
           hideProgressBar: true
         });
       }
-    console.log(props.carpool)
     return (
         <div className="carpool-item">
         <div className="carpool-item-text">

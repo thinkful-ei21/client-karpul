@@ -11,6 +11,17 @@ input#arrivalTime {
   -o-border-radius: 5px;
 }
 
+.modal-close {
+  border: solid 1px black;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0 5px;
+  cursor: pointer;
+  background-color: rgb(50, 92, 116);
+}
+
 .arrival-time-label,
 .details-label,
 .available-seats-label,
@@ -23,7 +34,6 @@ input#arrivalTime {
   width: 260px;
   font-size: 14px;
   font-weight: 500;
-  
 }
 
 .ap-dropdown-menu{

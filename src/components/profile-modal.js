@@ -9,6 +9,7 @@ export function ProfileModal(props){
       <div className="profile-modal" role="complementary" aria-live="polite">
       <div className="pic-container">
          <h2>{props.user.username}</h2>
+         <span role="button" className="modal-close" onClick={() => props.dispatch(hideModal())}> X </span>
           <img src={props.user.profilePicUrl} className="profilePic" alt='User Profile'/> 
       </div>
       <section className="login-form profile-modal-container">

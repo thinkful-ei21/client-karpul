@@ -27,7 +27,7 @@ export class Profile extends React.Component{
   setEditView(error){
       if(this.state.edit){
           return <Form
-          className="login-form"
+          className="profile-form"
           aria-live="polite"
           aria-atomic="true"
           aria-label="Profile Form"
@@ -143,7 +143,7 @@ export class Profile extends React.Component{
       </Form>
       }
       else {
-          return <section className="login-form profile-container" role="complementary">
+          return <section className="login-form" role="complementary">
               <div className="profile-label-container">
               <label className="profile-labels">Name</label>
               <span className="profile-label-data">{this.props.userData.firstName} {this.props.userData.lastName}</span>
@@ -193,13 +193,13 @@ export class Profile extends React.Component{
     }
     return (
       <div role="complementary" aria-live="polite">
-      <div className="pic-container">
-          <label htmlFor="profilePic" id="profilePiclbl">Profile Pic</label>
-          <img src={this.props.profilePic} className="profilePic" alt='Sample Image'/>
-          <input type="file" onChange={this.handleUploadFile} accept="image/*" 
-              aria-label="Profile Pic" alt="profile pic" />   
-      </div>
+      <div className="login-form profile-container">
+        <label htmlFor="profilePic" id="profilePiclbl">Profile Pic</label>
+        <img src={this.props.profilePic} className="profilePic" alt='Sample Image'/>
+        <input type="file" className="choose-pic-button" onChange={this.handleUploadFile} accept="image/*" 
+            aria-label="Profile Pic" alt="profile pic" />
         {this.setEditView(error)}
+        </div>
       </div>
   );
   }

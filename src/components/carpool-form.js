@@ -61,6 +61,7 @@ export class CarpoolForm extends React.Component {
                 )}>
                 {error}
                 <label className="carpool-title-label" htmlFor="startAddress">Carpool Title</label>
+                <span role="button" className="modal-close" onClick={() => this.props.dispatch(hideModal())}> X </span>
                 <Field
                     component={Input}
                     type="text"

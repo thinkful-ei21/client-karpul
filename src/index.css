@@ -38,6 +38,7 @@ form.login-form, form.carpool-form, form.proximity-search-form {
 
 form.proximity-search-form {
   margin: -40px auto 0 auto;
+  background-color: transparent;
 }
 
 form.login-form {
@@ -92,11 +93,11 @@ fieldset.address-fieldset {
   
 }
 
-button:hover {
+button:hover, .choose-pic-button:hover {
   cursor: pointer;
 }
 
-button {
+button, .choose-pic-button {
   width: 260px;
   height: 45px;
   padding: 10px;
@@ -176,7 +177,7 @@ h1.landing {
   background-color: red;
 }
 
-.login-form > button:hover, button:hover {
+.login-form > button:hover, button:hover, .choose-pic-button:hover {
   color: rgb(117, 29, 29);
   background-color: white;
   border: 1px solid rgb(117, 29, 29);

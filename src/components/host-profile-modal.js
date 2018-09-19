@@ -9,7 +9,8 @@ export function HostProfileModal(props){
       <div className="profile-modal">
       <div className="pic-container">
          <h2>{props.user.username}</h2>
-          <img src={props.user.profilePicUrl} className="profilePic" alt='User Profile'/> 
+        <span role="button" className="modal-close" onClick={() => props.dispatch(hideModal())}> X </span>
+        <img src={props.user.profilePicUrl} className="profilePic" alt='User Profile'/> 
       </div>
       <section className="login-form profile-modal-container">
               <div className="profile-label-container">

@@ -11,8 +11,9 @@
   z-index: 1;
 }
 
-.header-bar > h1, h1.landing {
+.header-bar h1, h1.landing {
   font-size: 55px;
+  color: rgb(50, 92, 116);
   text-align: start;
   margin-left: 50px;
   margin-top: 0;
@@ -84,7 +85,7 @@
 
 @media only screen and (max-width: 800px) {
 
-  .header-bar > h1 {
+  .header-bar h1 {
     margin-left: 10px;
     font-size: 40px;
   }

@@ -86,7 +86,7 @@ class MyCarpools extends React.Component{
     let currentUserCount = carpool.users.length;
     let seatsRemaining = riderCapacity - currentUserCount;
     
-    if (riderCapacity === NaN || carpool.openSeats === null) {
+    if (riderCapacity === isNaN || carpool.openSeats === null) {
       'Carpool Full';
     }
 
