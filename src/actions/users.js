@@ -113,7 +113,6 @@ export const fetchPic = userId => dispatch => {
 }
 
 export const registerUser = user => dispatch => {
-    console.log(user);
     return fetch(`${API_BASE_URL}/users`, {
         method: 'POST',
         headers: {

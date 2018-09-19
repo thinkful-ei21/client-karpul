@@ -10,7 +10,6 @@ export function LandingPage(props) {
         return <Redirect to="/dashboard" />;
     }
 
-
     return (
         <div className="home">
             <LoginForm />
