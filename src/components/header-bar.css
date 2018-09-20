@@ -21,6 +21,10 @@
   padding-bottom: 8px;
 }
 
+.header-bar h1 {
+  padding: 0;
+}
+
 .header-username {
   text-align: end;
   margin-top: 30px;

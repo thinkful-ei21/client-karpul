@@ -5,6 +5,11 @@
 .profilePic {
   max-width: 160px;
   display: block;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 .pic-container {
@@ -13,12 +18,7 @@
   margin-right: auto;
   text-align: center;
   font-size: 25px;
-  border-radius: 8;
   background-color: white;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
   padding: 20px;
 }
 
@@ -30,6 +30,7 @@
 .profile-form {
   margin: -30px auto;
   background-color: transparent;
+  overflow: scroll;
 }
 
 .login-form input {
@@ -50,7 +51,7 @@
 }
 
 .profile-container {
-  margin: -60px auto;
+  margin: -50px auto;
   display: block;
   padding: 4px 0 40px 0;
   font-size: 20px;
@@ -72,6 +73,10 @@
   border-radius: 5px;
   width: 400px;
   -webkit-border-radius: 5px;
+}
+
+.save-profile-button {
+  margin-bottom: 40px;
 }
 
 @media only screen and (max-width: 420px) {

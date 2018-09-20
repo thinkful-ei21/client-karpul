@@ -136,7 +136,8 @@ export class Profile extends React.Component{
           />
             <button
                 type="submit"
-                >
+                className="save-profile-button"
+            >
                 Save Changes
             </button>
 
